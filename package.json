@@ -16,7 +16,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "stylelint-config-standard": "^19.0.0"
   },
   "devDependencies": {
     "eslint": "^6.4.0",
@@ -24,7 +25,9 @@
     "eslint-config-prettier": "^6.3.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "stylelint": "^11.0.0",
+    "stylelint-config-prettier": "^5.2.0"
   },
   "keywords": [
     "gatsby"
@@ -58,6 +61,10 @@
     ],
     "*.{json,md}": [
       "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
       "git add"
     ]
   }
