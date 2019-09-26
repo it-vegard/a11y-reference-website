@@ -15,6 +15,7 @@ module.exports = {
     SharedArrayBuffer: "readonly",
     React: "readonly",
   },
+  parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -25,5 +26,6 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "comma-dangle": ["error", "always-multiline"],
+    "valid-jsdoc": "off",
   },
 }

@@ -192,10 +192,10 @@ html {
 * {
   box-sizing: inherit;
 }
-*:before {
+*::before {
   box-sizing: inherit;
 }
-*:after {
+*::after {
   box-sizing: inherit;
 }
 body {
@@ -602,17 +602,17 @@ pre code {
   background: none;
   line-height: 1.42;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
+code::before,
+code::after,
+tt::before,
+tt::after {
   letter-spacing: -0.2em;
   content: " ";
 }
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
+pre code::before,
+pre code::after,
+pre tt::before,
+pre tt::after {
   content: "";
 }
 @media only screen and (max-width: 480px) {

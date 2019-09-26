@@ -2,5 +2,8 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-prettier"
+  ],
+  "ignoreFiles": [
+    "./src/components/layout/layout.css"
   ]
 }
