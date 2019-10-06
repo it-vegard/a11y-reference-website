@@ -4,6 +4,6 @@
     "stylelint-config-prettier"
   ],
   "ignoreFiles": [
-    "./src/components/layout/layout.css"
+    "./src/components/layout/layout-old.css"
   ]
 }
