@@ -1,0 +1,8 @@
+:root {
+  /* Color palette */
+  --color-cornflowerblue: #6495ed;
+  --color-blue-cola: #0088DC;
+
+  /* Default color definitions */
+  --color-profile-main: var(--color-blue-cola);
+}

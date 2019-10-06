@@ -1,0 +1,6 @@
+.footer {
+  background-color: var(--color-profile-main);
+  border-top: 0.2rem var(--color-profile-main);
+  filter: brightness(75%);
+  padding: 2rem 0;
+}
