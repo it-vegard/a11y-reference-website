@@ -1,0 +1,8 @@
+.container {
+  --container-max-width: 75rem;
+
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+  padding: 0 1rem;
+}
