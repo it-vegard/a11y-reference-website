@@ -7,12 +7,7 @@ import Container from "../container"
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header className="header">
     <Container>
       <h1 style={{ margin: 0 }}>
         <Link
