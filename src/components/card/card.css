@@ -1,0 +1,85 @@
+.card {
+  --card-cursor: default;
+  --card-box-shadow: 0 0 0.3rem 0.01rem #cdcdcd;
+  --card-hover-box-shadow: var(--card-box-shadow);
+  --card-link-outline: outset;
+  --card-hover-jump-distance: 0;
+
+  border-radius: 0.3rem;
+  box-shadow: var(--card-box-shadow);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: var(--card-cursor); /* Will be overridden by card.js useEffect hook as progressive enhancement */
+}
+
+/* Should not move the cards if it makes the user queasy */
+@media screen and (prefers-reduced-motion: no-preference) {
+  .card:hover {
+    position: relative;
+    top: var(--card-hover-jump-distance);
+  }
+}
+
+
+.card:focus-within {
+  box-shadow: var(--card-hover-box-shadow);
+}
+
+.card__content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card__heading {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.card__text {
+  font-size: larger;
+  margin-top: 0;
+}
+
+.card__text:last-of-type {
+  margin-bottom: 0;
+}
+
+.card__link {
+  --card-link-border: 0.2rem solid;
+
+  color: var(--color-profile-main);
+  font-size: x-large;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+
+.card__link:focus {
+  border-bottom: var(--card-link-border);
+  outline: var(--card-link-outline);
+}
+
+.card:hover .card__link {
+  border-bottom: var(--card-link-border);
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .card:hover .card__link {
+    border-bottom: 0;
+  }
+}
+
+.card:focus-within .card__link:focus {
+  border-bottom: 0;
+}
+
+.card__image {
+  width: 100%;
+  max-width: 30rem;
+  order: -1;
+}
