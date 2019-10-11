@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
 import * as PropTypes from "prop-types"
-import { Link } from "gatsby"
 
 import { supportsFocusWithin } from "../../util/browser-support"
 import { isLeftMouseButton } from "../../util/mouse-events-util"
@@ -70,9 +69,9 @@ const Card = ({
       <div className="card__content">
         <LinkWrapper className="card__heading">
           {link ? (
-            <Link to={link} className="card__link" ref={linkElement}>
+            <a href={link} className="card__link" ref={linkElement}>
               {title}
-            </Link>
+            </a>
           ) : (
             title
           )}

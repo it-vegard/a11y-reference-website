@@ -1,0 +1,38 @@
+.credit {
+  box-shadow: 0 0 0.3rem 0.01rem #cdcdcd;;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+}
+
+.credit__link {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 4px 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.2;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.credit__icon {
+  height: 12px;
+  width: auto;
+  position: relative;
+  vertical-align: middle;
+  top: -2px;
+  fill: white
+}
+
+.credit__icon__container {
+  display: inline-block;
+  padding: 2px 3px;
+}
+
+.credit__name {
+  display: inline-block;
+  padding: 2px 3px;
+}

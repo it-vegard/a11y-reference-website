@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 
 const products = require("./src/data/products")
+const credits = require("./src/data/credits")
 
 exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
   products.forEach(product => {
@@ -23,5 +24,19 @@ exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
       type: product.type,
     }
     actions.createNode(productNode)
+  })
+  credits.forEach(credit => {
+    const creditNode = {
+      id: createNodeId(`Credit-${credit.userName}`),
+      name: credit.name,
+      userName: credit.userName,
+      imageSrc: credit.imageSrc,
+      imageAlt: credit.imageAlt,
+      internal: {
+        contentDigest: createContentDigest(credit),
+        type: "credit",
+      },
+    }
+    actions.createNode(creditNode)
   })
 }
