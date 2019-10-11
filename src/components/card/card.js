@@ -52,7 +52,7 @@ const Card = ({
   }
   const onMouseUp = event => {
     if (isLeftMouseButton(event)) {
-      if (new Date() - timeClicked < 200) {
+      if (new Date() - timeClicked < 250) {
         onClick(event)
       }
       setTimeClicked(0)
