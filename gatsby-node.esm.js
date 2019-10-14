@@ -6,8 +6,79 @@
 
 // You can delete this file if you're not using it
 
+import path from "path"
+import { mapProductsToGenderAndType } from "./src/util/products-util"
+import { toSlug } from "./src/util/url-util"
+
 import products from "./src/data/products"
 import credits from "./src/data/credits"
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  const ProductListPage = path.resolve(
+    "./src/page-templates/product-list-page.js"
+  )
+  const ProductPage = path.resolve("./src/page-templates/product-page.js")
+
+  return graphql(
+    `
+      {
+        allProduct {
+          nodes {
+            displayName
+            gender
+            id
+            imageName
+            price
+            type
+          }
+        }
+      }
+    `,
+    { folder: "products" }
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    // Create product list pages
+    const productLists = mapProductsToGenderAndType(
+      result.data.allProduct.nodes
+    )
+
+    // Create product details pages
+    Object.keys(productLists).forEach(gender => {
+      createPage({
+        path: `/${gender}`,
+        component: ProductListPage,
+        context: {
+          gender,
+        },
+      })
+      Object.keys(productLists[gender]).forEach(productType => {
+        createPage({
+          path: `/${gender}/${productType}`,
+          component: ProductListPage,
+          context: {
+            gender,
+            productType,
+          },
+        })
+        productLists[gender][productType].forEach(product => {
+          createPage({
+            path: `/${gender}/${productType}/${toSlug(product.displayName)}`,
+            component: ProductPage,
+            context: {
+              gender,
+              productType,
+              slug: toSlug(product.displayName),
+            },
+          })
+        })
+      })
+    })
+  })
+}
 
 exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
   products.forEach(product => {
@@ -21,6 +92,7 @@ exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
         type: "product",
       },
       price: product.price,
+      slug: toSlug(product.displayName),
       type: product.type,
     }
     actions.createNode(productNode)
