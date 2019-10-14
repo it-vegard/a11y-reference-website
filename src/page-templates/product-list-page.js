@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import ProductList from "../components/product-list"
 import { graphql, Link } from "gatsby"
 import { mapProducts, mapProductsToGenderAndType } from "../util/products-util"
+import { capitalizeAllWords } from "../util/text-util"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
@@ -17,12 +18,14 @@ const ProductListPage = ({ data }) => {
       {Object.keys(filteredProducts).map(gender => (
         <section key={gender}>
           <h2>
-            <Link to={`/${gender}`}>{gender}</Link>
+            <Link to={`/${gender}`}>{capitalizeAllWords(gender)}</Link>
           </h2>
           {Object.keys(filteredProducts[gender]).map(type => (
             <Fragment key={type}>
               <h3>
-                <Link to={`/${gender}/${type}`}>{type}</Link>
+                <Link to={`/${gender}/${type}`}>
+                  {capitalizeAllWords(type)}
+                </Link>
               </h3>
               <ProductList products={filteredProducts[gender][type]} />
             </Fragment>
