@@ -10,22 +10,25 @@ import {
   ProductQueryPropType,
 } from "../prop-types/product-query"
 import { mapProducts, mapProductsToType } from "../util/products-util"
+import LocationContext from "../components/location-context"
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
   const filteredProducts = mapProductsToType(products)
   return (
-    <Layout>
-      <SEO title="Home" />
-      <h1>Clothes</h1>
-      <h2>Coats</h2>
-      <ProductList products={filteredProducts.coat} />
-      <h2>Blazers</h2>
-      <ProductList products={filteredProducts.blazer} />
-      <h2>Suits</h2>
-      <ProductList products={filteredProducts.suit} />
-      <Link to="/page-2/">Go to page 2</Link>
-    </Layout>
+    <LocationContext.Provider value={{ location }}>
+      <Layout>
+        <SEO title="Home" />
+        <h1>Clothes</h1>
+        <h2>Coats</h2>
+        <ProductList products={filteredProducts.coat} />
+        <h2>Blazers</h2>
+        <ProductList products={filteredProducts.blazer} />
+        <h2>Suits</h2>
+        <ProductList products={filteredProducts.suit} />
+        <Link to="/page-2/">Go to page 2</Link>
+      </Layout>
+    </LocationContext.Provider>
   )
 }
 
@@ -33,6 +36,9 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     allProduct: ProductQueryPropType.allProduct,
     allFile: ImageQueryPropType.allFile,
+  }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
   }),
 }
 

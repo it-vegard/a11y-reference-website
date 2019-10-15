@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+
+import LocationContext from "../location-context"
 
 import "./breadcrumbs.css"
 
@@ -10,6 +12,12 @@ import "./breadcrumbs.css"
  */
 
 const Breadcrumbs = () => {
+  const { location } = useContext(LocationContext)
+
+  if (!location) {
+    return null
+  }
+
   const data = useStaticQuery(graphql`
     {
       allSitePage {
@@ -27,7 +35,7 @@ const Breadcrumbs = () => {
   `)
 
   const currentSitePage = data.allSitePage.nodes.find(
-    page => page.path === window.location.pathname
+    page => page.path === location.pathname
   )
 
   if (!currentSitePage || !currentSitePage.context.breadcrumbs) {

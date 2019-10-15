@@ -9,14 +9,17 @@ import {
   ProductQueryPropType,
 } from "../prop-types/product-query"
 import { mapProducts } from "../util/products-util"
+import LocationContext from "../components/location-context"
 
-const ProductPage = ({ data }) => {
+const ProductPage = ({ data, location }) => {
   const product = mapProducts(data.allProduct.nodes, data.allFile.nodes)[0]
   return (
-    <Layout>
-      <h1>Product page</h1>
-      <ProductCard {...product} />
-    </Layout>
+    <LocationContext.Provider value={{ location }}>
+      <Layout>
+        <h1>Product page</h1>
+        <ProductCard {...product} />
+      </Layout>
+    </LocationContext.Provider>
   )
 }
 
@@ -24,6 +27,9 @@ ProductPage.propTypes = {
   data: PropTypes.shape({
     allProduct: ProductQueryPropType.allProduct,
     allFile: ImageQueryPropType.allFile,
+  }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
   }),
 }
 
