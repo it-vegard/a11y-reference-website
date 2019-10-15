@@ -12,6 +12,7 @@ import { toSlug } from "./src/util/url-util"
 
 import products from "./src/data/products"
 import credits from "./src/data/credits"
+import { capitalizeAllWords } from "./src/util/text-util"
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -53,6 +54,16 @@ exports.createPages = ({ graphql, actions }) => {
         component: ProductListPage,
         context: {
           gender,
+          breadcrumbs: [
+            {
+              title: "Home",
+              path: "/",
+            },
+            {
+              title: capitalizeAllWords(gender),
+              path: `/${gender}`,
+            },
+          ],
         },
       })
       Object.keys(productLists[gender]).forEach(productType => {
@@ -62,6 +73,20 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             gender,
             productType,
+            breadcrumbs: [
+              {
+                title: "Home",
+                path: "/",
+              },
+              {
+                title: capitalizeAllWords(gender),
+                path: `/${gender}`,
+              },
+              {
+                title: capitalizeAllWords(productType),
+                path: `/${gender}/${productType}`,
+              },
+            ],
           },
         })
         productLists[gender][productType].forEach(product => {
@@ -72,6 +97,26 @@ exports.createPages = ({ graphql, actions }) => {
               gender,
               productType,
               slug: toSlug(product.displayName),
+              breadcrumbs: [
+                {
+                  title: "Home",
+                  path: "/",
+                },
+                {
+                  title: capitalizeAllWords(gender),
+                  path: `/${gender}`,
+                },
+                {
+                  title: capitalizeAllWords(productType),
+                  path: `/${gender}/${productType}`,
+                },
+                {
+                  title: capitalizeAllWords(product.displayName),
+                  path: `/${gender}/${productType}/${toSlug(
+                    product.displayName
+                  )}`,
+                },
+              ],
             },
           })
         })
