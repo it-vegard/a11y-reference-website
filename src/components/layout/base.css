@@ -2,7 +2,8 @@
   /* Color palette */
   --color-cornflowerblue: #6495ed;
   --color-blue-cola: #0088DC;
+  --color-dark-cerulean: #005b94;
 
   /* Default color definitions */
-  --color-profile-main: var(--color-blue-cola);
+  --color-profile-main: var(--color-dark-cerulean);
 }
