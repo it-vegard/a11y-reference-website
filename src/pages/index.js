@@ -1,14 +1,15 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import * as PropTypes from "prop-types"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import ProductList from "../components/product-list"
-import { mapProducts, mapProductsToType } from "../util/products-util"
+import SEO from "../components/seo"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
 } from "../prop-types/product-query"
+import { mapProducts, mapProductsToType } from "../util/products-util"
 
 const IndexPage = ({ data }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
@@ -29,10 +30,10 @@ const IndexPage = ({ data }) => {
 }
 
 IndexPage.propTypes = {
-  data: {
-    ProductQueryPropType,
-    ImageQueryPropType,
-  },
+  data: PropTypes.shape({
+    allProduct: ProductQueryPropType.allProduct,
+    allFile: ImageQueryPropType.allFile,
+  }),
 }
 
 export const query = graphql`

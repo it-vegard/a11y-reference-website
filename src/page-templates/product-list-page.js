@@ -1,13 +1,15 @@
 import React, { Fragment } from "react"
+import { graphql, Link } from "gatsby"
+import * as PropTypes from "prop-types"
+
 import Layout from "../components/layout"
 import ProductList from "../components/product-list"
-import { graphql, Link } from "gatsby"
-import { mapProducts, mapProductsToGenderAndType } from "../util/products-util"
-import { capitalizeAllWords } from "../util/text-util"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
 } from "../prop-types/product-query"
+import { mapProducts, mapProductsToGenderAndType } from "../util/products-util"
+import { capitalizeAllWords } from "../util/text-util"
 
 const ProductListPage = ({ data }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
@@ -37,10 +39,10 @@ const ProductListPage = ({ data }) => {
 }
 
 ProductListPage.propTypes = {
-  data: {
-    ...ProductQueryPropType,
-    ...ImageQueryPropType,
-  },
+  data: PropTypes.shape({
+    allProduct: ProductQueryPropType.allProduct,
+    allFile: ImageQueryPropType.allFile,
+  }),
 }
 
 export const query = graphql`
