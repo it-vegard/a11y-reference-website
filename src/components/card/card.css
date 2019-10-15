@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   height: 100%;
+  max-width: 36.5rem;
   overflow: hidden;
   position: relative;
   cursor: var(--card-cursor); /* Will be overridden by card.js useEffect hook as progressive enhancement */
