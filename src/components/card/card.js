@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
+import { Link } from "gatsby"
 import * as PropTypes from "prop-types"
 
 import { supportsFocusWithin } from "../../util/browser-support"
@@ -69,9 +70,9 @@ const Card = ({
       <div className="card__content">
         <LinkWrapper className="card__heading">
           {link ? (
-            <a href={link} className="card__link" ref={linkElement}>
+            <Link to={link} className="card__link" ref={linkElement}>
               {title}
-            </a>
+            </Link>
           ) : (
             title
           )}
