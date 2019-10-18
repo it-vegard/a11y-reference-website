@@ -8,7 +8,7 @@
 
 import path from "path"
 import { mapProductsToGenderAndType } from "./src/util/products-util"
-import { toSlug } from "./src/util/url-util"
+import { createProductUrl, toSlug } from "./src/util/url-util"
 
 import products from "./src/data/products"
 import credits from "./src/data/credits"
@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Create product details pages
     Object.keys(productLists).forEach(gender => {
       createPage({
-        path: `/${gender}`,
+        path: createProductUrl(gender),
         component: ProductListPage,
         context: {
           gender,
@@ -61,14 +61,14 @@ exports.createPages = ({ graphql, actions }) => {
             },
             {
               title: capitalizeAllWords(gender),
-              path: `/${gender}`,
+              path: createProductUrl(gender),
             },
           ],
         },
       })
       Object.keys(productLists[gender]).forEach(productType => {
         createPage({
-          path: `/${gender}/${productType}`,
+          path: createProductUrl(gender, productType),
           component: ProductListPage,
           context: {
             gender,
@@ -80,18 +80,18 @@ exports.createPages = ({ graphql, actions }) => {
               },
               {
                 title: capitalizeAllWords(gender),
-                path: `/${gender}`,
+                path: createProductUrl(gender),
               },
               {
                 title: capitalizeAllWords(productType),
-                path: `/${gender}/${productType}`,
+                path: createProductUrl(gender, productType),
               },
             ],
           },
         })
         productLists[gender][productType].forEach(product => {
           createPage({
-            path: `/${gender}/${productType}/${toSlug(product.displayName)}`,
+            path: createProductUrl(gender, productType, product.displayName),
             component: ProductPage,
             context: {
               gender,
@@ -104,17 +104,19 @@ exports.createPages = ({ graphql, actions }) => {
                 },
                 {
                   title: capitalizeAllWords(gender),
-                  path: `/${gender}`,
+                  path: createProductUrl(gender),
                 },
                 {
                   title: capitalizeAllWords(productType),
-                  path: `/${gender}/${productType}`,
+                  path: createProductUrl(gender, productType),
                 },
                 {
                   title: capitalizeAllWords(product.displayName),
-                  path: `/${gender}/${productType}/${toSlug(
+                  path: createProductUrl(
+                    gender,
+                    productType,
                     product.displayName
-                  )}`,
+                  ),
                 },
               ],
             },
