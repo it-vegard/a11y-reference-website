@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Vegard Haugstvedt <it.vegard@gmail.com>",
   "dependencies": {
+    "axe-core": "^3.3.2",
     "esm": "^3.2.25",
     "gatsby": "^2.15.15",
     "gatsby-image": "^2.2.19",
@@ -18,7 +19,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "stylelint-config-standard": "^19.0.0"
+    "stylelint-config-standard": "^19.0.0",
+    "wcag-as-json": "0.0.1"
   },
   "devDependencies": {
     "eslint": "^6.4.0",

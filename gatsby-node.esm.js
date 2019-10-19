@@ -1,3 +1,13 @@
+import wcag from "wcag-as-json/src/wcag"
+import path from "path"
+
+import products from "./src/data/products"
+import credits from "./src/data/credits"
+import rules from "./src/data/rules"
+import { mapProductsToGenderAndType } from "./src/util/products-util"
+import { capitalizeAllWords } from "./src/util/text-util"
+import { createProductUrl, toSlug } from "./src/util/url-util"
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -5,14 +15,6 @@
  */
 
 // You can delete this file if you're not using it
-
-import path from "path"
-import { mapProductsToGenderAndType } from "./src/util/products-util"
-import { createProductUrl, toSlug } from "./src/util/url-util"
-
-import products from "./src/data/products"
-import credits from "./src/data/credits"
-import { capitalizeAllWords } from "./src/util/text-util"
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -127,7 +129,12 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
+const addProductNodes = (
+  products,
+  createContentDigest,
+  createNode,
+  createNodeId
+) => {
   products.forEach(product => {
     const productNode = {
       displayName: product.displayName,
@@ -142,8 +149,16 @@ exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
       slug: toSlug(product.displayName),
       type: product.type,
     }
-    actions.createNode(productNode)
+    createNode(productNode)
   })
+}
+
+const addCreditNodes = (
+  credits,
+  createContentDigest,
+  createNode,
+  createNodeId
+) => {
   credits.forEach(credit => {
     const creditNode = {
       id: createNodeId(`Credit-${credit.userName}`),
@@ -156,6 +171,108 @@ exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
         type: "credit",
       },
     }
-    actions.createNode(creditNode)
+    createNode(creditNode)
   })
+}
+
+const addInternalRuleNodes = (
+  rules,
+  createContentDigest,
+  createNode,
+  createNodeId
+) => {
+  rules.forEach(rule => {
+    const ruleNode = {
+      ...rule,
+      id: createNodeId(`Rule-${rule.axeId}`),
+      internal: {
+        contentDigest: createContentDigest(rule),
+        type: "internalRule",
+      },
+    }
+    createNode(ruleNode)
+  })
+}
+
+const createPrincipleNode = (principle, createContentDigest, createNodeId) => ({
+  ...principle,
+  id: createNodeId(`Principle-${principle["ref_id"]}`),
+  internal: {
+    contentDigest: createContentDigest(principle),
+    type: "wcagPrinciple",
+  },
+})
+
+const createGuidelineNode = (
+  guideline,
+  principle,
+  createContentDigest,
+  createNodeId
+) => ({
+  ...guideline,
+  id: createNodeId(`Guideline-${guideline["ref_id"]}`),
+  principle: principle["ref_id"],
+  internal: {
+    contentDigest: createContentDigest(guideline),
+    type: "wcagGuideline",
+  },
+})
+
+const createSuccessCriterionNode = (
+  successCriterion,
+  guideline,
+  principle,
+  createContentDigest,
+  createNodeId
+) => ({
+  ...successCriterion,
+  id: createNodeId(`SuccessCriteria-${successCriterion["ref_id"]}`),
+  guideline: guideline["ref_id"],
+  principle: principle["ref_id"],
+  internal: {
+    contentDigest: createContentDigest(successCriterion),
+    type: "wcagSuccessCriteria",
+  },
+})
+
+const addWcagSuccessCriteria = (
+  wcag,
+  createContentDigest,
+  createNode,
+  createNodeId
+) => {
+  wcag.forEach(principle => {
+    createNode(
+      createPrincipleNode(principle, createContentDigest, createNodeId)
+    )
+    principle.guidelines.forEach(guideline => {
+      createNode(
+        createGuidelineNode(
+          guideline,
+          principle,
+          createContentDigest,
+          createNodeId
+        )
+      )
+      guideline["success_criteria"].forEach(successCriterion => {
+        createNode(
+          createSuccessCriterionNode(
+            successCriterion,
+            guideline,
+            principle,
+            createContentDigest,
+            createNodeId
+          )
+        )
+      })
+    })
+  })
+}
+
+exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
+  const { createNode } = actions
+  addProductNodes(products, createContentDigest, createNode, createNodeId)
+  addCreditNodes(credits, createContentDigest, createNode, createNodeId)
+  addInternalRuleNodes(rules, createContentDigest, createNode, createNodeId)
+  addWcagSuccessCriteria(wcag, createContentDigest, createNode, createNodeId)
 }
