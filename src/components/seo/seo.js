@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 
 /**
  * SEO component that queries for data with
@@ -9,7 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang = "en", meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,12 +25,18 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+  const { rules } = useContext(AccessibilityRulesContext)
+
   const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: !rules["html-has-lang"]
+          ? undefined
+          : !rules["html-lang-valid"]
+          ? "invalid-lang"
+          : lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}

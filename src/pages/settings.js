@@ -1,11 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import AccessibilityRulesContext from "../components/accessibility-rules/accessibility-rules-context"
+import AccessibilityRulesWrapper from "../components/accessibility-rules/accessibility-rules-wrapper"
 
 const RuleSelector = ({ rule }) => {
+  const { rules, setRule } = useContext(AccessibilityRulesContext)
+  const currentValue = rules[rule.axeId] || false
   return (
     <React.Fragment key={rule.axeId}>
       <label
@@ -15,7 +19,9 @@ const RuleSelector = ({ rule }) => {
         <input
           type="checkbox"
           name={rule.axeId}
+          onChange={() => setRule(rule.axeId, !currentValue)}
           style={{ marginRight: "1rem" }}
+          checked={currentValue}
         />
         {rule.metadata.help}
       </label>
@@ -110,29 +116,31 @@ const SettingsPage = ({ data }) => {
   const principles = getWcagPrinciples(data)
   const rules = getRules(data)
   return (
-    <Layout>
-      <SEO title="Settings" />
-      <article>
-        <h1>Settings</h1>
-        <p>
-          On this page you can switch on/off individual accessibility bugs, so
-          you can test each bug separately or remove barriers for testing the
-          rest of the bugs.
-        </p>
-        <p>
-          The bugs are ordered according to the{" "}
-          <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>{" "}
-          guidelines
-        </p>
-        {principles.map(principle => (
-          <WCAGLevel
-            content={principle}
-            key={principle["ref_id"]}
-            rules={rules}
-          />
-        ))}
-      </article>
-    </Layout>
+    <AccessibilityRulesWrapper>
+      <Layout>
+        <SEO title="Settings" lang="en" />
+        <article>
+          <h1>Settings</h1>
+          <p>
+            On this page you can switch on/off individual accessibility bugs, so
+            you can test each bug separately or remove barriers for testing the
+            rest of the bugs.
+          </p>
+          <p>
+            The bugs are ordered according to the{" "}
+            <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>{" "}
+            guidelines
+          </p>
+          {principles.map(principle => (
+            <WCAGLevel
+              content={principle}
+              key={principle["ref_id"]}
+              rules={rules}
+            />
+          ))}
+        </article>
+      </Layout>
+    </AccessibilityRulesWrapper>
   )
 }
 

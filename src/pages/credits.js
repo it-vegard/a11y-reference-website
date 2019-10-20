@@ -18,7 +18,7 @@ const Credits = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Credits" />
+      <SEO title="Credits" lang="en" />
       <h1>Credits</h1>
       <p>Product images have been downloaded from Unsplash.com.</p>
       <Grid>
