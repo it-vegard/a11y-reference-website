@@ -7,3 +7,7 @@
   /* Default color definitions */
   --color-profile-main: var(--color-dark-cerulean);
 }
+
+#main {
+  outline: none;
+}

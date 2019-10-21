@@ -1,0 +1,16 @@
+.skip-link:focus {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: 0.1rem dashed #999;
+}
+
+.skip-link:not(:focus) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}

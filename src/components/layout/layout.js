@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "../header"
 import Footer from "../footer"
 import Container from "../container"
+import SkipLink from "../skip-link"
 
 import "./normalize.css"
 import "./base.css"
@@ -27,11 +28,16 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const mainTagId = "main"
+
   return (
     <>
+      <SkipLink mainTagId={mainTagId} />
       <Header siteTitle={data.site.siteMetadata.title} />
       <Container>
-        <main>{children}</main>
+        <main id={mainTagId} tabIndex={-1}>
+          {children}
+        </main>
       </Container>
       <Footer />
     </>
