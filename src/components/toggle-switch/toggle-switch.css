@@ -1,0 +1,85 @@
+.toggle-switch {
+  display: grid;
+  grid-template-columns: auto 5.5rem;
+  margin-bottom: 2rem;
+  max-width: 65ch;
+}
+
+.toggle-switch__label {
+  font-weight: bold;
+}
+
+.toggle-switch__button {
+  --border-width: 0.1rem;
+  --height: 2rem;
+  --padding-for-button: calc(var(--height) + 0.5rem);
+  --transition-time: 0.4s;
+
+  background-color: var(--background-color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: calc(var(--height) / 2);
+  box-sizing: border-box;
+  color: var(--color);
+  font-family: Arial, sans-serif;
+  font-size: calc(var(--height) / 2);
+  height: var(--height);
+  line-height: calc(var(--height) / 2);
+  padding: calc(var(--height) / 4) 1rem;
+  position: relative;
+  transition: padding-right var(--transition-time), padding-left var(--transition-time);
+}
+
+.toggle-switch__button:focus {
+  outline: none; /* Set outline for :after (aka visual button) instead */
+}
+
+.toggle-switch__button[aria-checked="true"] {
+  --background-color: #00AE00;
+  --border-color: #005000;
+  --color: #000;
+
+  padding-right: var(--padding-for-button);
+}
+
+.toggle-switch__button[aria-checked="false"] {
+  --background-color: transparent;
+  --border-color: #666;
+  --color: #333;
+
+  padding-left: var(--padding-for-button);
+}
+
+.toggle-switch__button::after {
+  background: var(--border-color);
+  content: "";
+  color: #fff;
+  display: inline-block;
+  height: var(--height);
+  width: var(--height);
+  border-radius: calc(var(--height) / 2);
+  border: var(--border-width) solid var(--border-color);
+
+  /* box-shadow: 0 0 0 calc(var(--border-width) * 2) var(--border-color); */
+  box-sizing: border-box;
+  margin: calc((var(--height) / -4) + calc(var(--border-width)
+  * -1)) 0;
+  transition: margin-right var(--transition-time), margin-left var(--transition-time);
+  position: relative;
+  z-index: 1000;
+}
+
+.toggle-switch__button:focus::after {
+  border-color: #fff;
+  border-width: calc(var(--border-width) * 2);
+  box-shadow: 0 0 0 calc(var(--border-width) * 2) var(--border-color);
+}
+
+.toggle-switch__button[aria-checked="true"]::after {
+  float: right;
+  margin-right: calc((var(--padding-for-button) * -1) - var(--border-width));
+}
+
+.toggle-switch__button[aria-checked="false"]::after {
+  float: left;
+  margin-left: calc((var(--padding-for-button) * -1) - var(--border-width));
+}
