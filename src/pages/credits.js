@@ -2,12 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 
+import App from "../components/app"
+import Credit from "../components/credit"
 import Grid from "../components/grid"
-import Credit from "../components/credit/credit"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-const Credits = ({ data }) => {
+const Credits = ({ data, location }) => {
   const images = data.allFile.edges.map(
     image => image.node.childImageSharp.fixed
   )
@@ -17,8 +16,7 @@ const Credits = ({ data }) => {
   }))
 
   return (
-    <Layout>
-      <SEO title="Credits" lang="en" />
+    <App pageTitle="Credits" location={location}>
       <h1>Credits</h1>
       <p>Product images have been downloaded from Unsplash.com.</p>
       <Grid>
@@ -26,7 +24,7 @@ const Credits = ({ data }) => {
           <Credit {...credit} key={credit.originalName} />
         ))}
       </Grid>
-    </Layout>
+    </App>
   )
 }
 
@@ -53,6 +51,9 @@ Credits.propTypes = {
         userName: PropTypes.string,
       }),
     }),
+  }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
   }),
 }
 

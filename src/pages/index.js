@@ -2,36 +2,28 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import * as PropTypes from "prop-types"
 
-import Layout from "../components/layout"
+import App from "../components/app"
 import ProductList from "../components/product-list"
-import SEO from "../components/seo"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
 } from "../prop-types/product-query"
 import { mapProducts, mapProductsToType } from "../util/products-util"
-import LocationContext from "../components/location-context"
-import AccessibilityRules from "../components/accessibility-rules"
 
 const IndexPage = ({ data, location }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
   const filteredProducts = mapProductsToType(products)
   return (
-    <LocationContext.Provider value={{ location }}>
-      <AccessibilityRules>
-        <Layout>
-          <SEO title="Home" lang="en" />
-          <h1>Clothes</h1>
-          <h2>Coats</h2>
-          <ProductList products={filteredProducts.coat} />
-          <h2>Blazers</h2>
-          <ProductList products={filteredProducts.blazer} />
-          <h2>Suits</h2>
-          <ProductList products={filteredProducts.suit} />
-          <Link to="/page-2/">Go to page 2</Link>
-        </Layout>
-      </AccessibilityRules>
-    </LocationContext.Provider>
+    <App location={location} pageTitle="Home">
+      <h1>Clothes</h1>
+      <h2>Coats</h2>
+      <ProductList products={filteredProducts.coat} />
+      <h2>Blazers</h2>
+      <ProductList products={filteredProducts.blazer} />
+      <h2>Suits</h2>
+      <ProductList products={filteredProducts.suit} />
+      <Link to="/page-2/">Go to page 2</Link>
+    </App>
   )
 }
 

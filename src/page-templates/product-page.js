@@ -2,27 +2,21 @@ import React from "react"
 import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 
-import Layout from "../components/layout"
+import App from "../components/app"
 import ProductCard from "../components/product-card"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
 } from "../prop-types/product-query"
 import { mapProducts } from "../util/products-util"
-import LocationContext from "../components/location-context"
-import AccessibilityRules from "../components/accessibility-rules"
 
 const ProductPage = ({ data, location }) => {
   const product = mapProducts(data.allProduct.nodes, data.allFile.nodes)[0]
   return (
-    <AccessibilityRules>
-      <LocationContext.Provider value={{ location }}>
-        <Layout>
-          <h1>Product page</h1>
-          <ProductCard {...product} />
-        </Layout>
-      </LocationContext.Provider>
-    </AccessibilityRules>
+    <App location={location} pageTitle={product.displayName}>
+      <h1>{product.displayName}</h1>
+      <ProductCard {...product} />
+    </App>
   )
 }
 

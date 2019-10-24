@@ -1,16 +1,21 @@
 import React from "react"
+import * as PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import App from "../components/app"
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" lang="en" />
+const SecondPage = ({ location }) => (
+  <App pageTitle="Page two" location={location}>
     <h1>Hi from the second page</h1>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  </App>
 )
+
+SecondPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
+}
 
 export default SecondPage
