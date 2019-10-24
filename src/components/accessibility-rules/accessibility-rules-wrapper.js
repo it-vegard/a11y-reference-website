@@ -16,7 +16,7 @@ const getInitialRules = defaultRules => {
     return defaultRules.reduce(
       (acc, curr) => ({
         ...acc,
-        [curr.axeId]: false,
+        [curr.axeId]: true,
       }),
       {}
     )

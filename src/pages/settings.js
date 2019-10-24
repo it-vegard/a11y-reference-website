@@ -19,9 +19,10 @@ const SettingsPage = ({ data }) => {
         <article>
           <h1>Settings</h1>
           <p>
-            On this page you can switch on/off individual accessibility bugs, so
-            you can test each bug separately or remove barriers for testing the
-            rest of the bugs.
+            On this page you can switch on/off individual accessibility rules,
+            so you can test each bug separately or remove barriers for testing
+            the rest of the bugs. Turn the rule off to switch to the
+            inaccessible version.
           </p>
           <p>
             The bugs are ordered according to the{" "}
