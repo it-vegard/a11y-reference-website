@@ -8,6 +8,11 @@
   --color-profile-main: var(--color-dark-cerulean);
 }
 
+body {
+  font-family: Arial, sans-serif;
+  font-size: 110%;
+}
+
 #main {
   outline: none;
 }

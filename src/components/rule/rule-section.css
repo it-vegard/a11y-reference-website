@@ -1,0 +1,7 @@
+.rule__section {
+  padding: 1rem 1rem 1rem 2rem;
+  background-color: #fefefe;
+  box-shadow: inset 0 0 0.5rem #eee;
+  border: 0.1rem solid #ddd;
+  margin-bottom: 2rem;
+}

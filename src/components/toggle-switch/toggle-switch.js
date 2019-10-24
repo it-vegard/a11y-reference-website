@@ -1,6 +1,8 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 
+import Paragraph from "../paragraph"
+
 import "./toggle-switch.css"
 
 const getLabelId = id => `toggle-switch-${id}-label`
@@ -28,9 +30,7 @@ const ToggleSwitch = ({ checked = false, helpText, id, onClick, label }) => {
         <span hidden={!checked}>On</span>
         <span hidden={checked}>Off</span>
       </button>
-      <p className="paragraph" id={getHelpTextId(id)}>
-        {helpText}
-      </p>
+      <Paragraph id={getHelpTextId(id)}>{helpText}</Paragraph>
     </div>
   )
 }

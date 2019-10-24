@@ -1,0 +1,19 @@
+.link {
+  --border-width: 0.2rem;
+  --color: var(--color-profile-main);
+  --background-color: #fff;
+
+  background-color: var(--background-color);
+  color: var(--color);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: var(--border-width) solid var(--color);
+}
+
+.link:focus {
+  background-color: var(--color);
+  border: var(--border-width) solid var(--background-color);
+  box-shadow: 0 0 0 var(--border-width) var(--color);
+  color: var(--background-color);
+  margin: 0 calc(var(--border-width) * -1);
+}
