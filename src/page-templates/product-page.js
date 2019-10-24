@@ -10,16 +10,19 @@ import {
 } from "../prop-types/product-query"
 import { mapProducts } from "../util/products-util"
 import LocationContext from "../components/location-context"
+import AccessibilityRules from "../components/accessibility-rules"
 
 const ProductPage = ({ data, location }) => {
   const product = mapProducts(data.allProduct.nodes, data.allFile.nodes)[0]
   return (
-    <LocationContext.Provider value={{ location }}>
-      <Layout>
-        <h1>Product page</h1>
-        <ProductCard {...product} />
-      </Layout>
-    </LocationContext.Provider>
+    <AccessibilityRules>
+      <LocationContext.Provider value={{ location }}>
+        <Layout>
+          <h1>Product page</h1>
+          <ProductCard {...product} />
+        </Layout>
+      </LocationContext.Provider>
+    </AccessibilityRules>
   )
 }
 

@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
-import PropTypes from "prop-types"
+import * as PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
+import AccessibilityRules from "../accessibility-rules"
 
 /**
  * SEO component that queries for data with
@@ -25,7 +25,7 @@ function SEO({ description, lang = "en", meta, title }) {
     `
   )
 
-  const { rules } = useContext(AccessibilityRulesContext)
+  const { rules } = useContext(AccessibilityRules.context)
 
   const metaDescription = description || site.siteMetadata.description
 

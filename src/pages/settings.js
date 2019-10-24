@@ -4,7 +4,7 @@ import * as PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AccessibilityRulesWrapper from "../components/accessibility-rules/accessibility-rules-wrapper"
+import AccessibilityRules from "../components/accessibility-rules"
 import RuleSection from "../components/rule/rule-section"
 
 const getRules = data => data.allInternalRule.nodes
@@ -13,7 +13,7 @@ const getSuccessCriteria = data => data.allWcagSuccessCriteria.nodes
 const SettingsPage = ({ data }) => {
   const rules = getRules(data)
   return (
-    <AccessibilityRulesWrapper>
+    <AccessibilityRules>
       <Layout>
         <SEO title="Settings" lang="en" />
         <article>
@@ -48,7 +48,7 @@ const SettingsPage = ({ data }) => {
             ))}
         </article>
       </Layout>
-    </AccessibilityRulesWrapper>
+    </AccessibilityRules>
   )
 }
 

@@ -4,9 +4,11 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import AccessibilityRulesContext from "./accessibility-rules-context"
 
+const ruleObjectName = "rules"
+
 const getInitialRules = defaultRules => {
   const storedRules = window
-    ? JSON.parse(window.sessionStorage.getItem("rules"))
+    ? JSON.parse(window.sessionStorage.getItem(ruleObjectName))
     : null
   if (storedRules) {
     return storedRules
@@ -45,7 +47,7 @@ const AccessibilityRulesWrapper = ({ children }) => {
       [axeId]: value,
     }
     setRules(newRules)
-    window.sessionStorage.setItem("rules", JSON.stringify(newRules))
+    window.sessionStorage.setItem(ruleObjectName, JSON.stringify(newRules))
   }
 
   return (
@@ -58,5 +60,7 @@ const AccessibilityRulesWrapper = ({ children }) => {
 AccessibilityRulesWrapper.propTypes = {
   children: PropTypes.element,
 }
+
+AccessibilityRulesWrapper.context = AccessibilityRulesContext
 
 export default AccessibilityRulesWrapper

@@ -11,14 +11,14 @@ import {
 } from "../prop-types/product-query"
 import { mapProducts, mapProductsToType } from "../util/products-util"
 import LocationContext from "../components/location-context"
-import AccessibilityRulesWrapper from "../components/accessibility-rules/accessibility-rules-wrapper"
+import AccessibilityRules from "../components/accessibility-rules"
 
 const IndexPage = ({ data, location }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
   const filteredProducts = mapProductsToType(products)
   return (
     <LocationContext.Provider value={{ location }}>
-      <AccessibilityRulesWrapper>
+      <AccessibilityRules>
         <Layout>
           <SEO title="Home" lang="en" />
           <h1>Clothes</h1>
@@ -30,7 +30,7 @@ const IndexPage = ({ data, location }) => {
           <ProductList products={filteredProducts.suit} />
           <Link to="/page-2/">Go to page 2</Link>
         </Layout>
-      </AccessibilityRulesWrapper>
+      </AccessibilityRules>
     </LocationContext.Provider>
   )
 }

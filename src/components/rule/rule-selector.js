@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
-import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
+import AccessibilityRules from "../accessibility-rules"
 import ToggleSwitch from "../toggle-switch"
 import * as PropTypes from "prop-types"
 
 const RuleSelector = ({ rule }) => {
-  const { rules, setRule } = useContext(AccessibilityRulesContext)
+  const { rules, setRule } = useContext(AccessibilityRules.context)
   const currentValue = rules[rule.axeId] || false
   return (
     <ToggleSwitch
