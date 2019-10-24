@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 
 import App from "../components/app"
-import ProductCard from "../components/product-card"
+import ProductDetails from "../components/product-details"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
@@ -15,7 +15,7 @@ const ProductPage = ({ data, location }) => {
   return (
     <App location={location} pageTitle={product.displayName}>
       <h1>{product.displayName}</h1>
-      <ProductCard {...product} />
+      <ProductDetails {...product} />
     </App>
   )
 }
