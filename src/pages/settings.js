@@ -6,27 +6,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import AccessibilityRulesContext from "../components/accessibility-rules/accessibility-rules-context"
 import AccessibilityRulesWrapper from "../components/accessibility-rules/accessibility-rules-wrapper"
+import ToggleSwitch from "../components/toggle-switch"
 
 const RuleSelector = ({ rule }) => {
   const { rules, setRule } = useContext(AccessibilityRulesContext)
   const currentValue = rules[rule.axeId] || false
   return (
-    <React.Fragment key={rule.axeId}>
-      <label
-        style={{ display: "block", marginBottom: "1rem" }}
-        aria-describedby={`${rule.axeId}-description`}
-      >
-        <input
-          type="checkbox"
-          name={rule.axeId}
-          onChange={() => setRule(rule.axeId, !currentValue)}
-          style={{ marginRight: "1rem" }}
-          checked={currentValue}
-        />
-        {rule.metadata.help}
-      </label>
-      <p id={`${rule.axeId}-description`}>{rule.metadata.description}</p>
-    </React.Fragment>
+    <ToggleSwitch
+      checked={currentValue}
+      helpText={rule.metadata.description}
+      id={rule.axeId}
+      key={rule.axeId}
+      label={rule.metadata.help}
+      onClick={() => setRule(rule.axeId, !currentValue)}
+    />
   )
 }
 
