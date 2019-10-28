@@ -1,0 +1,12 @@
+.radio-buttons {
+  border: 0;
+  padding: 0;
+  margin-bottom: var(--margin-default);
+}
+
+.radio-buttons__legend {
+  margin-bottom: var(--margin-default);
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+}

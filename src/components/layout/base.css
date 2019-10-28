@@ -6,6 +6,11 @@
 
   /* Default color definitions */
   --color-profile-main: var(--color-dark-cerulean);
+  --color: #333;
+  --background-color: #fff;
+  --border-width: 0.1rem;
+  --border-width--thick: calc(var(--border-width) * 2);
+  --margin-default: 1rem;
 }
 
 body {
