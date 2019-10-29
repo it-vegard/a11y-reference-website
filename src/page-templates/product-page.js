@@ -39,6 +39,7 @@ export const query = graphql`
       }
     ) {
       nodes {
+        description
         displayName
         id
         imageName

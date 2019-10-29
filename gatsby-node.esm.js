@@ -32,6 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
       {
         allProduct {
           nodes {
+            description
             displayName
             gender
             id
@@ -148,6 +149,7 @@ const addProductNodes = (
 ) => {
   products.forEach(product => {
     const productNode = {
+      description: product.description,
       displayName: product.displayName,
       gender: product.gender,
       id: createNodeId(`Product-${product.displayName}`),
