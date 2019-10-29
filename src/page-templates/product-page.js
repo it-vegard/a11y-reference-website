@@ -14,7 +14,6 @@ const ProductPage = ({ data, location }) => {
   const product = mapProducts(data.allProduct.nodes, data.allFile.nodes)[0]
   return (
     <App location={location} pageTitle={product.displayName}>
-      <h1>{product.displayName}</h1>
       <ProductDetails {...product} />
     </App>
   )

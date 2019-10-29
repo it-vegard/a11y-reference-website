@@ -2,3 +2,8 @@
   border: 0.1rem solid #666;
   margin-bottom: 2rem;
 }
+
+.product-details__image {
+  float: left;
+  margin-inline-end: var(--margin-default);
+}
