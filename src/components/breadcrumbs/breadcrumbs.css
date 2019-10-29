@@ -12,18 +12,18 @@
 }
 
 .breadcrumbs__list__item {
-  margin-right: 1rem;
+  margin-inline-end: 1rem;
   text-decoration: none;
 }
 
 .breadcrumbs__list__item:last-of-type {
-  margin-right: 0;
+  margin-inline-end: 0;
 }
 
 .breadcrumbs__list__item:nth-of-type(n + 2)::before {
   content: "";
   display: inline-block;
-  margin-right: 1rem;
+  margin-inline-end: 1rem;
   border-top: .55ch solid transparent;
   border-bottom: .55ch solid transparent;
   border-left: .75ch solid currentColor;

@@ -7,3 +7,7 @@
   float: left;
   margin-inline-end: var(--margin-default);
 }
+
+[dir="rtl"] .product-details__image {
+  float: right;
+}
