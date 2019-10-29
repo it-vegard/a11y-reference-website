@@ -1,0 +1,30 @@
+.product-size-picker .radio-buttons__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product-size-picker .radio-button__label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
+.product-size-picker .radio-button__container:first-of-type .radio-button__label {
+  margin-inline-start: 0;
+}
+
+.product-size-picker .radio-button__container:last-of-type .radio-button__label {
+  margin-inline-end: 0;
+}
+
+.product-size-picker .radio-button + .radio-button__label::before {
+  margin-inline-end: 0;
+  margin-block-end: 0.5rem;
+}
+
+.product-size-picker .radio-button + .radio-button__label::after {
+  margin: 0 auto;
+  top: calc(var(--radio-button-border-width) * -2);
+}

@@ -8,9 +8,11 @@ import "./radio-buttons.css"
 const RadioButtons = ({ radioButtons = [] }) => (
   <fieldset className="radio-buttons">
     <legend className="radio-buttons__legend">Pick size</legend>
-    {radioButtons.map(radioButton => (
-      <RadioButton key={radioButton.id} {...radioButton} />
-    ))}
+    <div className="radio-buttons__container">
+      {radioButtons.map(radioButton => (
+        <RadioButton key={radioButton.id} {...radioButton} />
+      ))}
+    </div>
   </fieldset>
 )
 

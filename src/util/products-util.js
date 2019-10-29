@@ -1,3 +1,5 @@
+import { toSlug } from "./url-util"
+
 export const mapProductsToGenderAndType = products =>
   products.reduce((acc, curr) => {
     const productsByGender = mapProductsToGender(products)
@@ -37,3 +39,8 @@ export const mapProducts = (products = [], images = []) =>
     imageSrc: getImageForProduct(images, product.imageName).childImageSharp
       .fixed.src,
   }))
+
+export const createProductId = product =>
+  `${toSlug(product.gender)}-${toSlug(product.type)}-${toSlug(
+    product.displayName
+  )}`

@@ -2,9 +2,13 @@ import wcag from "wcag-as-json/src/wcag"
 import path from "path"
 
 import products from "./src/data/products"
+import sizes from "./src/data/sizes"
 import credits from "./src/data/credits"
 import rules from "./src/data/rules"
-import { mapProductsToGenderAndType } from "./src/util/products-util"
+import {
+  createProductId,
+  mapProductsToGenderAndType,
+} from "./src/util/products-util"
 import { capitalizeAllWords } from "./src/util/text-util"
 import { createProductUrl, toSlug } from "./src/util/url-util"
 
@@ -33,6 +37,12 @@ exports.createPages = ({ graphql, actions }) => {
             id
             imageName
             price
+            sizes {
+              id
+              label
+              name
+              value
+            }
             type
           }
         }
@@ -131,6 +141,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 const addProductNodes = (
   products,
+  sizes,
   createContentDigest,
   createNode,
   createNodeId
@@ -146,6 +157,12 @@ const addProductNodes = (
         type: "product",
       },
       price: product.price,
+      sizes: sizes.map(size => ({
+        id: `${createProductId(product)}-${size.id}`,
+        label: size.displayName,
+        name: `${createProductId(product)}-size`,
+        value: size.id,
+      })),
       slug: toSlug(product.displayName),
       type: product.type,
     }
@@ -271,7 +288,13 @@ const addWcagSuccessCriteria = (
 
 exports.sourceNodes = ({ actions, createContentDigest, createNodeId }) => {
   const { createNode } = actions
-  addProductNodes(products, createContentDigest, createNode, createNodeId)
+  addProductNodes(
+    products,
+    sizes,
+    createContentDigest,
+    createNode,
+    createNodeId
+  )
   addCreditNodes(credits, createContentDigest, createNode, createNodeId)
   addInternalRuleNodes(rules, createContentDigest, createNode, createNodeId)
   addWcagSuccessCriteria(wcag, createContentDigest, createNode, createNodeId)

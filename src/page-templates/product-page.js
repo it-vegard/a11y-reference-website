@@ -45,6 +45,12 @@ export const query = graphql`
         price
         type
         gender
+        sizes {
+          id
+          label
+          name
+          value
+        }
         slug
       }
     }

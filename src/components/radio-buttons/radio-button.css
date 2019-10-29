@@ -26,6 +26,7 @@
 
 .radio-button__label {
   align-items: center;
+  cursor: pointer;
   display: flex;
   position: relative;
 }

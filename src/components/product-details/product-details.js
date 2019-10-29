@@ -1,5 +1,6 @@
 import React from "react"
 
+import ProductSizePicker from "./product-size-picker"
 import { ProductPropType } from "../../prop-types/product-query"
 
 import "./product-details.css"
@@ -14,6 +15,7 @@ const ProductDetails = product => {
           src={product.imageSrc}
           alt={product.imageAlt}
         />
+        <ProductSizePicker sizes={product.sizes} />
       </section>
       <pre>{JSON.stringify(product, null, 2)}</pre>
     </article>

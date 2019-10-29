@@ -21,6 +21,12 @@ export const ProductPropType = {
   id: PropTypes.string,
   imageName: PropTypes.string,
   price: PropTypes.number,
+  sizes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      displayName: PropTypes.string,
+    })
+  ),
   slug: PropTypes.string,
   type: PropTypes.string,
 }
