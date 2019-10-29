@@ -19,5 +19,12 @@ body {
 }
 
 #main {
+  min-height: calc(100vh - 16rem); /* Fallback for browsers that do not support grid (IE) */
   outline: none;
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }

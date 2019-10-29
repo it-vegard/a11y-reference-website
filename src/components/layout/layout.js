@@ -31,16 +31,14 @@ const Layout = ({ children }) => {
   const mainTagId = "main"
 
   return (
-    <>
+    <div className="layout">
       <SkipLink mainTagId={mainTagId} />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Container>
-        <main id={mainTagId} tabIndex={-1}>
-          {children}
-        </main>
-      </Container>
+      <main id={mainTagId} tabIndex={-1}>
+        <Container>{children}</Container>
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
