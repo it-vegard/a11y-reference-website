@@ -15,7 +15,7 @@ const Article = ({ children, setRef, ...rest }) => {
 
 Article.propTypes = {
   children: PropTypes.node,
-  setRef: PropTypes.func,
+  setRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 }
 
 export default Article
