@@ -6,15 +6,10 @@ import { supportsFocusWithin } from "../../util/browser-support"
 import { isLeftMouseButton } from "../../util/mouse-events-util"
 
 import "./card.css"
+import { Article } from "../semantic-region"
+import Heading from "../semantic-heading"
 
-const Card = ({
-  imgSrc,
-  imgAlt = "",
-  LinkWrapper = "h2",
-  link,
-  text,
-  title,
-}) => {
+const Card = ({ imgSrc, imgAlt = "", link, text, title }) => {
   const cardElement = useRef(null)
   const linkElement = useRef(null)
   useEffect(() => {
@@ -61,14 +56,14 @@ const Card = ({
   }
 
   return (
-    <article
+    <Article
       className="card"
       onMouseDown={link ? onMouseDown : () => {}}
       onMouseUp={link ? onMouseUp : () => {}}
-      ref={cardElement}
+      setRef={cardElement}
     >
       <div className="card__content">
-        <LinkWrapper className="card__heading">
+        <Heading className="card__heading">
           {link ? (
             <Link to={link} className="card__link" ref={linkElement}>
               {title}
@@ -76,11 +71,11 @@ const Card = ({
           ) : (
             title
           )}
-        </LinkWrapper>
+        </Heading>
         {text && <p className="card__text">{text}</p>}
       </div>
       {imgSrc && <img className="card__image" src={imgSrc} alt={imgAlt} />}
-    </article>
+    </Article>
   )
 }
 

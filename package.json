@@ -6,6 +6,7 @@
   "author": "Vegard Haugstvedt <it.vegard@gmail.com>",
   "dependencies": {
     "axe-core": "^3.3.2",
+    "classnames": "^2.2.6",
     "esm": "^3.2.25",
     "gatsby": "^2.15.15",
     "gatsby-image": "^2.2.19",

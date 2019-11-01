@@ -7,7 +7,6 @@ const ProductCard = ({ displayName, gender, imageSrc, price, type }) => (
   <Card
     imgSrc={imageSrc}
     link={`/${gender}/${type}/${toSlug(displayName)}`}
-    LinkWrapper="h3"
     text={`$${price}`}
     title={displayName}
   />

@@ -1,0 +1,31 @@
+.heading {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  margin: 0 0 1em; /* Using em instead of rem to adjust based on heading font size */
+}
+
+.heading-largest {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.heading-larger {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.heading-large {
+  font-size: 1.4rem;
+}
+
+.heading-medium {
+  font-size: 1.3rem;
+}
+
+.heading-small {
+  font-size: 1.2rem;
+}
+
+.heading-smaller {
+  font-size: 1.1rem;
+}

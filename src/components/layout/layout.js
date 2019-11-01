@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../header"
+import { Main } from "../semantic-region"
 import Footer from "../footer"
+import Header from "../header"
 import Container from "../container"
 import SkipLink from "../skip-link"
 
@@ -34,9 +35,9 @@ const Layout = ({ children }) => {
     <div className="layout">
       <SkipLink mainTagId={mainTagId} />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main id={mainTagId} tabIndex={-1}>
+      <Main id={mainTagId} tabIndex={-1}>
         <Container>{children}</Container>
-      </main>
+      </Main>
       <Footer />
     </div>
   )

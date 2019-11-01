@@ -2,17 +2,18 @@ import React from "react"
 import * as PropTypes from "prop-types"
 
 import RuleSelector from "./rule-selector"
+import { Section } from "../semantic-region"
+import Heading from "../semantic-heading"
 
-const RuleList = ({ headingLevel, rules }) => {
-  const Heading = `h${headingLevel}`
+const RuleList = ({ rules }) => {
   if (rules.length > 0) {
     return (
-      <React.Fragment>
+      <Section>
         <Heading>Rules</Heading>
         {rules.map(rule => (
           <RuleSelector key={rule.axeId} rule={rule} />
         ))}
-      </React.Fragment>
+      </Section>
     )
   } else {
     return null
