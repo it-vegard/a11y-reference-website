@@ -44,3 +44,13 @@ export const createProductId = product =>
   `${toSlug(product.gender)}-${toSlug(product.type)}-${toSlug(
     product.displayName
   )}`
+
+export const getAllGendersForProducts = products =>
+  products
+    .map(product => product.gender)
+    .filter((value, index, self) => self.indexOf(value) === index)
+
+export const getAllTypesForProducts = products =>
+  products
+    .map(product => product.type)
+    .filter((value, index, self) => self.indexOf(value) === index)

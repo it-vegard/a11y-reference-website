@@ -55,4 +55,12 @@ module.exports = [
     imageName: "javier-reyes-qi2cD5oR_fE-unsplash.jpg",
     price: 630,
   },
+  {
+    type: "suit",
+    displayName: "Dark grey women's suit",
+    description: ["A classic suit for your formal party."],
+    gender: "women",
+    imageName: "javier-reyes-qi2cD5oR_fE-unsplash.jpg",
+    price: 630,
+  },
 ]

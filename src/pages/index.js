@@ -1,28 +1,20 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 
 import App from "../components/app"
-import ProductList from "../components/product-list"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
 } from "../prop-types/product-query"
-import { mapProducts, mapProductsToType } from "../util/products-util"
+import { mapProducts } from "../util/products-util"
+import ProductCategory from "../components/product-category"
 
 const IndexPage = ({ data, location }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
-  const filteredProducts = mapProductsToType(products)
   return (
     <App location={location} pageTitle="Home">
-      <h1>Clothes</h1>
-      <h2>Coats</h2>
-      <ProductList products={filteredProducts.coat} />
-      <h2>Blazers</h2>
-      <ProductList products={filteredProducts.blazer} />
-      <h2>Suits</h2>
-      <ProductList products={filteredProducts.suit} />
-      <Link to="/page-2/">Go to page 2</Link>
+      <ProductCategory products={products} />
     </App>
   )
 }
