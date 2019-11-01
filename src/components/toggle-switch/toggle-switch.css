@@ -1,5 +1,6 @@
 .toggle-switch {
   display: grid;
+  grid-gap: 1rem;
   grid-template-columns: auto 5.5rem;
   margin-bottom: 2rem;
   max-width: 65ch;
@@ -7,6 +8,7 @@
 
 .toggle-switch__label {
   font-weight: bold;
+  align-self: center;
 }
 
 .toggle-switch__button {

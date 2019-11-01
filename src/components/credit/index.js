@@ -1,3 +1,3 @@
-import Credits from "../../pages/credits"
+import Credit from "./credit"
 
-export default Credits
+export default Credit

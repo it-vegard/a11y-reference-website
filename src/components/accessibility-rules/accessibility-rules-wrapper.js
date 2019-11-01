@@ -58,7 +58,7 @@ const AccessibilityRulesWrapper = ({ children }) => {
 }
 
 AccessibilityRulesWrapper.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
 }
 
 AccessibilityRulesWrapper.context = AccessibilityRulesContext
