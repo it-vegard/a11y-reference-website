@@ -1,7 +1,5 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import IE11CustomProperties from "ie11-custom-properties" // eslint-disable-line no-unused-vars
-
 import Layout from "../layout"
 import LocationContext from "../location-context"
 import AccessibilityRules from "../accessibility-rules"

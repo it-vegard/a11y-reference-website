@@ -14,7 +14,6 @@ module.exports = {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
     React: "readonly",
-    IE11CustomProperties: "readonly",
   },
   parser: "babel-eslint",
   parserOptions: {
