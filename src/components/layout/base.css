@@ -3,14 +3,17 @@
   --color-cornflowerblue: #6495ed;
   --color-blue-cola: #0088DC;
   --color-dark-cerulean: #005b94;
+  --color-black: #333;
+  --color-white: #fff;
 
   /* Default color definitions */
   --color-profile-main: var(--color-dark-cerulean);
-  --color: #333;
-  --background-color: #fff;
+  --color: var(--color-black);
+  --background-color: var(--color-white);
   --border-width: 0.1rem;
   --border-width--thick: calc(var(--border-width) * 2);
   --margin-default: 1rem;
+  --padding-default: 1rem;
 }
 
 body {
