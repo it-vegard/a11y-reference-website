@@ -7,6 +7,7 @@ import ProductDescription from "./product-description"
 import ProductSizePicker from "./product-size-picker"
 
 import "./product-details.css"
+import BuyButton from "../buy-button"
 
 const ProductDetails = product => {
   return (
@@ -20,6 +21,7 @@ const ProductDetails = product => {
           alt={product.imageAlt}
         />
         <ProductSizePicker sizes={product.sizes} />
+        <BuyButton product={product} />
       </Section>
     </Article>
   )

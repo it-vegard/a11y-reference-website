@@ -5,6 +5,7 @@ import LocationContext from "../location-context"
 import AccessibilityRules from "../accessibility-rules"
 import SEO from "../seo"
 import HeadingLevelContext from "../semantic-heading/heading-level-context"
+import { OrderProvider } from "../order"
 
 const App = ({ children, location, pageTitle }) => {
   const AccessibilityRulesProxy =
@@ -12,12 +13,12 @@ const App = ({ children, location, pageTitle }) => {
   return (
     <LocationContext.Provider value={{ location }}>
       <HeadingLevelContext.Provider value={0}>
-        {" "}
-        {/* Initialize as 0, so the main tag can increase to 1 */}
-        <AccessibilityRulesProxy>
-          <SEO title={pageTitle} lang="en" />
-          <Layout>{children}</Layout>
-        </AccessibilityRulesProxy>
+        <OrderProvider>
+          <AccessibilityRulesProxy>
+            <SEO title={pageTitle} lang="en" />
+            <Layout>{children}</Layout>
+          </AccessibilityRulesProxy>
+        </OrderProvider>
       </HeadingLevelContext.Provider>
     </LocationContext.Provider>
   )
