@@ -38,7 +38,7 @@ const AboutPage = ({ location }) => (
       </ul>
       <p>
         The tool is basically a web application, and its main feature is that it
-        be configured to contain or be free of accessibility errors.
+        can be configured to contain or be free of accessibility errors.
         Accessibility flaws in turn corresponding to selected{" "}
         <a
           href="//www.w3.org/WAI/standards-guidelines/wcag/"
