@@ -5,12 +5,14 @@ import Container from "../container"
 import Breadcrumbs from "../breadcrumbs"
 import "./header.css"
 import Logo from "../logo"
+import { MiniCart } from "../cart"
 
 const Header = ({ siteTitle }) => (
   <header>
     <div className="header">
       <Container>
         <Logo siteTitle={siteTitle} />
+        <MiniCart />
       </Container>
     </div>
     <Container>

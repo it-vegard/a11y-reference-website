@@ -14,17 +14,36 @@ const orderReducer = (state, action) => {
           count: state[itemId] ? state[itemId].count + 1 : 1,
         },
       }
-    case "remove":
-      return {
-        ...state,
-        [itemId]:
-          state[itemId] && state[itemId].count > 1
-            ? {
-                ...state[itemId],
-                count: state[itemId] - 1,
-              }
-            : undefined,
-      }
+    case "subtract":
+      return Object.keys(state).reduce((acc, curr) => {
+        if (curr !== itemId) {
+          // Not the type that should be subtracted -> Keep in cart
+          return {
+            ...acc,
+            [curr]: state[curr],
+          }
+        } else if (state[curr].count > 1) {
+          // Has more of same type in cart -> Reduce by one
+          return {
+            ...acc,
+            [curr]: {
+              ...state[curr],
+              count: state[curr].count - 1,
+            },
+          }
+        } else {
+          // Last of type -> remove product from cart
+          return Object.keys(state)
+            .filter(key => key !== itemId)
+            .reduce(
+              (acc, curr) => ({
+                ...acc,
+                [curr]: state[curr],
+              }),
+              {}
+            )
+        }
+      }, {})
     default:
       return state
   }
@@ -63,7 +82,7 @@ export const useOrder = () => {
 
   const subtractFromCart = item => {
     const subtractFromCartAction = {
-      type: "add",
+      type: "subtract",
       payload: item,
     }
     window.sessionStorage.setItem(
@@ -73,7 +92,13 @@ export const useOrder = () => {
     dispatch(subtractFromCartAction)
   }
 
+  const numberOfItems = Object.keys(state).reduce(
+    (acc, curr) => acc + state[curr].count,
+    0
+  )
+
   return {
+    numberOfItems,
     order: state,
     addToCart,
     subtractFromCart,
