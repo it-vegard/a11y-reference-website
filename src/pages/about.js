@@ -101,9 +101,8 @@ const AboutPage = ({ location }) => (
       <h2>If you would like to contribute</h2>
       <p>
         We invite you to contribute to this project and extend the tool. Please
-        see the
-        <Link to="/howto">How To</Link>
-        for use and extension possibilities.
+        see the <Link to="/howto">Howto</Link> for use and extension
+        possibilities.
       </p>
     </section>
     <section>
