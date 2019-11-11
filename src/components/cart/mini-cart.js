@@ -4,6 +4,8 @@ import { useOrder } from "../order"
 import Button from "../button"
 import DropDown from "../dropdown/dropdown"
 
+import "./mini-cart.css"
+
 const MiniCart = () => {
   const { order, numberOfItems, subtractFromCart } = useOrder()
 
@@ -17,7 +19,7 @@ const MiniCart = () => {
       <ul className="cart__list">
         {Object.keys(order).map(key => (
           <li key={key}>
-            {order[key].displayName} - {order[key].count}
+            {order[key].displayName} ({order[key].count})
             <Button onClick={() => subtractFromCart(order[key])}>-</Button>
           </li>
         ))}

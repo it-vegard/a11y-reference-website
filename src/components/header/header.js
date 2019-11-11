@@ -3,14 +3,15 @@ import * as PropTypes from "prop-types"
 
 import Container from "../container"
 import Breadcrumbs from "../breadcrumbs"
-import "./header.css"
 import Logo from "../logo"
 import { MiniCart } from "../cart"
+
+import "./header.css"
 
 const Header = ({ siteTitle }) => (
   <header>
     <div className="header">
-      <Container>
+      <Container className="header__container">
         <Logo siteTitle={siteTitle} />
         <MiniCart />
       </Container>

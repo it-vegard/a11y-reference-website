@@ -3,3 +3,10 @@
   margin-bottom: 1.45rem;
   padding: 2rem 0 1rem;
 }
+
+.header__container {
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
