@@ -17,6 +17,8 @@
   height: var(--dropdown-size);
   margin-inline-start: calc(var(--margin-default) / 2);
   width: var(--dropdown-size);
+  position: relative;
+  top: calc(var(--dropdown-size) * -1)
 }
 
 .dropdown[aria-expanded="true"]::after {
