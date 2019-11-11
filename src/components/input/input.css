@@ -1,0 +1,14 @@
+.label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  padding: calc(var(--padding-default) / 2);
+}
+
+.input-container {
+  margin-bottom: var(--margin-default);
+}
