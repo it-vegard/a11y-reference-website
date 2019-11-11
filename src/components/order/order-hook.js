@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import * as PropTypes from "prop-types"
 
 import { GlobalStateProvider, useGlobalState } from "../global-state"
@@ -51,9 +51,9 @@ const orderReducer = (state, action) => {
 
 export const OrderProvider = ({ children }) => {
   let initialState = {}
-  if (window) {
+  useEffect(() => {
     initialState = JSON.parse(window.sessionStorage.getItem("order")) || {}
-  }
+  })
   return (
     <GlobalStateProvider initialState={initialState} reducer={orderReducer}>
       {children}
