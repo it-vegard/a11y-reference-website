@@ -5,6 +5,7 @@ import Button from "../button"
 import DropDown from "../dropdown/dropdown"
 
 import "./mini-cart.css"
+import Link from "../link"
 
 const MiniCart = () => {
   const { order, numberOfItems, subtractFromCart } = useOrder()
@@ -24,6 +25,7 @@ const MiniCart = () => {
           </li>
         ))}
       </ul>
+      <Link url="/personal-details" title="Go to checkout" />
     </DropDown>
   )
 }
