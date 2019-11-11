@@ -1,6 +1,7 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import App from "../components/app"
+import "./howto.css"
 
 const HowtoPage = ({ location }) => (
   <App pageTitle="Howto" location={location}>
@@ -13,7 +14,7 @@ const HowtoPage = ({ location }) => (
       </p>
       <table>
         <caption>Usage suggestions</caption>
-        <tr>
+        <tr className="header">
           <th scope="col">Objective</th>
           <th scope="col">Requirements</th>
           <th scope="col">Min. time estimation</th>
@@ -77,7 +78,7 @@ const HowtoPage = ({ location }) => (
       </p>
       <table>
         <caption>Task suggestions</caption>
-        <tr>
+        <tr className="header">
           <th scope="col">Task</th>
           <th scope="col">Requirements</th>
           <th scope="col">Min. time estimation</th>

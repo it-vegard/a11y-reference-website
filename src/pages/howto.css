@@ -1,0 +1,12 @@
+table tr:nth-child(even) {
+  background-color: #ddd;
+}
+table tr.header {
+  background-color: #ddf;
+}
+table td, table th {
+  padding: .5ex;
+}
+h2 {
+  margin-top: 2em;
+}
