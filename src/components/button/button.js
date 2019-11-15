@@ -4,12 +4,13 @@ import classNames from "classnames"
 
 import "./button.css"
 
-const Button = ({ children, className, type = "button", ...rest }) => (
+const Button = ({ children, className, setRef, type = "button", ...rest }) => (
   <button
     className={classNames("button", {
       [className]: className,
     })}
     type={type}
+    ref={setRef}
     {...rest}
   >
     {children}
@@ -19,6 +20,7 @@ const Button = ({ children, className, type = "button", ...rest }) => (
 Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  setRef: PropTypes.func,
   type: PropTypes.string,
 }
 

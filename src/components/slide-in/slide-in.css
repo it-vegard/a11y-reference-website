@@ -1,0 +1,24 @@
+.slide-in {
+  height: 100vh;
+  min-width: 25vw;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  right: -100vw;
+  transition: 0.2s right;
+  background-color: var(--color-profile-main);
+  color: var(--color-white);
+  padding: var(--padding-default);
+}
+
+.slide-in[aria-hidden="false"] {
+  right: 0;
+}
+
+.slide-in__close {
+  float: right;
+}
+
+.slide-in__heading {
+  margin-top: 0.5rem;
+}
