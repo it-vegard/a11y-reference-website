@@ -15,8 +15,9 @@
   right: 0;
 }
 
-.slide-in__close {
-  float: right;
+.slide-in__close__container {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .slide-in__heading {

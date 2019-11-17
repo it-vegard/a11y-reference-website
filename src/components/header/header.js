@@ -7,6 +7,7 @@ import Logo from "../logo"
 import { MiniCart } from "../cart"
 
 import "./header.css"
+import { AccessibilitySlideIn } from "../accessibility-configurator"
 
 const Header = ({ siteTitle }) => (
   <header>
@@ -14,6 +15,7 @@ const Header = ({ siteTitle }) => (
       <Container className="header__container">
         <Logo siteTitle={siteTitle} />
         <MiniCart />
+        <AccessibilitySlideIn />
       </Container>
     </div>
     <Container>

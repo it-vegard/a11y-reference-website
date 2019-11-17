@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import * as PropTypes from "prop-types"
 
 import { useModal } from "../../hooks"
@@ -9,6 +9,12 @@ import "./slide-in.css"
 const SlideIn = ({ children, toggleText }) => {
   const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal()
   const toggleButtonRef = useRef()
+  const closeButtonRef = useRef()
+  useEffect(() => {
+    if (isOpen) {
+      closeButtonRef.current.focus()
+    }
+  }, [isOpen])
   return (
     <React.Fragment>
       <Button
@@ -25,12 +31,15 @@ const SlideIn = ({ children, toggleText }) => {
         aria-hidden={!isOpen}
         onKeyUp={event => closeOnEscapeKey(event, toggleButtonRef)}
       >
-        <Button
-          className="slide-in__toggle slide-in__close"
-          onClick={() => toggleIsOpen(toggleButtonRef, false)}
-        >
-          Close
-        </Button>
+        <div className="slide-in__close__container">
+          <Button
+            className="slide-in__toggle slide-in__close"
+            onClick={() => toggleIsOpen(toggleButtonRef, false)}
+            setRef={closeButtonRef}
+          >
+            Close
+          </Button>
+        </div>
         {children}
       </aside>
     </React.Fragment>
