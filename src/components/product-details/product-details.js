@@ -20,6 +20,7 @@ const ProductDetails = product => {
           src={product.imageSrc}
           alt={product.imageAlt}
         />
+        <p className="product-details__price">${product.price}</p>
         <ProductSizePicker sizes={product.sizes} />
         <BuyButton product={product} />
       </Section>

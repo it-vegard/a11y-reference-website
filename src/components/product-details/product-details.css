@@ -2,6 +2,12 @@
   margin-bottom: 2rem;
 }
 
+.product-details__price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto var(--margin-default);
+}
+
 .product-details__image {
   float: left;
   margin-inline-end: var(--margin-default);
