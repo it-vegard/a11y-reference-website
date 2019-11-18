@@ -155,7 +155,10 @@ const addProductNodes = (
       id: createNodeId(`Product-${product.displayName}`),
       imageName: product.imageName,
       internal: {
-        contentDigest: createContentDigest(product),
+        contentDigest: createContentDigest({
+          ...product,
+          sizes,
+        }),
         type: "product",
       },
       price: product.price,
