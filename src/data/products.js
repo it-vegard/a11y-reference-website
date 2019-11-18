@@ -1,4 +1,24 @@
 module.exports = [
+  // {
+  //   type: "",
+  //   displayName: "",
+  //   description: [
+  //     "",
+  //   ],
+  //   gender: "",
+  //   imageName: "",
+  //   price: ,
+  // },
+  {
+    type: "coat",
+    displayName: "Off-white coat",
+    description: [
+      "This classic coat suits almost all generations with a timeless yet modern appearance.",
+    ],
+    gender: "women",
+    imageName: "dmitriy-ilkevich-88daTR_Od3o-unsplash.jpg",
+    price: 399,
+  },
   {
     type: "coat",
     displayName: "Beige coat",
@@ -7,7 +27,7 @@ module.exports = [
     ],
     gender: "men",
     imageName: "dami-adebayo-k6aQzmIbR1s-unsplash.jpg",
-    price: 320,
+    price: 319,
   },
   {
     type: "coat",
@@ -17,7 +37,7 @@ module.exports = [
     ],
     gender: "men",
     imageName: "lee-weng-qfFI57PMXj8-unsplash.jpg",
-    price: 380,
+    price: 379,
   },
   {
     type: "coat",
@@ -27,7 +47,7 @@ module.exports = [
     ],
     gender: "men",
     imageName: "sorin-sirbu-ifYt0sKdJYk-unsplash.jpg",
-    price: 430,
+    price: 429,
   },
   {
     type: "blazer",
@@ -35,7 +55,7 @@ module.exports = [
     description: ["The perfect suit for your next summer party."],
     gender: "men",
     imageName: "krystian-krzewinski-SZ9y9PGVQbY-unsplash.jpg",
-    price: 400,
+    price: 399,
   },
   {
     type: "blazer",
@@ -45,7 +65,7 @@ module.exports = [
     ],
     gender: "men",
     imageName: "thai-an-kog39lmHguY-unsplash.jpg",
-    price: 420,
+    price: 419,
   },
   {
     type: "suit",
@@ -53,14 +73,14 @@ module.exports = [
     description: ["A classic suit for your formal party."],
     gender: "men",
     imageName: "javier-reyes-qi2cD5oR_fE-unsplash.jpg",
-    price: 630,
+    price: 629,
   },
   {
     type: "suit",
-    displayName: "Dark grey women's suit",
+    displayName: "Dark grey men's suit",
     description: ["A classic suit for your formal party."],
-    gender: "women",
+    gender: "men",
     imageName: "javier-reyes-qi2cD5oR_fE-unsplash.jpg",
-    price: 630,
+    price: 559,
   },
 ]

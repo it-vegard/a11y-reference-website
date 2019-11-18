@@ -1,4 +1,16 @@
 module.exports = [
+  // {
+  //   name: "",
+  //   userName: "",
+  //   imageSrc: "",
+  //   imageAlt: "",
+  // },
+  {
+    name: "Dmitriy Ilkevich",
+    userName: "ilkvch",
+    imageSrc: "dmitriy-ilkevich-88daTR_Od3o-unsplash.jpg",
+    imageAlt: "Coat for women",
+  },
   {
     name: "Dami Adebayo",
     userName: "dammypayne",
