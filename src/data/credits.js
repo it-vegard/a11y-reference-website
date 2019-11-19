@@ -6,10 +6,28 @@ module.exports = [
   //   imageAlt: "",
   // },
   {
+    name: "Gregory Hayes",
+    userName: "gregoryallen",
+    imageSrc: "gregory-hayes-h5cd51KXmRQ-unsplash.jpg",
+    imageAlt: "Man in dark suit",
+  },
+  {
+    name: "Subhkaran Singh",
+    userName: "barbarian_subhkaran",
+    imageSrc: "subhkaran-singh-EMhVJwkIIYU-unsplash.jpg",
+    imageAlt: "Woman in yellow coat",
+  },
+  {
+    name: "Tyler Nix",
+    userName: "jtylernix",
+    imageSrc: "tyler-nix-Q3LKEbYX2-w-unsplash.jpg",
+    imageAlt: "Woman in woolen coat",
+  },
+  {
     name: "Dmitriy Ilkevich",
     userName: "ilkvch",
     imageSrc: "dmitriy-ilkevich-88daTR_Od3o-unsplash.jpg",
-    imageAlt: "Coat for women",
+    imageAlt: "Woman in wollen coat",
   },
   {
     name: "Dami Adebayo",
