@@ -152,7 +152,11 @@ const addProductNodes = (
       description: product.description,
       displayName: product.displayName,
       gender: product.gender,
-      id: createNodeId(`Product-${product.displayName}`),
+      id: createNodeId(
+        `Product-${product.gender}-${product.type}-${toSlug(
+          product.displayName
+        )}`
+      ),
       imageName: product.imageName,
       internal: {
         contentDigest: createContentDigest({
