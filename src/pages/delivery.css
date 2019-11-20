@@ -1,0 +1,12 @@
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+th, td {
+  padding: .5ex;
+}
+th {
+  background-color: #ddf;
+}
+td.nmbr {
+  text-align: right;
+}
