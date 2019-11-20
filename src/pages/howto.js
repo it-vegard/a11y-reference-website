@@ -101,14 +101,23 @@ const HowtoPage = ({ location }) => (
         </tr>
         <tr>
           <td>Add more products / clothes</td>
-          <td>git, Node, Javascript, React, JSX</td>
-          <td>2 d</td>
-          <td>...</td>
+          <td>git, JSON</td>
+          <td>2 h</td>
+          <td>
+            First get the repository. Decide which product categories you want
+            to add. See the <samp>type</samp> fields in{" "}
+            <samp>src/data/products.js</samp> for existing categories. For each
+            new product, copy the picture to <samp>src/images/products/</samp>,
+            then add another object in the array of products in{" "}
+            <samp>products.js</samp> according to the structure of existing
+            objects. Before you go live, do not forget to add the appropriate
+            objects in the array of credits in <samp>src/data/credits.js</samp>.
+          </td>
         </tr>
         <tr>
           <td>Add other pages</td>
           <td>git, Node, Javascript, React, JSX</td>
-          <td>1-5 d</td>
+          <td>Min. 1 d</td>
           <td>
             Get the repository and copy one of the other pages in{" "}
             <samp>src/pages</samp> or <samp>src/page-templates</samp>, then

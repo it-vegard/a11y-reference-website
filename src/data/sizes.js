@@ -1,5 +1,9 @@
 const sizes = [
   {
+    id: "size-xs",
+    displayName: "Extra small",
+  },
+  {
     id: "size-s",
     displayName: "Small",
   },
@@ -14,10 +18,6 @@ const sizes = [
   {
     id: "size-xl",
     displayName: "X-Large",
-  },
-  {
-    id: "size-xxl",
-    displayName: "XX-Large",
   },
 ]
 
