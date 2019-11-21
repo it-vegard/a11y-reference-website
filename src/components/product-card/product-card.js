@@ -3,10 +3,17 @@ import Card from "../card"
 import { toSlug } from "../../util/url-util"
 import { ProductPropType } from "../../prop-types/product-query"
 
-const ProductCard = ({ displayName, gender, imageSrc, price, type }) => (
+const ProductCard = ({
+  displayName,
+  gender,
+  imageSrc,
+  language,
+  price,
+  type,
+}) => (
   <Card
     imgSrc={imageSrc}
-    link={`/${gender}/${type}/${toSlug(displayName)}`}
+    link={`/${language}/${gender}/${type}/${toSlug(displayName)}`}
     text={`$${price}`}
     title={displayName}
   />

@@ -30,11 +30,17 @@ ProductPage.propTypes = {
 }
 
 export const query = graphql`
-  query ProductPageQuery($productType: String, $gender: String, $slug: String) {
+  query ProductPageQuery(
+    $productType: String
+    $gender: String
+    $language: String
+    $slug: String
+  ) {
     allProduct(
       filter: {
         type: { eq: $productType }
         gender: { eq: $gender }
+        language: { eq: $language }
         slug: { eq: $slug }
       }
     ) {
@@ -46,6 +52,7 @@ export const query = graphql`
         price
         type
         gender
+        language
         sizes {
           id
           label

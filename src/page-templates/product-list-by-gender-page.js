@@ -10,16 +10,16 @@ import {
 } from "../prop-types/product-query"
 import { mapProducts } from "../util/products-util"
 
-const ProductListPage = ({ data, location }) => {
+const ProductListByGenderPage = ({ data, location }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
   return (
     <App location={location} pageTitle="Products">
-      <ProductCategory products={products} />
+      <ProductCategory products={products} data={data} />
     </App>
   )
 }
 
-ProductListPage.propTypes = {
+ProductListByGenderPage.propTypes = {
   data: PropTypes.shape({
     allProduct: ProductQueryPropType.allProduct,
     allFile: ImageQueryPropType.allFile,
@@ -30,13 +30,9 @@ ProductListPage.propTypes = {
 }
 
 export const query = graphql`
-  query ProductListQuery($productType: String, $gender: String, $slug: String) {
+  query ProductListByGenderQuery($gender: String, $language: String) {
     allProduct(
-      filter: {
-        type: { eq: $productType }
-        gender: { eq: $gender }
-        slug: { eq: $slug }
-      }
+      filter: { language: { eq: $language }, gender: { eq: $gender } }
     ) {
       nodes {
         displayName
@@ -45,6 +41,7 @@ export const query = graphql`
         price
         type
         gender
+        language
         slug
       }
     }
@@ -61,4 +58,4 @@ export const query = graphql`
   }
 `
 
-export default ProductListPage
+export default ProductListByGenderPage

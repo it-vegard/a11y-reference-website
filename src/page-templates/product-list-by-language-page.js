@@ -3,23 +3,23 @@ import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 
 import App from "../components/app"
+import ProductCategory from "../components/product-category"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
 } from "../prop-types/product-query"
 import { mapProducts } from "../util/products-util"
-import ProductCategory from "../components/product-category"
 
-const IndexPage = ({ data, location }) => {
+const ProductListByLanguagePage = ({ data, location }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
   return (
-    <App location={location} pageTitle="Home">
-      <ProductCategory products={products} />
+    <App location={location} pageTitle="Products">
+      <ProductCategory products={products} data={data} />
     </App>
   )
 }
 
-IndexPage.propTypes = {
+ProductListByLanguagePage.propTypes = {
   data: PropTypes.shape({
     allProduct: ProductQueryPropType.allProduct,
     allFile: ImageQueryPropType.allFile,
@@ -30,18 +30,16 @@ IndexPage.propTypes = {
 }
 
 export const query = graphql`
-  query FrontPageQuery($productType: String, $gender: String) {
-    allProduct(
-      filter: { type: { eq: $productType }, gender: { eq: $gender } }
-    ) {
+  query ProductListByLanguageQuery($language: String) {
+    allProduct(filter: { language: { eq: $language } }) {
       nodes {
         displayName
         id
         imageName
-        language
         price
         type
         gender
+        language
         slug
       }
     }
@@ -58,4 +56,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default ProductListByLanguagePage

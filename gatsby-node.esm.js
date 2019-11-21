@@ -1,14 +1,11 @@
 import wcag from "wcag-as-json/src/wcag"
 import path from "path"
 
-import products from "./src/data/products"
+import products from "./src/data/products/index"
 import sizes from "./src/data/sizes"
 import credits from "./src/data/credits"
 import rules from "./src/data/rules"
-import {
-  createProductId,
-  mapProductsToGenderAndType,
-} from "./src/util/products-util"
+import { createProductId } from "./src/util/products-util"
 import { capitalizeAllWords } from "./src/util/text-util"
 import { createProductUrl, toSlug } from "./src/util/url-util"
 
@@ -18,12 +15,65 @@ import { createProductUrl, toSlug } from "./src/util/url-util"
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+const createBreadcrumbs = (language, gender, type, product) => {
+  const breadcrumbs = [
+    {
+      title: "Home",
+      path: `/${language}`,
+    },
+  ]
+  if (gender) {
+    breadcrumbs.push({
+      title: capitalizeAllWords(gender),
+      path: createProductUrl(language, gender),
+    })
+  }
+  if (type) {
+    breadcrumbs.push({
+      title: capitalizeAllWords(type),
+      path: createProductUrl(language, gender, type),
+    })
+  }
+  if (product) {
+    breadcrumbs.push({
+      title: capitalizeAllWords(product.displayName),
+      path: createProductUrl(language, gender, type, product),
+    })
+  }
+  return breadcrumbs
+}
+
+const createProductPage = (
+  createPage,
+  component,
+  language,
+  gender,
+  productType,
+  product
+) => {
+  createPage({
+    path: createProductUrl(language, gender, productType, product),
+    component: component,
+    context: {
+      gender: gender ? gender : undefined,
+      language,
+      productType: productType ? productType : undefined,
+      slug: product ? toSlug(product.displayName) : undefined,
+      breadcrumbs: createBreadcrumbs(language, gender, productType, product),
+    },
+  })
+}
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const ProductListPage = path.resolve(
-    "./src/page-templates/product-list-page.js"
+  const ProductListPageByLanguage = path.resolve(
+    "./src/page-templates/product-list-by-language-page.js"
+  )
+  const ProductListPageByGender = path.resolve(
+    "./src/page-templates/product-list-by-gender-page.js"
+  )
+  const ProductListPageByType = path.resolve(
+    "./src/page-templates/product-list-by-type-page.js"
   )
   const ProductPage = path.resolve("./src/page-templates/product-page.js")
 
@@ -37,6 +87,7 @@ exports.createPages = ({ graphql, actions }) => {
             gender
             id
             imageName
+            language
             price
             sizes {
               id
@@ -55,84 +106,55 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create product list pages
-    const productLists = mapProductsToGenderAndType(
-      result.data.allProduct.nodes
+    const products = result.data.allProduct.nodes
+    const productsByLanguage = products.reduce(
+      (productsByLanguage, product) => ({
+        ...productsByLanguage,
+        [product.language]: [
+          ...(productsByLanguage[product.language] || []),
+          product,
+        ],
+      }),
+      {}
     )
-
-    // Create product details pages
-    Object.keys(productLists).forEach(gender => {
-      createPage({
-        path: createProductUrl(gender),
-        component: ProductListPage,
-        context: {
-          gender,
-          breadcrumbs: [
-            {
-              title: "Home",
-              path: "/",
-            },
-            {
-              title: capitalizeAllWords(gender),
-              path: createProductUrl(gender),
-            },
+    Object.keys(productsByLanguage).forEach(language => {
+      createProductPage(createPage, ProductListPageByLanguage, language)
+      const productsByGender = productsByLanguage[language].reduce(
+        (productsByGender, product) => ({
+          ...productsByGender,
+          [product.gender]: [
+            ...(productsByGender[product.gender] || []),
+            product,
           ],
-        },
-      })
-      Object.keys(productLists[gender]).forEach(productType => {
-        createPage({
-          path: createProductUrl(gender, productType),
-          component: ProductListPage,
-          context: {
+        }),
+        {}
+      )
+      Object.keys(productsByGender).forEach(gender => {
+        createProductPage(createPage, ProductListPageByGender, language, gender)
+        const productsByType = productsByGender[gender].reduce(
+          (productsByType, product) => ({
+            ...productsByType,
+            [product.type]: [...(productsByType[product.type] || []), product],
+          }),
+          {}
+        )
+        Object.keys(productsByType).forEach(type => {
+          createProductPage(
+            createPage,
+            ProductListPageByType,
+            language,
             gender,
-            productType,
-            breadcrumbs: [
-              {
-                title: "Home",
-                path: "/",
-              },
-              {
-                title: capitalizeAllWords(gender),
-                path: createProductUrl(gender),
-              },
-              {
-                title: capitalizeAllWords(productType),
-                path: createProductUrl(gender, productType),
-              },
-            ],
-          },
-        })
-        productLists[gender][productType].forEach(product => {
-          createPage({
-            path: createProductUrl(gender, productType, product.displayName),
-            component: ProductPage,
-            context: {
+            type
+          )
+          productsByType[type].forEach(product => {
+            createProductPage(
+              createPage,
+              ProductPage,
+              language,
               gender,
-              productType,
-              slug: toSlug(product.displayName),
-              breadcrumbs: [
-                {
-                  title: "Home",
-                  path: "/",
-                },
-                {
-                  title: capitalizeAllWords(gender),
-                  path: createProductUrl(gender),
-                },
-                {
-                  title: capitalizeAllWords(productType),
-                  path: createProductUrl(gender, productType),
-                },
-                {
-                  title: capitalizeAllWords(product.displayName),
-                  path: createProductUrl(
-                    gender,
-                    productType,
-                    product.displayName
-                  ),
-                },
-              ],
-            },
+              type,
+              product
+            )
           })
         })
       })
@@ -147,35 +169,39 @@ const addProductNodes = (
   createNode,
   createNodeId
 ) => {
-  products.forEach(product => {
-    const productNode = {
-      description: product.description,
-      displayName: product.displayName,
-      gender: product.gender,
-      id: createNodeId(
-        `Product-${product.gender}-${product.type}-${toSlug(
-          product.displayName
-        )}`
-      ),
-      imageName: product.imageName,
-      internal: {
-        contentDigest: createContentDigest({
-          ...product,
-          sizes,
-        }),
-        type: "product",
-      },
-      price: product.price,
-      sizes: sizes.map(size => ({
-        id: `${createProductId(product)}-${size.id}`,
-        label: size.displayName,
-        name: `${createProductId(product)}-size`,
-        value: size.id,
-      })),
-      slug: toSlug(product.displayName),
-      type: product.type,
-    }
-    createNode(productNode)
+  products.forEach(({ products, language }) => {
+    products.forEach(product => {
+      const productNode = {
+        description: product.description,
+        displayName: product.displayName,
+        gender: product.gender,
+        id: createNodeId(
+          `Product-${language}-${product.gender}-${product.type}-${toSlug(
+            product.displayName
+          )}`
+        ),
+        imageName: product.imageName,
+        internal: {
+          contentDigest: createContentDigest({
+            ...product,
+            sizes,
+            language,
+          }),
+          type: "product",
+        },
+        language,
+        price: product.price,
+        sizes: sizes.map(size => ({
+          id: `${createProductId(product)}-${size.id}`,
+          label: size.displayName,
+          name: `${createProductId(product)}-size`,
+          value: size.id,
+        })),
+        slug: toSlug(product.displayName),
+        type: product.type,
+      }
+      createNode(productNode)
+    })
   })
 }
 

@@ -5,14 +5,14 @@ export const toSlug = text =>
     .replace(/\s/g, "-")
     .replace(/[^\w|-]/, "")
 
-export const createProductUrl = (gender, type, name) => {
-  let url = "/"
+export const createProductUrl = (language, gender, type, product) => {
+  let url = `/${language}`
   if (gender) {
-    url = `/${toSlug(gender)}`
+    url = `${url}/${toSlug(gender)}`
     if (type) {
       url = `${url}/${toSlug(type)}`
-      if (name) {
-        url = `${url}/${toSlug(name)}`
+      if (product) {
+        url = `${url}/${toSlug(product.displayName)}`
       }
     }
   }
