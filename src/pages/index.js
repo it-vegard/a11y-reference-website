@@ -32,7 +32,11 @@ IndexPage.propTypes = {
 export const query = graphql`
   query FrontPageQuery($productType: String, $gender: String) {
     allProduct(
-      filter: { type: { eq: $productType }, gender: { eq: $gender } }
+      filter: {
+        type: { eq: $productType }
+        gender: { eq: $gender }
+        language: { eq: "en" }
+      }
     ) {
       nodes {
         displayName

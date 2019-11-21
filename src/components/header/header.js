@@ -5,15 +5,17 @@ import Container from "../container"
 import Breadcrumbs from "../breadcrumbs"
 import Logo from "../logo"
 import { MiniCart } from "../cart"
+import { AccessibilitySlideIn } from "../accessibility-configurator"
+import { LanguageSelector } from "../language"
 
 import "./header.css"
-import { AccessibilitySlideIn } from "../accessibility-configurator"
 
 const Header = ({ siteTitle }) => (
   <header>
     <div className="header">
       <Container className="header__container">
         <Logo siteTitle={siteTitle} />
+        <LanguageSelector />
         <MiniCart />
         <AccessibilitySlideIn />
       </Container>

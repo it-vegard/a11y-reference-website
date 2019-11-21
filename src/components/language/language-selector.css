@@ -1,0 +1,17 @@
+.language-selector {
+  display: flex;
+  flex-direction: row;
+}
+
+.language-selector .link {
+  --color: var(--color-white);
+  --background-color: var(--color-profile-main);
+
+  border-bottom-style: none;
+  margin-inline-end: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.language-selector .link:focus {
+  border-bottom-style: solid;
+}
