@@ -8,6 +8,7 @@ import rules from "./src/data/rules"
 import { createProductId } from "./src/util/products-util"
 import { capitalizeAllWords } from "./src/util/text-util"
 import { createProductUrl, toSlug } from "./src/util/url-util"
+import TEXTS from "./src/data/texts"
 
 /**
  * Implement Gatsby's Node APIs in this file.
@@ -16,13 +17,12 @@ import { createProductUrl, toSlug } from "./src/util/url-util"
  */
 
 const createBreadcrumbs = (language, gender, type, product) => {
-  const breadcrumbs = [
-    {
-      title: "Home",
-      path: `/${language}`,
-    },
-  ]
+  const breadcrumbs = []
   if (gender) {
+    breadcrumbs.push({
+      title: TEXTS[language].HOME,
+      path: `/${language}`,
+    })
     breadcrumbs.push({
       title: capitalizeAllWords(gender),
       path: createProductUrl(language, gender),

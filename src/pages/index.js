@@ -9,11 +9,14 @@ import {
 } from "../prop-types/product-query"
 import { mapProducts } from "../util/products-util"
 import ProductCategory from "../components/product-category"
+import TEXTS from "../data/texts"
+import { useLanguage } from "../components/language"
 
 const IndexPage = ({ data, location }) => {
+  const { language } = useLanguage()
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
   return (
-    <App location={location} pageTitle="Home">
+    <App location={location} pageTitle={TEXTS[language].HOME}>
       <ProductCategory products={products} />
     </App>
   )

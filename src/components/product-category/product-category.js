@@ -8,8 +8,11 @@ import { capitalizeAllWords } from "../../util/text-util"
 import ProductList from "../product-list"
 import Heading from "../semantic-heading"
 import { Section } from "../semantic-region"
+import TEXTS from "../../data/texts"
+import { useLanguage } from "../language"
 
 const ProductCategory = ({ products }) => {
+  const { language } = useLanguage()
   const genders = getAllGendersForProducts(products)
   const types = getAllTypesForProducts(products)
   if (types.length === 1 && genders.length === 1) {
@@ -24,7 +27,11 @@ const ProductCategory = ({ products }) => {
     // Gender listing page
     return (
       <Fragment>
-        <Heading>{`${capitalizeAllWords(genders[0])}'s Fashion`}</Heading>
+        <Heading>
+          {TEXTS[language].PRODUCT_FOR_GENDER_HEADING(
+            capitalizeAllWords(genders[0])
+          )}
+        </Heading>
         {types.map(type => (
           <Section key={type}>
             <ProductCategory
@@ -38,7 +45,11 @@ const ProductCategory = ({ products }) => {
     // Front page
     return genders.map(gender => (
       <Section key={gender}>
-        <Heading>{`${capitalizeAllWords(gender)}'s Fashion`}</Heading>
+        <Heading>
+          {TEXTS[language].PRODUCT_FOR_GENDER_HEADING(
+            capitalizeAllWords(gender)
+          )}
+        </Heading>
         <ProductList
           products={products
             .filter(product => product.gender === gender)

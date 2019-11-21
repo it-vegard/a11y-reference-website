@@ -27,5 +27,6 @@ module.exports = {
   rules: {
     "comma-dangle": ["error", "always-multiline"],
     "valid-jsdoc": "off",
+    "new-cap": "off",
   },
 }
