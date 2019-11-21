@@ -7,13 +7,43 @@ const PRODUCT_TYPE_SUIT = "suit"
 module.exports = [
   {
     type: PRODUCT_TYPE_COAT,
-    displayName: "Beige coat",
+    displayName: "Fresh and cool",
+    description: [
+      "Make yourself be seen while fitting in, regardless of the time of the year. Spring and Autumn are equally fine.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "subhkaran-singh-EMhVJwkIIYU-unsplash.jpg",
+    price: 449,
+  },
+  {
+    type: PRODUCT_TYPE_COAT,
+    displayName: "Woolen luxury",
+    description: [
+      "Meet Spring in a pleasant and cozy green! You'll gain everybody's attention on the next stroll through the city.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "tyler-nix-Q3LKEbYX2-w-unsplash.jpg",
+    price: 344,
+  },
+  {
+    type: PRODUCT_TYPE_COAT,
+    displayName: "Off-white elegance",
+    description: [
+      "This classic coat suits almost all generations with a timeless yet modern appearance.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "dmitriy-ilkevich-88daTR_Od3o-unsplash.jpg",
+    price: 399,
+  },
+  {
+    type: PRODUCT_TYPE_COAT,
+    displayName: "Leather coat",
     description: [
       "A sleek, leather coat that will help you stand out in the crowd. The top of the line zippers come with a life-time warranty.",
     ],
     gender: GENDER_MEN,
     imageName: "dami-adebayo-k6aQzmIbR1s-unsplash.jpg",
-    price: 320,
+    price: 1019,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -23,7 +53,7 @@ module.exports = [
     ],
     gender: GENDER_MEN,
     imageName: "lee-weng-qfFI57PMXj8-unsplash.jpg",
-    price: 380,
+    price: 379,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -33,15 +63,15 @@ module.exports = [
     ],
     gender: GENDER_MEN,
     imageName: "sorin-sirbu-ifYt0sKdJYk-unsplash.jpg",
-    price: 430,
+    price: 429,
   },
   {
     type: PRODUCT_TYPE_BLAZER,
-    displayName: "Brown blazer",
+    displayName: "Gray blazer",
     description: ["The perfect suit for your next summer party."],
     gender: GENDER_MEN,
     imageName: "krystian-krzewinski-SZ9y9PGVQbY-unsplash.jpg",
-    price: 400,
+    price: 399,
   },
   {
     type: PRODUCT_TYPE_BLAZER,
@@ -51,7 +81,7 @@ module.exports = [
     ],
     gender: GENDER_MEN,
     imageName: "thai-an-kog39lmHguY-unsplash.jpg",
-    price: 420,
+    price: 419,
   },
   {
     type: PRODUCT_TYPE_SUIT,
@@ -59,14 +89,14 @@ module.exports = [
     description: ["A classic suit for your formal party."],
     gender: GENDER_MEN,
     imageName: "javier-reyes-qi2cD5oR_fE-unsplash.jpg",
-    price: 630,
+    price: 629,
   },
   {
     type: PRODUCT_TYPE_SUIT,
-    displayName: "Dark grey women's suit",
+    displayName: "Dark grey men's suit",
     description: ["A classic suit for your formal party."],
-    gender: GENDER_WOMEN,
-    imageName: "javier-reyes-qi2cD5oR_fE-unsplash.jpg",
-    price: 630,
+    gender: GENDER_MEN,
+    imageName: "gregory-hayes-h5cd51KXmRQ-unsplash.jpg",
+    price: 559,
   },
 ]

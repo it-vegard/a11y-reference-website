@@ -1,7 +1,7 @@
 import wcag from "wcag-as-json/src/wcag"
 import path from "path"
 
-import products from "./src/data/products/index"
+import products from "./src/data/products"
 import sizes from "./src/data/sizes"
 import credits from "./src/data/credits"
 import rules from "./src/data/rules"
