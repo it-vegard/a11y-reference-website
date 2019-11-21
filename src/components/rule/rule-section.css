@@ -3,5 +3,6 @@
   background-color: #fefefe;
   box-shadow: inset 0 0 0.5rem #eee;
   border: 0.1rem solid #ddd;
+  color: var(--color);
   margin-bottom: 2rem;
 }
