@@ -1,5 +1,5 @@
+const GENDER_WOMEN = "woman"
 const GENDER_MEN = "men"
-const GENDER_WOMEN = "women"
 const PRODUCT_TYPE_COAT = "coat"
 const PRODUCT_TYPE_BLAZER = "blazer"
 const PRODUCT_TYPE_SUIT = "suit"
@@ -13,7 +13,7 @@ module.exports = [
     ],
     gender: GENDER_WOMEN,
     imageName: "subhkaran-singh-EMhVJwkIIYU-unsplash.jpg",
-    price: 449,
+    price: 129,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -23,7 +23,7 @@ module.exports = [
     ],
     gender: GENDER_WOMEN,
     imageName: "tyler-nix-Q3LKEbYX2-w-unsplash.jpg",
-    price: 344,
+    price: 89,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -33,7 +33,7 @@ module.exports = [
     ],
     gender: GENDER_WOMEN,
     imageName: "dmitriy-ilkevich-88daTR_Od3o-unsplash.jpg",
-    price: 399,
+    price: 179,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -43,17 +43,17 @@ module.exports = [
     ],
     gender: GENDER_MEN,
     imageName: "dami-adebayo-k6aQzmIbR1s-unsplash.jpg",
-    price: 1019,
+    price: 519,
   },
   {
     type: PRODUCT_TYPE_COAT,
     displayName: "Brown coat",
     description: [
-      "A thick, comfortable wool coat that will keep you warm throughout the winter.",
+      "A thick and comfortable wool coat that will keep you warm throughout the winter.",
     ],
     gender: GENDER_MEN,
     imageName: "lee-weng-qfFI57PMXj8-unsplash.jpg",
-    price: 379,
+    price: 719,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -63,7 +63,7 @@ module.exports = [
     ],
     gender: GENDER_MEN,
     imageName: "sorin-sirbu-ifYt0sKdJYk-unsplash.jpg",
-    price: 429,
+    price: 689,
   },
   {
     type: PRODUCT_TYPE_BLAZER,
@@ -71,7 +71,7 @@ module.exports = [
     description: ["The perfect suit for your next summer party."],
     gender: GENDER_MEN,
     imageName: "krystian-krzewinski-SZ9y9PGVQbY-unsplash.jpg",
-    price: 399,
+    price: 459,
   },
   {
     type: PRODUCT_TYPE_BLAZER,
@@ -81,7 +81,7 @@ module.exports = [
     ],
     gender: GENDER_MEN,
     imageName: "thai-an-kog39lmHguY-unsplash.jpg",
-    price: 419,
+    price: 379,
   },
   {
     type: PRODUCT_TYPE_SUIT,
