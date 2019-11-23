@@ -10,6 +10,8 @@ const textsNO = {
   CART: "Handlekurv",
   PAY: "Gjennomfør kjøpet",
   CONTINUE: "Fortsett",
+  LADIES: "Damemote",
+  GENTS: "Herremote",
   // portal
   HOME: "Hjem",
   PRODUCT_FOR_GENDER_HEADING: gender => `${gender}mote`,

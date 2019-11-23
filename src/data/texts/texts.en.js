@@ -10,6 +10,8 @@ const textsEN = {
   CART: "Cart",
   PAY: "Go to payment",
   CONTINUE: "Continue",
+  LADIES: "Ladies' fashion",
+  GENTS: "Gents' fashion",
   // portal
   HOME: "Home",
   PRODUCT_FOR_GENDER_HEADING: gender => `${gender}'s Fashion`,
