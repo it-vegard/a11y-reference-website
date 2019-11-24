@@ -15,3 +15,15 @@
 .language-selector .link:focus {
   border-bottom-style: solid;
 }
+
+.language-selector__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.language-selector__flag {
+  order: 1;
+  height: 1rem;
+  margin-inline-start: 0.5rem;
+}

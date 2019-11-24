@@ -21,6 +21,7 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "stylelint-config-standard": "^19.0.0",
+    "svg-country-flags": "^1.2.6",
     "wcag-as-json": "0.0.1"
   },
   "devDependencies": {
