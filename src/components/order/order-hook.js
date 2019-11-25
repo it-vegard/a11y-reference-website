@@ -6,6 +6,8 @@ import { GlobalStateProvider, useGlobalState } from "../global-state"
 const orderReducer = (state, action) => {
   const itemId = action.payload.id
   switch (action.type) {
+    case "init":
+      return action.payload.order
     case "add":
       return {
         ...state,
@@ -92,6 +94,16 @@ export const useOrder = () => {
     dispatch(subtractFromCartAction)
   }
 
+  const loadOrder = () => {
+    const order = JSON.parse(window.sessionStorage.getItem("order")) || {}
+    dispatch({
+      type: "init",
+      payload: {
+        order: order,
+      },
+    })
+  }
+
   const numberOfItems = Object.keys(state).reduce(
     (acc, curr) => acc + state[curr].count,
     0
@@ -102,5 +114,6 @@ export const useOrder = () => {
     order: state,
     addToCart,
     subtractFromCart,
+    loadOrder,
   }
 }

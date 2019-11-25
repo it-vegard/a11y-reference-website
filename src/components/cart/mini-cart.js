@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Heading from "../semantic-heading"
 import { useOrder } from "../order"
 import Button from "../button"
@@ -8,6 +8,12 @@ import "./mini-cart.css"
 import Link from "../link"
 
 const MiniCart = () => {
+  const { loadOrder } = useOrder()
+
+  useEffect(() => {
+    loadOrder()
+  }, [])
+
   const { order, numberOfItems, subtractFromCart } = useOrder()
 
   if (numberOfItems === 0) {
