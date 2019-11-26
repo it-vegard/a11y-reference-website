@@ -28,7 +28,7 @@ const SlideIn = ({ children, toggleText }) => {
       </Button>
       <aside
         className="slide-in"
-        aria-hidden={!isOpen}
+        hidden={!isOpen}
         onKeyUp={event => closeOnEscapeKey(event, toggleButtonRef)}
       >
         <div className="slide-in__close__container">

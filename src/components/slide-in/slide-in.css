@@ -11,7 +11,7 @@
   padding: var(--padding-default);
 }
 
-.slide-in[aria-hidden="false"] {
+.slide-in[hidden="false"] {
   right: 0;
 }
 
