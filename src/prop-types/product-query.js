@@ -15,24 +15,26 @@ export const ImageQueryPropType = {
   }),
 }
 
-export const ProductPropType = {
+export const ProductSizesPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string,
+    displayName: PropTypes.string,
+  })
+)
+
+export const ProductPropType = PropTypes.shape({
   displayName: PropTypes.string,
   gender: PropTypes.string,
   id: PropTypes.string,
   imageName: PropTypes.string,
   price: PropTypes.number,
-  sizes: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      displayName: PropTypes.string,
-    })
-  ),
+  sizes: ProductSizesPropType,
   slug: PropTypes.string,
   type: PropTypes.string,
-}
+})
 
 export const ProductQueryPropType = {
   allProduct: PropTypes.shape({
-    nodes: PropTypes.arrayOf(PropTypes.shape(ProductPropType)),
+    nodes: PropTypes.arrayOf(ProductPropType),
   }),
 }

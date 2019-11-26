@@ -20,7 +20,7 @@ const Button = ({ children, className, setRef, type = "button", ...rest }) => (
 Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  setRef: PropTypes.func,
+  setRef: PropTypes.object,
   type: PropTypes.string,
 }
 
