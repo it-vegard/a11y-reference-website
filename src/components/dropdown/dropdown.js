@@ -7,10 +7,10 @@ import "./dropdown.css"
 const DropDown = ({ buttonText, ButtonType = Button, children }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
-    <React.Fragment>
+    <div className="dropdown">
       <ButtonType
         aria-haspopup="true"
-        className="dropdown"
+        className="dropdown-toggle"
         aria-expanded={isExpanded}
         onClick={() => setIsExpanded(!isExpanded)}
       >
@@ -19,7 +19,7 @@ const DropDown = ({ buttonText, ButtonType = Button, children }) => {
       <div className="dropdown__container" hidden={!isExpanded}>
         {children}
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 

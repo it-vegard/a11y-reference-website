@@ -8,6 +8,8 @@ import HeadingLevelContext from "../semantic-heading/heading-level-context"
 import { OrderProvider } from "../order"
 import { LanguageSupport } from "../language"
 
+import "./app.css"
+
 const App = ({ children, location, pageTitle }) => {
   const AccessibilityRulesProxy =
     location.pathname === "settings" ? React.Fragment : AccessibilityRules
