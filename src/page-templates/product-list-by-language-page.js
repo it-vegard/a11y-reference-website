@@ -30,8 +30,8 @@ ProductListByLanguagePage.propTypes = {
 }
 
 export const query = graphql`
-  query ProductListByLanguageQuery($language: String) {
-    allProduct(filter: { language: { eq: $language } }) {
+  query ProductListByLanguageQuery($langKey: String) {
+    allProduct(filter: { language: { eq: $langKey } }) {
       nodes {
         displayName
         id

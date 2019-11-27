@@ -56,7 +56,7 @@ const createProductPage = (
     component: component,
     context: {
       gender: gender ? gender : undefined,
-      language,
+      langKey: language,
       productType: productType ? productType : undefined,
       slug: product ? toSlug(product.displayName) : undefined,
       breadcrumbs: createBreadcrumbs(language, gender, productType, product),

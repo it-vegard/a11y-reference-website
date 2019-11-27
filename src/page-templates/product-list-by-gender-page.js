@@ -30,9 +30,9 @@ ProductListByGenderPage.propTypes = {
 }
 
 export const query = graphql`
-  query ProductListByGenderQuery($gender: String, $language: String) {
+  query ProductListByGenderQuery($gender: String, $langKey: String) {
     allProduct(
-      filter: { language: { eq: $language }, gender: { eq: $gender } }
+      filter: { language: { eq: $langKey }, gender: { eq: $gender } }
     ) {
       nodes {
         displayName
