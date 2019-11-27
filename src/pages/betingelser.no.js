@@ -1,12 +1,11 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import App from "../components/app"
-// import "./terms.css"
 
 const TermsPage = ({ location }) => (
-  <App pageTitle="Terms and conditions" location={location}>
-    <h1>Terms and conditions</h1>
-    <p>Updated 19.11.2019</p>
+  <App pageTitle="Betingelser" location={location}>
+    <h1>Betingelser</h1>
+    <p>Oppdatert 19.11.2019</p>
     <p>
       The conditions below apply to all contracts for the purchase and delivery
       of goods from Accessible Clothes.
