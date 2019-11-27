@@ -3,8 +3,59 @@ const GENDER_MEN = "menn"
 const PRODUCT_TYPE_COAT = "frakk"
 const PRODUCT_TYPE_BLAZER = "blazer"
 const PRODUCT_TYPE_SUIT = "dress"
+const PRODUCT_TYPE_SHIRT = "skjorte"
 
 module.exports = [
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Rutede bomullskjorte",
+    description: [
+      "Dette rutede bomullskjorte har sesongens fineste farger og kan brukes til mange ulike anledninger.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "blake-barlow-BwJ6oov5AoM-unsplash.jpg",
+    price: 449,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Kul og trendy",
+    description: [
+      "Med denne skjorten kommer du til å sette trenden i gjengen din i mange måneder fremover. Den er best egnet til fritidsbruk.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "cihan-soysakal-5OjfCQduO9E-unsplash.jpg",
+    price: 479,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Ung og robust",
+    description: [
+      "Denne bomullsskjorten er florlett, strykefri og har mye bevegelsesfrihet til unge, aktive voksne.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "mario-klassen-t8yimzM2bEY-unsplash.jpg",
+    price: 499,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Klassisk og modisk samtidig",
+    description: [
+      "I denne rødvinsrøde skjorten vil du få alles oppmerksomhet ved neste sosiale begivenhet. Den er allikevel tidsløs nok til at du aldri vil føle deg ukomfortabel i den.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "itay-verchik--aInqL0SlP4-unsplash.jpg",
+    price: 559,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Forretningskorte",
+    description: [
+      "En elegant skjorte, perfekt til forretningsanledninger, men du vil med sikkerhet også få mange beundringsverdige blikk ved neste fest.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "krystian-krzewinski-eSO7_yNJ33E-unsplash.jpg",
+    price: 699,
+  },
   {
     type: PRODUCT_TYPE_COAT,
     displayName: "Forfriskende og attraktiv",

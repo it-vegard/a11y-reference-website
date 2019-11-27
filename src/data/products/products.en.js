@@ -3,8 +3,70 @@ const GENDER_MEN = "men"
 const PRODUCT_TYPE_COAT = "coat"
 const PRODUCT_TYPE_BLAZER = "blazer"
 const PRODUCT_TYPE_SUIT = "suit"
+const PRODUCT_TYPE_SHIRT = "shirt"
 
 module.exports = [
+  // {
+  //   type: PRODUCT_TYPE_,
+  //   displayName: "",
+  //   description: [
+  //     "",
+  //   ],
+  //   gender: GENDER_MEN,
+  //   imageName: "",
+  //   price: 0,
+  // },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Checkered cotton shirt",
+    description: [
+      "This fashionable checkered cotton shirt has the latest colors of the season and is very versatile when it comes to use areas.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "blake-barlow-BwJ6oov5AoM-unsplash.jpg",
+    price: 79,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Cool and trendy",
+    description: [
+      "With this shirt, you will set the trends in your clique for many months. Best suited for leisure use.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "cihan-soysakal-5OjfCQduO9E-unsplash.jpg",
+    price: 79,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Young and robust",
+    description: [
+      "This cotton shirt is lightweight, iron-free, and has plenty of room for the active young adult.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "mario-klassen-t8yimzM2bEY-unsplash.jpg",
+    price: 69,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Classy yet fashionable",
+    description: [
+      "In this burgundy shirt you will stick out on the next social occasion. However, its timelessness will never make you uncomfortable.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "itay-verchik--aInqL0SlP4-unsplash.jpg",
+    price: 89,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Business shirt",
+    description: [
+      "This elegant shirt is perfect for business situations, but also an eye catcher when going on a party.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "krystian-krzewinski-eSO7_yNJ33E-unsplash.jpg",
+    price: 99,
+  },
+  // new ones above
   {
     type: PRODUCT_TYPE_COAT,
     displayName: "Fresh and cool",

@@ -6,6 +6,67 @@ module.exports = [
   //   imageAlt: "",
   // },
   {
+    name: "",
+    userName: "",
+    imageSrc: "",
+    imageAlt: "",
+  },
+  {
+    name: "",
+    userName: "",
+    imageSrc: "",
+    imageAlt: "",
+  },
+  {
+    name: "",
+    userName: "",
+    imageSrc: "",
+    imageAlt: "",
+  },
+  {
+    name: "",
+    userName: "",
+    imageSrc: "",
+    imageAlt: "",
+  },
+  {
+    name: "",
+    userName: "",
+    imageSrc: "",
+    imageAlt: "",
+  },
+  {
+    name: "Blake Barlow",
+    userName: "_blahblake",
+    imageSrc: "blake-barlow-BwJ6oov5AoM-unsplash.jpg",
+    imageAlt: "Man posing",
+  },
+  {
+    name: "Cihan Soysakal",
+    userName: "cihansoysakal",
+    imageSrc: "cihan-soysakal-5OjfCQduO9E-unsplash.jpg",
+    imageAlt: "Man posing",
+  },
+  {
+    name: "Mario Klassen",
+    userName: "marioklassen",
+    imageSrc: "mario-klassen-t8yimzM2bEY-unsplash.jpg",
+    imageAlt: "Man posing",
+  },
+  {
+    name: "Itay Verchik",
+    userName: "itayverchik",
+    imageSrc: "itay-verchik--aInqL0SlP4-unsplash.jpg",
+    imageAlt: "Man posing",
+  },
+  {
+    name: "Krystian Krzewinski",
+    userName: "kriskrzewinski",
+    imageSrc: "krystian-krzewinski-eSO7_yNJ33E-unsplash.jpg",
+    imageAlt: "Man posing",
+  },
+  // new oness above
+  {
     name: "Gregory Hayes",
     userName: "gregoryallen",
     imageSrc: "gregory-hayes-h5cd51KXmRQ-unsplash.jpg",
