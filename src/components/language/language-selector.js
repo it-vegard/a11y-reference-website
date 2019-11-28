@@ -25,6 +25,8 @@ const Flag = ({ languageCode }) => {
         src={NorwegianFlag}
       />
     )
+  } else {
+    return null
   }
 }
 
