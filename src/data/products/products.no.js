@@ -1,10 +1,334 @@
 const GENDER_WOMEN = "kvinner"
 const GENDER_MEN = "menn"
-const PRODUCT_TYPE_COAT = "frakk"
-const PRODUCT_TYPE_BLAZER = "blazer"
-const PRODUCT_TYPE_SUIT = "dress"
+const PRODUCT_TYPE_COAT = "frakker"
+const PRODUCT_TYPE_BLAZER = "blazere"
+const PRODUCT_TYPE_SUIT = "dresser"
+const PRODUCT_TYPE_SHIRT = "skjorter"
+const PRODUCT_TYPE_PANTS = "bukser"
+const PRODUCT_TYPE_SHORTS = "shorts"
+const PRODUCT_TYPE_DRESS = "kjoler"
 
 module.exports = [
+  {
+    type: PRODUCT_TYPE_DRESS,
+    displayName: "Sommerbris",
+    description: [
+      "Denne lette silkekjolen i lyserosa har et fornemt blomstermønster og knapper øverst. Ekstra vid for ekstra eleganse.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "flaunter-com-WcXxxQYp_aM-unsplash.jpg",
+    price: 1099,
+  },
+  {
+    type: PRODUCT_TYPE_DRESS,
+    displayName: "Oransje er det nye svart",
+    description: [
+      "Til de som elsker chic'en av 60-tallet. En lyseoransje vil definitivt fargesette hverdagen din. Om du tør.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "mason-jones-bIIP4igsg1I-unsplash.jpg",
+    price: 889,
+  },
+  {
+    type: PRODUCT_TYPE_DRESS,
+    displayName: "Sommerfugl, sommerfugl, opp i luften!",
+    description: [
+      "En utradisjonell kjole med utradisjonelle farger og en utradisjonell passform for de som tør.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "glody-kikonga-HpRVY2Mn0ws-unsplash.jpg",
+    price: 1129,
+  },
+  {
+    type: PRODUCT_TYPE_DRESS,
+    displayName: "Bare svart",
+    description: [
+      "Dette skjørtet av syntetisk materiale kan være 'det lille sorte' i garderoben din. En enkel, men komfortabel passform gir ubegrensete muligheter til å vise seg frem.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "irene-strong-kb2vZFF9o58-unsplash.jpg",
+    price: 829,
+  },
+  {
+    type: PRODUCT_TYPE_DRESS,
+    displayName: "Vis mye farge!",
+    description: [
+      "Lang, lett kjole med gitarer i mange forskjellige farger. Du vil råkke omgivelsene dine!",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "eugene-chystiakov-0A5hJ0W3Gys-unsplash.jpg",
+    price: 1169,
+  },
+  {
+    type: PRODUCT_TYPE_DRESS,
+    displayName: "Damen i rødt",
+    description: [
+      "Vil du være damen i rødt? Med denne lette sommerkjolen vil drømmen gå i oppfyllelse. Perfekt for å danse piruetter, blant annet.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "ussama-azam-HKchJL3uFrw-unsplash.jpg",
+    price: 999,
+  },
+  {
+    type: PRODUCT_TYPE_SHORTS,
+    displayName: "Olashorts",
+    description: [
+      "Lyseblå og stiliserte shorts i denim-material med høy midje og korte ben for varme, lune sommerdager.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "ben-weber-elJ6ZCACSqQ-unsplash.jpg",
+    price: 529,
+  },
+  {
+    type: PRODUCT_TYPE_SHORTS,
+    displayName: "Hvite jeans i røff design",
+    description: [
+      "Hvit er det nye blått, i hvert fall når det kommer til sommerklær. En rå avslutning på leggene gir denne buksen et røft, men balansert utseende.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "clifford-photography-cE4YLIxEKeY-unsplash.jpg",
+    price: 369,
+  },
+  {
+    type: PRODUCT_TYPE_SHORTS,
+    displayName: "Unike olashorts",
+    description: [
+      "Ola-shortsene med kort ben har gått gjennom en spesiell behandlingsprosess på fabrikken. Resultatet er forseggjort 'slitasje', som gjør en og hver av dem 100% unik.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "brooke-cagle-VrXv2KGPqDE-unsplash.jpg",
+    price: 309,
+  },
+  {
+    type: PRODUCT_TYPE_SHORTS,
+    displayName: "White shorts",
+    description: [
+      "Hvis du liker kort ben kan disse shortsene i off-white være noe for deg. Nyt vinden rundt leggene!",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "tamara-bellis-pONwcn4IcVU-unsplash.jpg",
+    price: 489,
+  },
+  {
+    type: PRODUCT_TYPE_SHORTS,
+    displayName: "Shorts i olastoff",
+    description: [
+      "Jeans går aldri av moten! Med denne shortsen vil du forstå hvorfor.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "marc-deriaz-vumytsi0teo-unsplash.jpg",
+    price: 389,
+  },
+  {
+    type: PRODUCT_TYPE_SHORTS,
+    displayName: "Sporty shorts",
+    description: [
+      "Om du er sporty eller ikke spiller ingen rolle: Disse syntetiske shorts vil utløse lykkefølelsene hver gang du tar dem på deg. Materiale motvirker lukt.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "chuttersnap-aPCgCdrr9ow-unsplash.jpg",
+    price: 349,
+  },
+  {
+    type: PRODUCT_TYPE_SHORTS,
+    displayName: "Off-white-shorts",
+    description: [
+      "Disse bomullsshorts i eggeskall-hvit vil være en sann berikelse for vår- og sommer-garderoben din. Materialet er 30% stretsj.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "lucie-marchant-Z0l5hlNjDuY-unsplash.jpg",
+    price: 649,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Slim-fit-olabukse",
+    description: [
+      "Olabukse i lyseblå og slim-fit. Dette produktet har masse stretsj lagt inn for å støtte opp under dine naturlige former.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "ameer-basheer-KXSX-i35_bQ-unsplash.jpg",
+    price: 879,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Røde hipster-tights",
+    description: [
+      "Disse stiliserte hipster-tightsene i signalrød er spot-on for alle som ønsker å skille seg ut av mengden.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "melody-jacob-WuZ7poeM21Y-unsplash.jpg",
+    price: 1439,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Off-white-bukser for den modne damen",
+    description: [
+      "Bukser med stil: Med disse tidsløse buksene i eggeskall-hvit vil du markere deg som den modne kvinnen du er.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "christian-ferrer--AshpzZKtwc-unsplash.jpg",
+    price: 769,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Koselige, sennep-fargede bukser",
+    description: [
+      "Hypp på å prøve noe nytt? Disse buksene har en uvanlig sennep-aktig farge og er laget av et spesielt mykt stoff. Perfekt for innebruk når høststormen herjer ute.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "katarina-sikuljak-R3KsTl9SG-U-unsplash.jpg",
+    price: 559,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Mørkegrå hipster-bukser",
+    description: [
+      "Disse hipster-buksene i mørkegrå består av et meget slitesterk materiale for ekstra tøff bruk i den urbane jungelen. Du kan også lett skli opp leggene på dem.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "napat-seang-Nt0hNFMGbxM-unsplash.jpg",
+    price: 669,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Lyseblå olabukse med normal-fit",
+    description: [
+      "Om slim-fit ikke er din greie, kan du vurdere denne flotte olabuksen med naturlig passform. En av våre mest populære modeller.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "tamara-bellis-zDyJOj8ZXG0-unsplash.jpg",
+    price: 859,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Svarte bukser med hvite striper",
+    description: [
+      "Buksene har normal passform og et mønster som gjør at du vil skille deg litt ut ved neste sosiale anledning &#8211; men ikke for mye.",
+    ],
+    gender: GENDER_WOMEN,
+    imageName: "jobz-tyler-bWathYZvsaA-unsplash.jpg",
+    price: 1099,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Eggeskall-hvite slim-fit-bukser",
+    description: [
+      "Disse buksene har en trangere passform enn vanlig og er et lite kupp for prisbevisste uten at det kompromisses på kvalitet.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "marc-deriaz-w1Oq4m3OPjg-unsplash.jpg",
+    price: 579,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Eggeskall-hvite bukser til fritidsbruk",
+    description: [
+      "Disse buksene i eggeskall-hvit (off-white) har topp-moderne passform og lar seg kombinere med nesten alt.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "krystian-krzewinski-oko89dbRhGE-unsplash.jpg",
+    price: 799,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Klassiske bukser til herremannen",
+    description: [
+      "Bukser i 1930-stil som passer godt voksne menn og unge som er interessert i vintage.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "clem-onojeghuo-kg3N8vqvMd8-unsplash.jpg",
+    price: 1339,
+  },
+  {
+    type: PRODUCT_TYPE_PANTS,
+    displayName: "Grønne, moderne bomullsbukser",
+    description: [
+      "Vid øverst, trang nederst: Disse toppmoderne buksene har den nyeste passformen etterspurt av den yngre generasjonen.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "banter-snaps-jC7nVH_Sw8k-unsplash.jpg",
+    price: 689,
+  },
+  {
+    type: PRODUCT_TYPE_SUIT,
+    displayName: "Mørkeblå fritidsdress",
+    description: [
+      "Denne dressen er til fritid og tilbakelente arbeidsmiljøer. Fargen er en smule formell, men ikke for mye.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "alora-griffiths-MdZhpwhdKMI-unsplash.jpg",
+    price: 1219,
+  },
+  {
+    type: PRODUCT_TYPE_SUIT,
+    displayName: "Grå dress",
+    description: [
+      "Slips har du? Fordelen med denne grå dressen er at den lar seg kombinere med nesten alle andre farger.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "banter-snaps-10FNZghGaLI-unsplash.jpg",
+    price: 889,
+  },
+  {
+    type: PRODUCT_TYPE_BLAZER,
+    displayName: "Grå fritidsskjorte i bomull",
+    description: [
+      "Denne grå bomullsblazer er svært attraktiv blant våre yngre kunder og de som fortsatt er ung til sinns.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "edward-franklin-GfCQjJV1DrI-unsplash.jpg",
+    price: 639,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Rutete bomullsskjorte",
+    description: [
+      "Denne skjorten har de nyeste trendfargene og er samtidig meget allsidig hva gjelder bruksområder.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "blake-barlow-BwJ6oov5AoM-unsplash.jpg",
+    price: 719,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Kul og trendy",
+    description: [
+      "Med denne skjorten setter du trenden blant vennene dine i mange måneder fremover. Er best egnet for fritidsbruk.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "cihan-soysakal-5OjfCQduO9E-unsplash.jpg",
+    price: 669,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Klassisk og moderne på samme tid",
+    description: [
+      "I denne vinrøde skjorten blir du fort festens midtpunkt, mens den klassiske formen vil sørge for at du aldri vil oppleve dette som ubehagelig",
+    ],
+    gender: GENDER_MEN,
+    imageName: "itay-verchik--aInqL0SlP4-unsplash.jpg",
+    price: 579,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Forretningsskjorte",
+    description: [
+      "En elegant skjorte, perfekt til forretningsanledninger, men du vil med sikkerhet også få mange beundringsverdige blikk ved neste fest.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "krystian-krzewinski-eSO7_yNJ33E-unsplash.jpg",
+    price: 559,
+  },
+  {
+    type: PRODUCT_TYPE_SHIRT,
+    displayName: "Ung og robust",
+    description: [
+      "Denne bomullsskjorten er florlett, strykefri og har mye bevegelsesfrihet til unge, aktive voksne.",
+    ],
+    gender: GENDER_MEN,
+    imageName: "mario-klassen-t8yimzM2bEY-unsplash.jpg",
+    price: 499,
+  },
   {
     type: PRODUCT_TYPE_COAT,
     displayName: "Forfriskende og attraktiv",
@@ -29,7 +353,7 @@ module.exports = [
     type: PRODUCT_TYPE_COAT,
     displayName: "Eleganse i eggeskall-hvit",
     description: [
-      "Denne lekre frekken til damen passer som hånd i hanske i forretningssituasjoner og på reiser.",
+      "Denne lekre frakken til damen passer som hånd i hanske i forretningssituasjoner og på reiser.",
     ],
     gender: GENDER_WOMEN,
     imageName: "dmitriy-ilkevich-88daTR_Od3o-unsplash.jpg",

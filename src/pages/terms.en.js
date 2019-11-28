@@ -8,7 +8,7 @@ const TermsPage = ({ location }) => (
     <p>Updated 11/19/2019</p>
     <p>
       The conditions below apply to all contracts for the purchase and delivery
-      of goods from Accessible Clothes.
+      of goods from Clothes for All.
     </p>
     <p>
       The conditions can be revised without notification, and the date above
@@ -38,10 +38,10 @@ const TermsPage = ({ location }) => (
         service for Visa and Mastercard. Payments made on our website are just
         as secure as payment in a shop. The site is secured by SSL, and all card
         details are encrypted. That means that no one can read your credit card
-        number, name or address when the data is sent via the Internet.
-        Accessible Clothes reserves the right to check card validity, address
-        details of the purchaser, and that there are funds available to cover
-        the purchase price.
+        number, name or address when the data is sent via the Internet. Clothes
+        for All reserves the right to check card validity, address details of
+        the purchaser, and that there are funds available to cover the purchase
+        price.
       </p>
       <p>It is also possible to pay by invoice.</p>
       <p>
@@ -55,7 +55,7 @@ const TermsPage = ({ location }) => (
         your invoice by logging on to the payment provider. When paying an
         invoice, a credit check will be made of your personal details.
       </p>
-      <p>Accessible Clothes reserves the right to cancel your purchase.</p>
+      <p>Clothes for All reserves the right to cancel your purchase.</p>
     </section>
     <section>
       <h2>Delivery</h2>
@@ -71,15 +71,15 @@ const TermsPage = ({ location }) => (
       <h2>Transport damage or undelivered packages</h2>
       <p>
         If the goods are damaged or lost during transport to the customer,
-        Accessible Clothes is responsible, but you must let us know as soon as
-        you discover any damage or loss.
+        Clothes for All is responsible, but you must let us know as soon as you
+        discover any damage or loss.
       </p>
     </section>
     <section>
       <h2>Exchanges and returns</h2>
       <p>
         If you want to exchange, return or complain about your purchase, you can
-        go to a Accessible Clothes store or return it to our web shop. You will
+        go to a Clothes for All store or return it to our web shop. You will
         find the location of all our stores listed here. When exchanging in a
         store, please take the receipt you received by mail with you.
       </p>
@@ -88,7 +88,7 @@ const TermsPage = ({ location }) => (
       <h2>Exchanging goods</h2>
       <p>
         If you want to exchange a purchase, the easiest way to do so is in a
-        Accessible Clothes store. If you want to return the purchase to our web
+        Clothes for All store. If you want to return the purchase to our web
         shop, you will be given a refund and can place a new order for a new
         product or size. Use the return address label enclosed in your delivery.
         Return shipping implies a small service fee and will be deducted from
@@ -173,9 +173,9 @@ const TermsPage = ({ location }) => (
       </p>
       <p>
         As a customer, you have the right to cancel a purchase if your order is
-        delayed. If Accessible Clothes is aware that the goods will be delayed,
-        we will contact you concerning a new delivery date. You can then decide
-        if you wamt to wait for the item(s) or cancel the order.
+        delayed. If Clothes for All is aware that the goods will be delayed, we
+        will contact you concerning a new delivery date. You can then decide if
+        you wamt to wait for the item(s) or cancel the order.
       </p>
     </section>
     <section>
@@ -190,11 +190,10 @@ const TermsPage = ({ location }) => (
     <section>
       <h2>Return of faulty goods</h2>
       <p>
-        If you want to complain about an Accessible Clothes product, the easiest
-        way to do is to go to a Accessible Clothes store. Please take the
-        receipt you received by mail with you. Your right to return faulty
-        products lasts for 3 years. The right does not cover ordinary wear and
-        tear.
+        If you want to complain about an Clothes for All product, the easiest
+        way to do is to go to a Clothes for All store. Please take the receipt
+        you received by mail with you. Your right to return faulty products
+        lasts for 3 years. The right does not cover ordinary wear and tear.
       </p>
       <p>
         If you want to return faulty goods to us, please contact us first by
@@ -227,8 +226,8 @@ const TermsPage = ({ location }) => (
         the user&#39;s browser when visiting a website. When the user visits the
         same website again, the data stored will be collected from the cookie
         and used to adapt the site according to the user&#39;s previous
-        preferences. Accessible Clothes uses cookies to improve and simplify
-        your visits to our website. We do not use cookies to save personal data.
+        preferences. Clothes for All uses cookies to improve and simplify your
+        visits to our website. We do not use cookies to save personal data.
         There are two types of cookie: permanent and temporary (cookies for
         sessions). Permanent cookies are saved as a file on your PC or
         smartphone for a period of no longer than 12 months. Sessions cookies
@@ -244,11 +243,11 @@ const TermsPage = ({ location }) => (
     <section>
       <h2>Force majeure</h2>
       <p>
-        If Accessible Clothes is subject to force majeure, i.e., if we or our
+        If Clothes for All is subject to force majeure, i.e., if we or our
         associates are victims of war, warlike events, revolution, rebellion,
         action taken by the authorities, strikes, lockouts, blockade, natural
         disasters, fire, transport disruption, a ban on supply or similar
-        events, Accessible Clothes is entitled to suspend its obligations to its
+        events, Clothes for All is entitled to suspend its obligations to its
         customers for up to two months. After this period, both parties can
         cancel the agreement without becoming liable for compensation.
       </p>
@@ -265,7 +264,7 @@ const TermsPage = ({ location }) => (
     <address>
       Company details:
       <br />
-      Accessible Clothes
+      Clothes for All
       <br />
       Karl Johan
       <br />
@@ -273,7 +272,7 @@ const TermsPage = ({ location }) => (
       <br />
       Norway
       <br />
-      Tel. +47 12 34 56 78
+      Phone +47 12 34 56 78
       <br />
       Org. no.: NO987654321
     </address>
