@@ -8,7 +8,7 @@ import { useLanguage } from "./language-support"
 
 import "./language-selector.css"
 
-const Flag = ({ languageCode }) => {
+const Flag = ({ languageCode = "en" }) => {
   if (languageCode === "en") {
     return (
       <img
