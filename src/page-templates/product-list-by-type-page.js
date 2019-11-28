@@ -33,11 +33,11 @@ export const query = graphql`
   query ProductListByTypeQuery(
     $productType: String
     $gender: String
-    $language: String
+    $langKey: String
   ) {
     allProduct(
       filter: {
-        language: { eq: $language }
+        language: { eq: $langKey }
         gender: { eq: $gender }
         type: { eq: $productType }
       }

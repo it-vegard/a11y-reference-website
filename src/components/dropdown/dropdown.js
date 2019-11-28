@@ -24,7 +24,7 @@ const DropDown = ({ buttonText, ButtonType = Button, children }) => {
 }
 
 DropDown.propTypes = {
-  buttonText: PropTypes.string,
+  buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   ButtonType: PropTypes.element,
   children: PropTypes.node,
 }

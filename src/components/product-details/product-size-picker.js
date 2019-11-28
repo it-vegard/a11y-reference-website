@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import * as PropTypes from "prop-types"
 
 import RadioButtons from "../radio-buttons/radio-buttons"
-import { ProductPropType } from "../../prop-types/product-query"
+import { ProductSizesPropType } from "../../prop-types/product-query"
 
 import "./product-size-picker.css"
 
@@ -28,7 +27,7 @@ const ProductSizePicker = ({ sizes }) => {
 }
 
 ProductSizePicker.propTypes = {
-  sizes: PropTypes.arrayOf(ProductPropType.sizes),
+  sizes: ProductSizesPropType,
 }
 
 export default ProductSizePicker
