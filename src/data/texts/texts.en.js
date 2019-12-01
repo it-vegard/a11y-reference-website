@@ -1,7 +1,7 @@
 const textsEN = {
   // general
   LANG: "English",
-  CURRENCY: "$",
+  CURRENCY: "USD",
   // entire site
   WEBSITE_NAME: "Clothes for all",
   RULE_SET: "Ruleset",

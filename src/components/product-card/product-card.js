@@ -2,6 +2,7 @@ import React from "react"
 import Card from "../card"
 import { toSlug } from "../../util/url-util"
 import { ProductPropType } from "../../prop-types/product-query"
+import { toCurrency } from "../../util/number-util"
 
 const ProductCard = ({
   displayName,
@@ -14,7 +15,7 @@ const ProductCard = ({
   <Card
     imgSrc={imageSrc}
     link={`/${language}/${gender}/${type}/${toSlug(displayName)}`}
-    text={`$${price}`}
+    text={toCurrency(price, language)}
     title={displayName}
   />
 )
