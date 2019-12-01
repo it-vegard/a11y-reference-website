@@ -6,20 +6,34 @@ import AccessibilityRulesContext from "./accessibility-rules-context"
 
 const ruleObjectName = "rules"
 
+const toggleAllRulesOnOrOff = () =>
+  location.search.split("?setErrors=")[1]
+    ? location.search.split("?setErrors=")[1].split("&")[0]
+    : false
+
+const setDefaultRules = (rules, defaultValue = true) =>
+  rules.reduce(
+    (acc, curr) => ({
+      ...acc,
+      [curr.axeId]: defaultValue,
+    }),
+    {}
+  )
+
 const getInitialRules = defaultRules => {
+  const shouldToggleAllRulesOnOrOff = toggleAllRulesOnOrOff()
   const storedRules = window
     ? JSON.parse(window.sessionStorage.getItem(ruleObjectName))
     : null
-  if (storedRules) {
+  if (shouldToggleAllRulesOnOrOff) {
+    return setDefaultRules(
+      defaultRules,
+      JSON.parse(shouldToggleAllRulesOnOrOff)
+    )
+  } else if (storedRules) {
     return storedRules
   } else {
-    return defaultRules.reduce(
-      (acc, curr) => ({
-        ...acc,
-        [curr.axeId]: true,
-      }),
-      {}
-    )
+    return setDefaultRules(defaultRules)
   }
 }
 
@@ -50,8 +64,20 @@ const AccessibilityRulesWrapper = ({ children }) => {
     window.sessionStorage.setItem(ruleObjectName, JSON.stringify(newRules))
   }
 
+  const setAllRules = value => {
+    setRules(
+      Object.keys(rules).reduce(
+        (nextRules, ruleId) => ({
+          ...nextRules,
+          [ruleId]: value,
+        }),
+        {}
+      )
+    )
+  }
+
   return (
-    <AccessibilityRulesContext.Provider value={{ rules, setRule }}>
+    <AccessibilityRulesContext.Provider value={{ rules, setRule, setAllRules }}>
       {children}
     </AccessibilityRulesContext.Provider>
   )
