@@ -19,7 +19,7 @@ const SlideIn = ({ children, toggleText }) => {
     <React.Fragment>
       <Button
         aria-haspopup={true}
-        aria-expanded={!isOpen}
+        aria-expanded={isOpen}
         className="slide-in__toggle"
         onClick={() => toggleIsOpen()}
         setRef={toggleButtonRef}
@@ -40,7 +40,7 @@ const SlideIn = ({ children, toggleText }) => {
             Close
           </Button>
         </div>
-        {children}
+        <div className="slide-in__container">{children}</div>
       </aside>
     </React.Fragment>
   )

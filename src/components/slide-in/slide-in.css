@@ -1,25 +1,32 @@
 .slide-in {
-  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
   min-width: 25vw;
   position: fixed;
   top: 0;
   z-index: 1000;
-  right: -200vw;
+  right: 0;
   transition: 0.2s right;
   background-color: var(--color-profile-main);
   color: var(--color-white);
   padding: var(--padding-default);
 }
 
-.slide-in[hidden="false"] {
-  right: 0;
+.slide-in[hidden="true"] {
+  right: -200vw;
 }
 
 .slide-in__close__container {
   display: flex;
   flex-direction: row-reverse;
+  padding-bottom: 1rem;
 }
 
 .slide-in__heading {
   margin-top: 0.5rem;
+}
+
+.slide-in__container {
+  overflow: auto;
+  min-height: calc(100vh - 4rem);
 }

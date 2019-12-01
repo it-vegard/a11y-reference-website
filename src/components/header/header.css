@@ -1,7 +1,7 @@
 .header {
   background: var(--color-profile-main);
   margin-bottom: 1.45rem;
-  padding: 2rem 0 1rem;
+  padding: 1rem 0;
 }
 
 .header__container {
