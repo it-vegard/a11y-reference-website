@@ -1,6 +1,25 @@
 .footer {
   background-color: var(--color-profile-main);
+  color: var(--color-white);
   border-top: 0.2rem var(--color-profile-main);
-  filter: brightness(75%);
   padding: 2rem 0;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: row;
+}
+
+@supports (display: grid) {
+  .footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+}
+
+.footer .link {
+  background-color: transparent;
+  border-bottom: 0.1rem solid var(--color-white);
+  color: var(--color-white);
+  padding-bottom: 0.2rem;
 }

@@ -12,6 +12,8 @@ const textsNO = {
   CONTINUE: "Fortsett",
   LADIES: "Damemote",
   GENTS: "Herremote",
+  FOOTER_WEB_SHOP_LINKS_HEADER: "Kundeservice",
+  FOOTER_RESOURCES_LINKS_HEADER: "Ressurser",
   // portal
   HOME: "Hjem",
   PRODUCT_FOR_GENDER_HEADING: gender => `${gender}mote`,
@@ -36,6 +38,36 @@ const textsNO = {
     "PS: Du fikk med deg at dette ikke er en riktig nettbutikk, eller?",
   RECEIPT_DISCLAIMER:
     "Det ble ikke sendt noen data fra nettleseren din. Dataene ble lagret kun midlertidig i nettleseren og er nå slettet. #PrivacyByDesign",
+  PAGES: {
+    ABOUT: {
+      URL: "/no/om-oss",
+      TITLE: "Om denne nettsiden",
+    },
+    CREDITS: {
+      URL: "/en/credits",
+      TITLE: "Credits",
+    },
+    DELIVERY: {
+      URL: "/no/levering",
+      TITLE: "Levering",
+    },
+    HOW_TO: {
+      URL: "/en/how-to",
+      TITLE: "How to's",
+    },
+    SETTINGS: {
+      URL: "/settings",
+      TITLE: "Settings",
+    },
+    RETURNS: {
+      URL: "/no/retur",
+      TITLE: "Bytte og retur",
+    },
+    TERMS: {
+      URL: "/no/vilkår",
+      TITLE: "Kjøpsvilkår",
+    },
+  },
 }
 
 export default textsNO
