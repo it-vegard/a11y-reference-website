@@ -48,6 +48,7 @@ export const query = graphql`
         description
         displayName
         id
+        imageAlt
         imageName
         price
         type

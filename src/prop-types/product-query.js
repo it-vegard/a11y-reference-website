@@ -26,6 +26,7 @@ export const ProductPropType = PropTypes.shape({
   displayName: PropTypes.string,
   gender: PropTypes.string,
   id: PropTypes.string,
+  imageAlt: PropTypes.string,
   imageName: PropTypes.string,
   price: PropTypes.number,
   sizes: ProductSizesPropType,

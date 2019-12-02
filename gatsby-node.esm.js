@@ -86,6 +86,7 @@ exports.createPages = ({ graphql, actions }) => {
             displayName
             gender
             id
+            imageAlt
             imageName
             language
             price
@@ -180,6 +181,7 @@ const addProductNodes = (
             product.displayName
           )}`
         ),
+        imageAlt: product.imageAlt,
         imageName: product.imageName,
         internal: {
           contentDigest: createContentDigest({

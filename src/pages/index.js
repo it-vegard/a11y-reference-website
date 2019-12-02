@@ -44,6 +44,7 @@ export const query = graphql`
       nodes {
         displayName
         id
+        imageAlt
         imageName
         language
         price

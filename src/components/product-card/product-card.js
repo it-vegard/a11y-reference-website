@@ -7,12 +7,14 @@ import { toCurrency } from "../../util/number-util"
 const ProductCard = ({
   displayName,
   gender,
+  imageAlt,
   imageSrc,
   language,
   price,
   type,
 }) => (
   <Card
+    imgAlt={imageAlt}
     imgSrc={imageSrc}
     link={`/${language}/${gender}/${type}/${toSlug(displayName)}`}
     text={toCurrency(price, language)}
