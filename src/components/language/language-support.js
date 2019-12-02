@@ -10,9 +10,10 @@ const LanguageSupportContext = createContext({
 
 const LanguageSupport = ({ children }) => {
   const { location } = useContext(LocationContext)
-  const activeLanguage = location.pathname.split("/")[1]
-    ? location.pathname.split("/")[1]
-    : "en"
+  const activeLanguage =
+    location.pathname.split("/").length > 3 // Anything on root (/somepath/) will have a length of 3, and should always use English.
+      ? location.pathname.split("/")[1]
+      : "en"
   const [language, setLanguage] = useState(activeLanguage)
 
   return (

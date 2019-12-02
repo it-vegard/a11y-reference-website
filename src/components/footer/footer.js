@@ -1,12 +1,12 @@
 import React from "react"
 
+import TEXTS from "../../data/texts"
 import Container from "../container"
 import { useLanguage } from "../language"
 import NavigationList from "../navigation-list"
-import TEXTS from "../../data/texts"
+import HeadingLevelContext from "../semantic-heading/heading-level-context"
 
 import "./footer.css"
-import HeadingLevelContext from "../semantic-heading/heading-level-context"
 
 const Footer = () => {
   const { language } = useLanguage()
