@@ -1,13 +1,15 @@
-import React, { useState } from "react"
+import React, { useRef } from "react"
 import classNames from "classnames"
 import * as PropTypes from "prop-types"
 
+import { useModal } from "../../hooks"
 import Button from "../button"
 
 import "./dropdown.css"
 
 const DropDown = ({ buttonText, ButtonType = Button, children, className }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal()
+  const toggleButtonRef = useRef(null)
   return (
     <div
       className={classNames("dropdown", {
@@ -17,12 +19,17 @@ const DropDown = ({ buttonText, ButtonType = Button, children, className }) => {
       <ButtonType
         aria-haspopup="true"
         className="dropdown-toggle"
-        aria-expanded={isExpanded}
-        onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isOpen}
+        onClick={() => toggleIsOpen()}
+        setRef={toggleButtonRef}
       >
         {buttonText}
       </ButtonType>
-      <div className="dropdown__container" hidden={!isExpanded}>
+      <div
+        className="dropdown__container"
+        hidden={!isOpen}
+        onKeyUp={event => closeOnEscapeKey(event, toggleButtonRef)}
+      >
         {children}
       </div>
     </div>
