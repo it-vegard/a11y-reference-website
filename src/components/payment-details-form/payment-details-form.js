@@ -4,11 +4,11 @@ import { Form, SubmitButton } from "../form"
 
 const PaymentDetailsForm = () => (
   <Form action="/receipt">
-    <TextInput
+    {/* <TextInput
       autoComplete="cc-type"
       name="payment-type"
       label="Choose payment type"
-    />
+    />*/}
     <TextInput
       autoComplete="cc-number"
       name="card-number"
