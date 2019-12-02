@@ -1,10 +1,10 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import App from "../components/app"
-import "./howto.css"
+import "./how-to.css"
 
 const HowtoPage = ({ location }) => (
-  <App pageTitle="Howto" location={location}>
+  <App pageTitle="How to's" location={location}>
     <h1>How to&#39;s</h1>
     <section>
       <h2>How to use this website</h2>
