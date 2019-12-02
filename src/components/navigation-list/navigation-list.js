@@ -13,27 +13,37 @@ const NavigationList = ({
   hideHeading,
   isHorizontal = false,
   links,
-}) => {
-  const headingId = `navigation-${toSlug(heading)}-heading`
-  return (
-    <div>
-      <Heading id={headingId}>{heading}</Heading>
-      <nav aria-labelledby={headingId}>
-        <ul
-          className={classNames("navigation-list", {
-            "navigation-list--horizontal": isHorizontal,
-          })}
-        >
-          {links.map(link => (
-            <li className="navigation-list__item" key={toSlug(heading)}>
-              <Link title={link.TITLE} url={link.URL} />
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
-  )
-}
+}) => (
+  <div>
+    {heading && (
+      <Heading
+        id={`navigation-${toSlug(heading)}-heading`}
+        className={classNames({
+          "visually-hidden": hideHeading,
+        })}
+      >
+        {heading}
+      </Heading>
+    )}
+    <nav
+      aria-labelledby={
+        heading ? `navigation-${toSlug(heading)}-heading` : undefined
+      }
+    >
+      <ul
+        className={classNames("navigation-list", {
+          "navigation-list--horizontal": isHorizontal,
+        })}
+      >
+        {links.map(link => (
+          <li className="navigation-list__item" key={toSlug(link.title)}>
+            <Link title={link.title} url={link.url} />
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+)
 
 NavigationList.propTypes = {
   heading: PropTypes.string,
@@ -41,8 +51,8 @@ NavigationList.propTypes = {
   isHorizontal: PropTypes.bool,
   links: PropTypes.arrayOf(
     PropTypes.shape({
-      TITLE: PropTypes.string,
-      URL: PropTypes.string,
+      title: PropTypes.string,
+      url: PropTypes.string,
     })
   ),
 }

@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu__dropdown {
+  position: initial;
+}
+
+.menu__dropdown .dropdown__container {
+  width: calc(100vw - 3rem);
+  right: 0;
+  top: 11vh;
+}

@@ -13,3 +13,14 @@
 .navigation-list__item {
   margin-bottom: 1.5rem;
 }
+
+.navigation-list--horizontal .navigation-list__item:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+@supports (display: grid) {
+  .navigation-list--horizontal {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
+}

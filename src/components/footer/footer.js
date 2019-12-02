@@ -25,11 +25,17 @@ const Footer = () => {
         <Container>
           <NavigationList
             heading={TEXTS[language].FOOTER_WEB_SHOP_LINKS_HEADER}
-            links={webShopLinks}
+            links={webShopLinks.map(link => ({
+              title: link.TITLE,
+              url: link.URL,
+            }))}
           />
           <NavigationList
             heading={TEXTS[language].FOOTER_RESOURCES_LINKS_HEADER}
-            links={accessibilityToolLinks}
+            links={accessibilityToolLinks.map(link => ({
+              title: link.TITLE,
+              url: link.URL,
+            }))}
           />
           {/* © {new Date().getFullYear()}, Built with
           {` `}
