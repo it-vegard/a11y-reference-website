@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from "react"
 import * as PropTypes from "prop-types"
+import TEXTS from "../../data/texts"
 
 import LocationContext from "../location-context"
 
@@ -10,8 +11,9 @@ const LanguageSupportContext = createContext({
 
 const LanguageSupport = ({ children }) => {
   const { location } = useContext(LocationContext)
+  const languages = Object.keys(TEXTS)
   const activeLanguage =
-    location.pathname.split("/").length > 3 // Anything on root (/somepath/) will have a length of 3, and should always use English.
+    languages.indexOf(location.pathname.split("/")[1]) >= 0 // Language is added in TEXTS
       ? location.pathname.split("/")[1]
       : "en"
   const [language, setLanguage] = useState(activeLanguage)
