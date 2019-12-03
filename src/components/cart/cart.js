@@ -4,13 +4,16 @@ import Button from "../button"
 
 import "./cart.css"
 
-const Cart = ({ order, subtractFn }) => {
+const Cart = ({ order, addFn, subtractFn }) => {
   return (
     <ul className="cart__list">
       {order.map(product => (
         <li key={product.id}>
-          {product.displayName} ({product.count})
-          <Button onClick={() => subtractFn(product)}>-</Button>
+          <div>{product.displayName}</div>
+          <div>
+            ({product.count})<Button onClick={() => addFn(product)}>+</Button>
+            <Button onClick={() => subtractFn(product)}>-</Button>
+          </div>
         </li>
       ))}
     </ul>
@@ -25,6 +28,7 @@ Cart.propTypes = {
       id: PropTypes.string,
     })
   ),
+  addFn: PropTypes.func,
   subtractFn: PropTypes.func,
 }
 

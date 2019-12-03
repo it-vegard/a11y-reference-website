@@ -16,7 +16,7 @@ const MiniCart = () => {
     loadOrder()
   }, [])
 
-  const { order, numberOfItems, subtractFromCart } = useOrder()
+  const { order, numberOfItems, addToCart, subtractFromCart } = useOrder()
 
   if (numberOfItems === 0) {
     return null
@@ -31,7 +31,11 @@ const MiniCart = () => {
   return (
     <DropDown buttonText={TEXTS[language].CART_WITH_ITEMS(numberOfItems)}>
       <Heading headingLevel={2}>{TEXTS[language].CART}</Heading>
-      <Cart order={mapProducts(order)} subtractFn={subtractFromCart} />
+      <Cart
+        order={mapProducts(order)}
+        addFn={addToCart}
+        subtractFn={subtractFromCart}
+      />
       <Link
         url={TEXTS[language].PAGES.CHECKOUT_PERSONAL_DETAILS.URL}
         title={TEXTS[language].GO_TO_CHECKOUT}
