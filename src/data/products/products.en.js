@@ -20,6 +20,7 @@ module.exports = [
       "A light-pink silk dress with a flower pattern. The skirt is waving in the wind.",
     imageName: "flaunter-com-WcXxxQYp_aM-unsplash.jpg",
     price: 139,
+    campaignPrice: 109,
   },
   {
     type: PRODUCT_TYPE_DRESS,
@@ -86,6 +87,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "ben-weber-elJ6ZCACSqQ-unsplash.jpg",
     price: 89,
+    campaignPrice: 59,
   },
   {
     type: PRODUCT_TYPE_SHORTS,
@@ -163,6 +165,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "ameer-basheer-KXSX-i35_bQ-unsplash.jpg",
     price: 179,
+    campaignPrice: 139,
   },
   {
     type: PRODUCT_TYPE_PANTS,
@@ -284,6 +287,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "alora-griffiths-MdZhpwhdKMI-unsplash.jpg",
     price: 789,
+    campaignPrice: 699,
   },
   {
     type: PRODUCT_TYPE_SUIT,
@@ -317,6 +321,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "blake-barlow-BwJ6oov5AoM-unsplash.jpg",
     price: 79,
+    campaignPrice: 49,
   },
   {
     type: PRODUCT_TYPE_SHIRT,
@@ -372,6 +377,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "subhkaran-singh-EMhVJwkIIYU-unsplash.jpg",
     price: 129,
+    campaignPrice: 99,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -447,6 +453,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "thai-an-kog39lmHguY-unsplash.jpg",
     price: 379,
+    campaignPrice: 299,
   },
   {
     type: PRODUCT_TYPE_SUIT,

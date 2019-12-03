@@ -19,6 +19,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "flaunter-com-WcXxxQYp_aM-unsplash.jpg",
     price: 1099,
+    campaignPrice: 899,
   },
   {
     type: PRODUCT_TYPE_DRESS,
@@ -85,6 +86,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "ben-weber-elJ6ZCACSqQ-unsplash.jpg",
     price: 529,
+    campaignPrice: 429,
   },
   {
     type: PRODUCT_TYPE_SHORTS,
@@ -162,6 +164,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "ameer-basheer-KXSX-i35_bQ-unsplash.jpg",
     price: 879,
+    campaignPrice: 629,
   },
   {
     type: PRODUCT_TYPE_PANTS,
@@ -283,6 +286,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "alora-griffiths-MdZhpwhdKMI-unsplash.jpg",
     price: 1219,
+    campaignPrice: 999,
   },
   {
     type: PRODUCT_TYPE_SUIT,
@@ -316,6 +320,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "blake-barlow-BwJ6oov5AoM-unsplash.jpg",
     price: 719,
+    campaignPrice: 569,
   },
   {
     type: PRODUCT_TYPE_SHIRT,
@@ -371,6 +376,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "subhkaran-singh-EMhVJwkIIYU-unsplash.jpg",
     price: 829,
+    campaignPrice: 629,
   },
   {
     type: PRODUCT_TYPE_COAT,
@@ -446,6 +452,7 @@ module.exports = [
     imageAlt: "", // TODO: Add alt-text
     imageName: "thai-an-kog39lmHguY-unsplash.jpg",
     price: 4099,
+    campaignPrice: 3509,
   },
   {
     type: PRODUCT_TYPE_SUIT,
