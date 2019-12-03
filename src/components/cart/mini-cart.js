@@ -1,13 +1,12 @@
 import React, { useEffect } from "react"
+
+import TEXTS from "../../data/texts"
 import Heading from "../semantic-heading"
 import { useOrder } from "../order"
-import Button from "../button"
-import DropDown from "../dropdown/dropdown"
+import DropDown from "../dropdown"
 import Link from "../link"
-import TEXTS from "../../data/texts"
-
-import "./mini-cart.css"
 import { useLanguage } from "../language"
+import Cart from "./cart"
 
 const MiniCart = () => {
   const { loadOrder } = useOrder()
@@ -23,17 +22,16 @@ const MiniCart = () => {
     return null
   }
 
+  const mapProducts = order =>
+    Object.keys(order).map(productId => ({
+      ...order[productId],
+      id: productId,
+    }))
+
   return (
     <DropDown buttonText={TEXTS[language].CART_WITH_ITEMS(numberOfItems)}>
       <Heading headingLevel={2}>{TEXTS[language].CART}</Heading>
-      <ul className="cart__list">
-        {Object.keys(order).map(key => (
-          <li key={key}>
-            {order[key].displayName} ({order[key].count})
-            <Button onClick={() => subtractFromCart(order[key])}>-</Button>
-          </li>
-        ))}
-      </ul>
+      <Cart order={mapProducts(order)} subtractFn={subtractFromCart} />
       <Link
         url={TEXTS[language].PAGES.CHECKOUT_PERSONAL_DETAILS.URL}
         title={TEXTS[language].GO_TO_CHECKOUT}
