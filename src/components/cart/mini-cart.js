@@ -3,12 +3,15 @@ import Heading from "../semantic-heading"
 import { useOrder } from "../order"
 import Button from "../button"
 import DropDown from "../dropdown/dropdown"
+import Link from "../link"
+import TEXTS from "../../data/texts"
 
 import "./mini-cart.css"
-import Link from "../link"
+import { useLanguage } from "../language"
 
 const MiniCart = () => {
   const { loadOrder } = useOrder()
+  const { language } = useLanguage()
 
   useEffect(() => {
     loadOrder()
@@ -21,8 +24,8 @@ const MiniCart = () => {
   }
 
   return (
-    <DropDown buttonText={`Cart (${numberOfItems})`}>
-      <Heading headingLevel={2}>Shopping Cart</Heading>
+    <DropDown buttonText={TEXTS[language].CART_WITH_ITEMS(numberOfItems)}>
+      <Heading headingLevel={2}>{TEXTS[language].CART}</Heading>
       <ul className="cart__list">
         {Object.keys(order).map(key => (
           <li key={key}>
@@ -31,7 +34,10 @@ const MiniCart = () => {
           </li>
         ))}
       </ul>
-      <Link url="/personal-details" title="Go to checkout" />
+      <Link
+        url={TEXTS[language].PAGES.CHECKOUT_PERSONAL_DETAILS.URL}
+        title={TEXTS[language].GO_TO_CHECKOUT}
+      />
     </DropDown>
   )
 }

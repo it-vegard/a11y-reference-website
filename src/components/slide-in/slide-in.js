@@ -1,12 +1,15 @@
 import React, { useEffect, useRef } from "react"
 import * as PropTypes from "prop-types"
 
-import { useModal } from "../../hooks"
 import Button from "../button"
+import { useModal } from "../../hooks"
+import { useLanguage } from "../language"
+import TEXTS from "../../data/texts"
 
 import "./slide-in.css"
 
 const SlideIn = ({ children, toggleText }) => {
+  const { language } = useLanguage()
   const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal()
   const toggleButtonRef = useRef()
   const closeButtonRef = useRef()
@@ -37,7 +40,7 @@ const SlideIn = ({ children, toggleText }) => {
             onClick={() => toggleIsOpen(toggleButtonRef, false)}
             setRef={closeButtonRef}
           >
-            Close
+            {TEXTS[language].CLOSE}
           </Button>
         </div>
         <div className="slide-in__container">{children}</div>

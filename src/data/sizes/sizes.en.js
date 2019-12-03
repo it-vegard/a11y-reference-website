@@ -1,4 +1,4 @@
-const sizes = [
+const sizesEn = [
   {
     id: "size-xs",
     displayName: "Extra small",
@@ -21,4 +21,4 @@ const sizes = [
   },
 ]
 
-export default sizes
+export default sizesEn

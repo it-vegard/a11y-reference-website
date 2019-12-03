@@ -193,7 +193,7 @@ const addProductNodes = (
         },
         language,
         price: product.price,
-        sizes: sizes.map(size => ({
+        sizes: sizes[language].map(size => ({
           id: `${createProductId(product)}-${size.id}`,
           label: size.displayName,
           name: `${createProductId(product)}-size`,

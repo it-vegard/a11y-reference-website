@@ -1,13 +1,16 @@
 import React, { useState } from "react"
 
-import RadioButtons from "../radio-buttons/radio-buttons"
 import { ProductSizesPropType } from "../../prop-types/product-query"
+import { useLanguage } from "../language"
+import RadioButtons from "../radio-buttons"
+import TEXTS from "../../data/texts"
 
 import "./product-size-picker.css"
 
 const isChecked = (options, id) => options[id] || undefined
 
 const ProductSizePicker = ({ sizes }) => {
+  const { language } = useLanguage()
   const [selectedSizes, setSelectedSize] = useState({
     [sizes[1].id]: true, // Set medium as default size
   })
@@ -21,7 +24,10 @@ const ProductSizePicker = ({ sizes }) => {
   }))
   return (
     <form className="product-size-picker">
-      <RadioButtons radioButtons={mappedRadioButtons} />
+      <RadioButtons
+        label={TEXTS[language].PICK_SIZE}
+        radioButtons={mappedRadioButtons}
+      />
     </form>
   )
 }

@@ -5,9 +5,9 @@ import RadioButton from "./radio-button"
 
 import "./radio-buttons.css"
 
-const RadioButtons = ({ radioButtons = [] }) => (
+const RadioButtons = ({ label, radioButtons = [] }) => (
   <fieldset className="radio-buttons">
-    <legend className="radio-buttons__legend">Pick size</legend>
+    <legend className="radio-buttons__legend">{label}</legend>
     <div className="radio-buttons__container">
       {radioButtons.map(radioButton => (
         <RadioButton key={radioButton.id} {...radioButton} />
@@ -17,6 +17,7 @@ const RadioButtons = ({ radioButtons = [] }) => (
 )
 
 RadioButtons.propTypes = {
+  label: PropTypes.string,
   radioButtons: PropTypes.array,
 }
 

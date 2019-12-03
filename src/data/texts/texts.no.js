@@ -6,17 +6,28 @@ const textsNO = {
   WEBSITE_NAME: "Klær for alle",
   RULE_SET: "Regelsett",
   SIZES: "Størrelser",
-  ADD: "Legg i handlekurven",
+  PICK_SIZE: "Velg størrelse",
+  CLOSE: "Lukk",
+  ADD_TO_CART: "Legg i handlekurven",
   CART: "Handlekurv",
-  PAY: "Gjennomfør kjøpet",
+  CART_WITH_ITEMS: numberOfItems => `Handlekurv (${numberOfItems})`,
+  GO_TO_CHECKOUT: "Gå til kassen",
+  GO_TO_PAYMENT: "Gå til betaling",
+  COMPLETE_PURCHASE: "Fullfør kjøp",
   CONTINUE: "Fortsett",
-  LADIES: "Damemote",
-  GENTS: "Herremote",
+  LADIES_FASHION: "Damemote",
+  GENTS_FASHION: "Herremote",
   FOOTER_WEB_SHOP_LINKS_HEADER: "Kundeservice",
   FOOTER_RESOURCES_LINKS_HEADER: "Ressurser",
   // portal
   HOME: "Hjem",
-  PRODUCT_FOR_GENDER_HEADING: gender => `${gender}mote`,
+  PRODUCT_FOR_GENDER_HEADING: gender => {
+    if (gender === "Kvinner") {
+      return textsNO.LADIES_FASHION
+    } else {
+      return textsNO.GENTS_FASHION
+    }
+  },
   // personal details
   PERS_DETAILS_TITLE: "Persondata",
   PERS_DETAILS_FIRST_NAME: "Fornavn",
@@ -28,8 +39,8 @@ const textsNO = {
   PAY_DETAILS_TITLE: "Betalingsdetaljer",
   PAY_DETAILS_TYPE: "Betalingsmåte",
   PAY_DETAILS_CARD_NUMBER: "Kortnummer",
-  PAY_DETAILS_EXPIRY_M: "Utløpsmåned",
-  PAY_DETAILS_EXPIRY_Y: "Utløpsår",
+  PAY_DETAILS_EXPIRY_MONTH: "Utløpsmåned",
+  PAY_DETAILS_EXPIRY_YEAR: "Utløpsår",
   PAY_DETAILS_CSC: "CSC",
   // receipt
   RECEIPT_TITLE: "Kvittering",
@@ -66,6 +77,18 @@ const textsNO = {
     TERMS: {
       URL: "/no/vilkår",
       TITLE: "Kjøpsvilkår",
+    },
+    CHECKOUT_PERSONAL_DETAILS: {
+      URL: "/no/personlige-opplysninger",
+      TITLE: "Personlige Opplysninger",
+    },
+    CHECKOUT_PAYMENT_DETAILS: {
+      URL: "/no/betaling",
+      TITLE: "Betaling",
+    },
+    CHECKOUT_RECEIPT: {
+      URL: "/no/kvittering",
+      TITLE: "Kvittering",
     },
   },
 }

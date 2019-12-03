@@ -6,17 +6,28 @@ const textsEN = {
   WEBSITE_NAME: "Clothes for all",
   RULE_SET: "Ruleset",
   SIZES: "Sizes",
-  ADD: "Add to cart",
+  PICK_SIZE: "Pick size",
+  CLOSE: "Close",
+  ADD_TO_CART: "Add to cart",
   CART: "Cart",
-  PAY: "Go to payment",
+  CART_WITH_ITEMS: numberOfItems => `Cart (${numberOfItems})`,
+  GO_TO_CHECKOUT: "Gå til checkout",
+  GO_TO_PAYMENT: "Go to payment",
+  COMPLETE_PURCHASE: "Complete purchase",
   CONTINUE: "Continue",
-  LADIES: "Ladies' fashion",
-  GENTS: "Gents' fashion",
+  LADIES_FASHION: "Ladies' fashion",
+  GENTS_FASHION: "Gents' fashion",
   FOOTER_WEB_SHOP_LINKS_HEADER: "Customer Service",
   FOOTER_RESOURCES_LINKS_HEADER: "Resources",
   // portal
   HOME: "Home",
-  PRODUCT_FOR_GENDER_HEADING: gender => `${gender}'s Fashion`,
+  PRODUCT_FOR_GENDER_HEADING: gender => {
+    if (gender === "Women") {
+      return textsEN.LADIES_FASHION
+    } else {
+      return textsEN.GENTS_FASHION
+    }
+  },
   // personal details
   PERS_DETAILS_TITLE: "Personal details",
   PERS_DETAILS_HEADER: "Personal details",
@@ -30,8 +41,8 @@ const textsEN = {
   PAY_DETAILS_HEADER: "Payment details",
   PAY_DETAILS_TYPE: "Payment type",
   PAY_DETAILS_CARD_NUMBER: "Card number",
-  PAY_DETAILS_EXPIRY_M: "Expiry month",
-  PAY_DETAILS_EXPIRY_Y: "Expiry year",
+  PAY_DETAILS_EXPIRY_MONTH: "Expiry month",
+  PAY_DETAILS_EXPIRY_YEAR: "Expiry year",
   PAY_DETAILS_CSC: "CSC",
   // receipt
   RECEIPT_TITLE: "Receipt",
@@ -67,6 +78,18 @@ const textsEN = {
     TERMS: {
       URL: "/no/terms",
       TITLE: "Terms and Conditions",
+    },
+    CHECKOUT_PERSONAL_DETAILS: {
+      URL: "/en/personal-details",
+      TITLE: "Personal Details",
+    },
+    CHECKOUT_PAYMENT_DETAILS: {
+      URL: "/en/payment-details",
+      TITLE: "Payment",
+    },
+    CHECKOUT_RECEIPT: {
+      URL: "/en/receipt",
+      TITLE: "Receipt",
     },
   },
 }
