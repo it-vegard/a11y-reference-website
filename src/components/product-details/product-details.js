@@ -1,4 +1,5 @@
 import React from "react"
+import * as PropTypes from "prop-types"
 
 import { ProductPropType } from "../../prop-types/product-query"
 import Heading from "../semantic-heading"
@@ -46,7 +47,7 @@ const ProductDetails = product => {
 }
 
 ProductDetails.propTypes = {
-  product: ProductPropType,
+  product: PropTypes.shape(ProductPropType),
 }
 
 export default ProductDetails

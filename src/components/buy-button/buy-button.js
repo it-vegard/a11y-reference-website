@@ -1,4 +1,5 @@
 import React from "react"
+import * as PropTypes from "prop-types"
 
 import { ProductPropType } from "../../prop-types/product-query"
 import Button from "../button/button"
@@ -19,7 +20,7 @@ const BuyButton = ({ product }) => {
 }
 
 BuyButton.propTypes = {
-  product: ProductPropType,
+  product: PropTypes.shape(ProductPropType),
 }
 
 export default BuyButton

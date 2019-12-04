@@ -27,7 +27,9 @@ ProductListByGenderPage.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),
-  pageContext: PropTypes.string,
+  pageContext: PropTypes.shape({
+    pageTitle: PropTypes.string,
+  }),
 }
 
 export const query = graphql`

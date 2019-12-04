@@ -28,7 +28,9 @@ Campaign.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),
-  pageContext: PropTypes.string,
+  pageContext: PropTypes.shape({
+    langKey: PropTypes.string,
+  }),
 }
 
 export const query = graphql`
