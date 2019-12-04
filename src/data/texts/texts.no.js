@@ -4,6 +4,8 @@ const textsNO = {
   CURRENCY: "NOK",
   // entire site
   WEBSITE_NAME: "Klær for alle",
+  WEBSITE_DESCRIPTION:
+    "A fake web shop for testing and learning about accessibility.",
   RULE_SET: "Regelsett",
   SIZES: "Størrelser",
   PICK_SIZE: "Velg størrelse",

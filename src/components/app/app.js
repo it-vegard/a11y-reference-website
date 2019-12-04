@@ -19,7 +19,7 @@ const App = ({ children, location, pageTitle }) => {
         <HeadingLevelContext.Provider value={0}>
           <OrderProvider>
             <AccessibilityRulesProxy>
-              <SEO title={pageTitle} lang="en" />
+              <SEO title={pageTitle} />
               <Layout>{children}</Layout>
             </AccessibilityRulesProxy>
           </OrderProvider>

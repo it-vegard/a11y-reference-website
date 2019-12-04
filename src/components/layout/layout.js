@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import { Main } from "../semantic-region"
 import Footer from "../footer"
@@ -19,22 +18,12 @@ import "./normalize.css"
 import "./base.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   const mainTagId = "main"
 
   return (
     <div className="layout">
       <SkipLink mainTagId={mainTagId} />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <Main id={mainTagId} tabIndex={-1}>
         <Container>{children}</Container>
       </Main>

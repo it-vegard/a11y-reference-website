@@ -4,6 +4,8 @@ const textsEN = {
   CURRENCY: "USD",
   // entire site
   WEBSITE_NAME: "Clothes4all",
+  WEBSITE_DESCRIPTION:
+    "A fake web shop for testing and learning about accessibility.",
   RULE_SET: "Ruleset",
   SIZES: "Sizes",
   PICK_SIZE: "Pick size",

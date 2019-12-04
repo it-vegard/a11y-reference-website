@@ -3,6 +3,8 @@ import * as PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import AccessibilityRules from "../accessibility-rules"
+import TEXTS from "../../data/texts"
+import { useLanguage } from "../language"
 
 /**
  * SEO component that queries for data with
@@ -10,7 +12,7 @@ import AccessibilityRules from "../accessibility-rules"
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-function SEO({ description, lang = "en", meta, title }) {
+function SEO({ meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,9 +27,16 @@ function SEO({ description, lang = "en", meta, title }) {
     `
   )
 
+  const { language } = useLanguage()
+
   const { rules } = useContext(AccessibilityRules.context)
 
-  const metaDescription = description || site.siteMetadata.description
+  const siteTitle = TEXTS[language]
+    ? TEXTS[language].WEBSITE_NAME
+    : site.siteMetadata.title
+  const siteDescription = TEXTS[language]
+    ? TEXTS[language].WEBSITE_DESCRIPTION
+    : site.siteMetadata.description
 
   return (
     <Helmet
@@ -36,14 +45,14 @@ function SEO({ description, lang = "en", meta, title }) {
           ? undefined
           : !rules["html-lang-valid"]
           ? "invalid-lang"
-          : lang,
+          : language,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${siteTitle}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: siteDescription,
         },
         {
           property: `og:title`,
@@ -51,7 +60,7 @@ function SEO({ description, lang = "en", meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: siteDescription,
         },
         {
           property: `og:type`,
@@ -71,7 +80,7 @@ function SEO({ description, lang = "en", meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: siteDescription,
         },
       ].concat(meta)}
     />
@@ -79,14 +88,12 @@ function SEO({ description, lang = "en", meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
   meta: [],
   description: ``,
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
-  lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }

@@ -1,5 +1,4 @@
 import React from "react"
-import * as PropTypes from "prop-types"
 
 import Container from "../container"
 import Breadcrumbs from "../breadcrumbs"
@@ -11,11 +10,11 @@ import { AccessibilitySlideIn } from "../accessibility-configurator"
 
 import "./header.css"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header>
     <div className="header">
       <Container className="header__container">
-        <Logo siteTitle={siteTitle} />
+        <Logo />
         <ContentMenu />
         <div className="header__menus">
           <MiniCart />
@@ -29,13 +28,5 @@ const Header = ({ siteTitle }) => (
     </Container>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
