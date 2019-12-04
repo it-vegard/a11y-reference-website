@@ -38,7 +38,9 @@ const HowtoPage = ({ location }) => (
           <td>
             Load this website with <samp>?enableRules=false</samp> in the URI to
             disable all rules.
-            <samp>?enableRules=true</samp> in the URI enables all rules.
+            <samp>?enableRules=true</samp> in the URI enables all rules. You can
+            also use the shortcut path <samp>v1</samp> to switch on all rules
+            and <samp>v2</samp> to switch off all rules.
           </td>
         </tr>
         <tr>
