@@ -21,6 +21,27 @@ const HowtoPage = ({ location }) => (
           <th scope="col">Description</th>
         </tr>
         <tr>
+          <td>Toggle rules manually</td>
+          <td>-</td>
+          <td>1 min</td>
+          <td>
+            Choose <q>Ruleset</q> to see which accessibility rules are on and
+            off. (A switch in <q>off</q> position equals accessibility issues.)
+            You can either set the rules one by one, or globally with the switch
+            on top.
+          </td>
+        </tr>
+        <tr>
+          <td>Toggle rules programmatically</td>
+          <td>-</td>
+          <td>1 min</td>
+          <td>
+            Load this website with <samp>?enableRules=false</samp> in the URI to
+            disable all rules.
+            <samp>?enableRules=true</samp> in the URI enables all rules.
+          </td>
+        </tr>
+        <tr>
           <td>A11Y failure demonstration</td>
           <td>Developer tools, HTML, CSS</td>
           <td>5 min</td>
