@@ -8,22 +8,22 @@ const ReturnsPage = ({ location }) => (
     <h1>Exhanges and returns</h1>
     <p>
       If you wish to exchange, send back or return faulty goods, you can do this
-      in an Clothes for All shop or by returning the goods to us.
+      in an Clothes4all shop or by returning the goods to us.
     </p>
     <p>
-      Please see the list of Clothes for All shops on this website. To exchange
+      Please see the list of Clothes4all shops on this website. To exchange
       something in a shop, please bring the receipt that has been emailed to
       you.
     </p>
     <section>
       <h2>Exchanging goods</h2>
       <p>
-        The easiest way to exchange goods is in an Clothes for All shop. If you
-        wish to return goods to our online shop, you will get your money back
-        and you will have to place a new order if you would like a new
-        item/size. Use the return address label enclosed in your delivery.
-        Return shipping also trigger a small service fee and will be deducted
-        from the amount to be refunded.
+        The easiest way to exchange goods is in an Clothes4all shop. If you wish
+        to return goods to our online shop, you will get your money back and you
+        will have to place a new order if you would like a new item/size. Use
+        the return address label enclosed in your delivery. Return shipping also
+        trigger a small service fee and will be deducted from the amount to be
+        refunded.
       </p>
     </section>
     <section>
@@ -82,11 +82,11 @@ const ReturnsPage = ({ location }) => (
         order from the day on which it was made. As a consumer, you have the
         right to cancel a purchase if your order is delayed. If you change your
         mind after placing an order, you must, nevertheless, collect the package
-        and either return it to an Clothes for All shop or send it back to us.
+        and either return it to an Clothes4all shop or send it back to us.
       </p>
       <p>
         As a consumer, you have the right to cancel a purchase if your order is
-        delayed. If Clothes for All is aware that goods’ delivery items will be
+        delayed. If Clothes4all is aware that goods’ delivery items will be
         delayed, we will inform you of the new delivery date. You can then
         decide if you will wait for the goods or cancel the order.
       </p>
@@ -103,9 +103,9 @@ const ReturnsPage = ({ location }) => (
     <section>
       <h2>Returning faulty goods</h2>
       <p>
-        If you wish to return a faulty Clothes for All product, the easiest way
-        to do this is in an Clothes for All shop. Bring the receipt that has
-        been emailed to you.
+        If you wish to return a faulty Clothes4all product, the easiest way to
+        do this is in an Clothes4all shop. Bring the receipt that has been
+        emailed to you.
       </p>
       <p>
         Your right to return faulty products is valid for three years. The

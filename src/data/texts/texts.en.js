@@ -3,7 +3,7 @@ const textsEN = {
   LANG: "English",
   CURRENCY: "USD",
   // entire site
-  WEBSITE_NAME: "Clothes for all",
+  WEBSITE_NAME: "Clothes4all",
   RULE_SET: "Ruleset",
   SIZES: "Sizes",
   PICK_SIZE: "Pick size",
