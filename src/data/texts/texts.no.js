@@ -76,7 +76,7 @@ const textsNO = {
       TITLE: "Bytte og retur",
     },
     TERMS: {
-      URL: "/no/vilkår",
+      URL: "/no/betingelser",
       TITLE: "Kjøpsvilkår",
     },
     CHECKOUT_CART: {
