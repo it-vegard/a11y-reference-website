@@ -65,7 +65,7 @@ const createProductPage = (
 }
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
   const ProductListPageByLanguage = path.resolve(
     "./src/page-templates/product-list-by-language-page.js"
   )
@@ -76,6 +76,9 @@ exports.createPages = ({ graphql, actions }) => {
     "./src/page-templates/product-list-by-type-page.js"
   )
   const ProductPage = path.resolve("./src/page-templates/product-page.js")
+
+  createRedirect({ fromPath: "/v1", toPath: "/no?setRules=true" })
+  createRedirect({ fromPath: "/v2", toPath: "/no?setRules=false" })
 
   return graphql(
     `
