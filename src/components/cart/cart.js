@@ -1,22 +1,69 @@
-import React from "react"
+import React, { Fragment } from "react"
 import * as PropTypes from "prop-types"
+
+import TEXTS from "../../data/texts"
+import { createProductUrl } from "../../util/url-util"
+import { toCurrency } from "../../util/number-util"
 import Button from "../button"
+import { useLanguage } from "../language"
 
 import "./cart.css"
 
 const Cart = ({ order, addFn, subtractFn }) => {
+  const { language } = useLanguage()
   return (
-    <ul className="cart__list">
-      {order.map(product => (
-        <li key={product.id}>
-          <div>{product.displayName}</div>
-          <div>
-            ({product.count})<Button onClick={() => addFn(product)}>+</Button>
-            <Button onClick={() => subtractFn(product)}>-</Button>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <Fragment>
+      <ul className="cart__list">
+        {order.map(product => (
+          <li className="cart__item" key={product.id}>
+            <div>
+              <img
+                src={product.imageSrc}
+                alt={product.imageAlt}
+                className="cart__image"
+              />
+            </div>
+            <div>
+              <a
+                className="link cart__link"
+                href={createProductUrl(
+                  product.language,
+                  product.gender,
+                  product.type,
+                  product
+                )}
+              >
+                {product.displayName}
+              </a>
+              <p className="cart__subtext">
+                á {toCurrency(product.price, language)}
+              </p>
+            </div>
+            <div>
+              <Button onClick={() => addFn(product)}>+</Button>
+              {product.count}
+              <Button onClick={() => subtractFn(product)}>-</Button>
+            </div>
+            <div>
+              <p className="cart__price">
+                {toCurrency(product.price * product.count, language)}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p className="cart__total">
+        <span>{TEXTS[language].IN_TOTAL}</span>
+        <span>
+          {toCurrency(
+            order
+              .map(product => product.price * product.count)
+              .reduce((acc, curr) => acc + curr, 0),
+            language
+          )}
+        </span>
+      </p>
+    </Fragment>
   )
 }
 
@@ -26,6 +73,8 @@ Cart.propTypes = {
       displayName: PropTypes.string,
       count: PropTypes.number,
       id: PropTypes.string,
+      imageAlt: PropTypes.string,
+      imageSrc: PropTypes.string,
     })
   ),
   addFn: PropTypes.func,

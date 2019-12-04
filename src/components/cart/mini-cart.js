@@ -37,7 +37,7 @@ const MiniCart = () => {
         subtractFn={subtractFromCart}
       />
       <Link
-        url={TEXTS[language].PAGES.CHECKOUT_PERSONAL_DETAILS.URL}
+        url={TEXTS[language].PAGES.CHECKOUT_CART.URL}
         title={TEXTS[language].GO_TO_CHECKOUT}
       />
     </DropDown>

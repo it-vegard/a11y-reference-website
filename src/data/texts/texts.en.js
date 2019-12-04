@@ -15,6 +15,7 @@ const textsEN = {
   GO_TO_PAYMENT: "Go to payment",
   COMPLETE_PURCHASE: "Complete purchase",
   CONTINUE: "Continue",
+  IN_TOTAL: "Total:",
   LADIES_FASHION: "Ladies' fashion",
   GENTS_FASHION: "Gents' fashion",
   FOOTER_WEB_SHOP_LINKS_HEADER: "Customer Service",
@@ -78,6 +79,10 @@ const textsEN = {
     TERMS: {
       URL: "/no/terms",
       TITLE: "Terms and Conditions",
+    },
+    CHECKOUT_CART: {
+      URL: "/en/cart",
+      TITLE: "Shopping Cart",
     },
     CHECKOUT_PERSONAL_DETAILS: {
       URL: "/en/personal-details",

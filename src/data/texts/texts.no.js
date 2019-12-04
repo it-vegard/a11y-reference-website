@@ -15,6 +15,7 @@ const textsNO = {
   GO_TO_PAYMENT: "Gå til betaling",
   COMPLETE_PURCHASE: "Fullfør kjøp",
   CONTINUE: "Fortsett",
+  IN_TOTAL: "Totalt:",
   LADIES_FASHION: "Damemote",
   GENTS_FASHION: "Herremote",
   FOOTER_WEB_SHOP_LINKS_HEADER: "Kundeservice",
@@ -77,6 +78,10 @@ const textsNO = {
     TERMS: {
       URL: "/no/vilkår",
       TITLE: "Kjøpsvilkår",
+    },
+    CHECKOUT_CART: {
+      URL: "/no/handlekurv",
+      TITLE: "Handlekurv",
     },
     CHECKOUT_PERSONAL_DETAILS: {
       URL: "/no/personlige-opplysninger",
