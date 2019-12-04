@@ -23,6 +23,7 @@ export const ProductSizesPropType = PropTypes.arrayOf(
 )
 
 export const ProductPropType = PropTypes.shape({
+  campaignPrice: PropTypes.number,
   displayName: PropTypes.string,
   gender: PropTypes.string,
   id: PropTypes.string,

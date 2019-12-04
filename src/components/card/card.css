@@ -45,6 +45,12 @@
 .card__text {
   font-size: larger;
   margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.card__sub-text {
+  font-size: small;
+  font-weight: lighter;
 }
 
 .card__text:last-of-type {
@@ -77,6 +83,24 @@
 
 .card:focus-within .card__link:focus {
   border-bottom: 0;
+}
+
+.card__ribbon {
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  right: -3rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: var(--color-profile-main);
+  color: var(--color-white);
+  width: 9rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+
 }
 
 .card__image {

@@ -9,7 +9,7 @@ import "./card.css"
 import { Article } from "../semantic-region"
 import Heading from "../semantic-heading"
 
-const Card = ({ imgSrc, imgAlt = "", link, text, title }) => {
+const Card = ({ imgSrc, imgAlt = "", link, ribbon, subText, text, title }) => {
   const cardElement = useRef(null)
   const linkElement = useRef(null)
   useEffect(() => {
@@ -66,6 +66,7 @@ const Card = ({ imgSrc, imgAlt = "", link, text, title }) => {
         <Heading className="card__heading">
           {link ? (
             <Link to={link} className="card__link" ref={linkElement}>
+              {ribbon && <p className="card__ribbon">{ribbon}</p>}
               {title}
             </Link>
           ) : (
@@ -73,6 +74,7 @@ const Card = ({ imgSrc, imgAlt = "", link, text, title }) => {
           )}
         </Heading>
         {text && <p className="card__text">{text}</p>}
+        {subText && <p className="card__text card__sub-text">{subText}</p>}
       </div>
       {imgSrc && <img className="card__image" src={imgSrc} alt={imgAlt} />}
     </Article>
@@ -84,6 +86,8 @@ Card.propTypes = {
   LinkWrapper: PropTypes.string,
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,
+  ribbon: PropTypes.string,
+  subText: PropTypes.string,
   text: PropTypes.string,
   title: PropTypes.string.isRequired,
 }

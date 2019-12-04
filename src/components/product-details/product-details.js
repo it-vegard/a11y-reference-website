@@ -11,9 +11,13 @@ import BuyButton from "../buy-button"
 import { toCurrency } from "../../util/number-util"
 import { useLanguage } from "../language"
 import { capitalizeAllWords } from "../../util/text-util"
+import TEXTS from "../../data/texts"
 
 const ProductDetails = product => {
   const { language } = useLanguage()
+  const mainPrice = product.campaignPrice
+    ? product.campaignPrice
+    : product.price
   return (
     <Article className="product-details">
       <Heading headingLevel={1}>{product.displayName}</Heading>
@@ -25,8 +29,15 @@ const ProductDetails = product => {
           alt={product.imageAlt}
         />
         <p className="product-details__price">
-          {capitalizeAllWords(toCurrency(product.price, language))}
+          {capitalizeAllWords(toCurrency(mainPrice, language))}
         </p>
+        {product.campaignPrice && (
+          <p className="product-details__price product-details__before-price">
+            {TEXTS[language].RETAIL_PRICE(
+              capitalizeAllWords(toCurrency(product.price, language))
+            )}
+          </p>
+        )}
         <ProductSizePicker sizes={product.sizes} />
         <BuyButton product={product} />
       </Section>

@@ -34,6 +34,7 @@ export const query = graphql`
   query ProductListByLanguageQuery($langKey: String) {
     allProduct(filter: { language: { eq: $langKey } }) {
       nodes {
+        campaignPrice
         displayName
         id
         imageAlt

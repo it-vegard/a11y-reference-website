@@ -2,6 +2,7 @@ const textsNO = {
   // general
   LANG: "norsk",
   CURRENCY: "NOK",
+  RETAIL_PRICE: price => `Førpris: ${price}`,
   // entire site
   WEBSITE_NAME: "Klær for alle",
   WEBSITE_DESCRIPTION:
@@ -11,6 +12,8 @@ const textsNO = {
   PICK_SIZE: "Velg størrelse",
   CLOSE: "Lukk",
   ADD_TO_CART: "Legg i handlekurven",
+  CAMPAIGN_HEADING: "Kampanjer",
+  CAMPAIGN_RIBBON: "Tilbud!",
   CART: "Handlekurv",
   CART_WITH_ITEMS: numberOfItems => `Handlekurv (${numberOfItems})`,
   GO_TO_CHECKOUT: "Gå til kassen",

@@ -189,6 +189,7 @@ const addProductNodes = (
   products.forEach(({ products, language }) => {
     products.forEach(product => {
       const productNode = {
+        campaignPrice: product.campaignPrice,
         description: product.description,
         displayName: product.displayName,
         gender: product.gender,

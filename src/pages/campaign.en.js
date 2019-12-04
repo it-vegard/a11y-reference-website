@@ -1,25 +1,26 @@
 import React from "react"
-import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
+import { graphql } from "gatsby"
 
 import App from "../components/app"
-import ProductCategory from "../components/product-category"
+import TEXTS from "../data/texts"
+import { mapProducts } from "../util/products-util"
+import CampaignPage from "../page-templates/campaign-page"
 import {
   ImageQueryPropType,
   ProductQueryPropType,
 } from "../prop-types/product-query"
-import { mapProducts } from "../util/products-util"
 
-const ProductListByTypePage = ({ data, location, pageContext }) => {
+const Campaign = ({ data, location, pageContext }) => {
   const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
   return (
-    <App location={location} pageTitle={pageContext.pageTitle}>
-      <ProductCategory products={products} data={data} />
+    <App location={location} pageTitle={TEXTS[pageContext.langKey].HOME}>
+      <CampaignPage products={products} />
     </App>
   )
 }
 
-ProductListByTypePage.propTypes = {
+Campaign.propTypes = {
   data: PropTypes.shape({
     allProduct: ProductQueryPropType.allProduct,
     allFile: ImageQueryPropType.allFile,
@@ -31,18 +32,8 @@ ProductListByTypePage.propTypes = {
 }
 
 export const query = graphql`
-  query ProductListByTypeQuery(
-    $productType: String
-    $gender: String
-    $langKey: String
-  ) {
-    allProduct(
-      filter: {
-        language: { eq: $langKey }
-        gender: { eq: $gender }
-        type: { eq: $productType }
-      }
-    ) {
+  query EnglishCampaignProductQuery {
+    allProduct(filter: { campaignPrice: { gt: 0 }, language: { eq: "en" } }) {
       nodes {
         campaignPrice
         displayName
@@ -69,4 +60,4 @@ export const query = graphql`
   }
 `
 
-export default ProductListByTypePage
+export default Campaign

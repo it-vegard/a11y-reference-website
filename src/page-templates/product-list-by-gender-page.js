@@ -36,6 +36,7 @@ export const query = graphql`
       filter: { language: { eq: $langKey }, gender: { eq: $gender } }
     ) {
       nodes {
+        campaignPrice
         displayName
         id
         imageAlt

@@ -3,9 +3,20 @@
 }
 
 .product-details__price {
+  display: inline-block;
   font-size: 2rem;
   font-weight: bold;
   margin: 0 auto var(--margin-default);
+}
+
+.product-details__before-price {
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-inline-start: 1rem;
+
+  /* text-decoration: line-through; */
+  color: #666;
+  vertical-align: middle;
 }
 
 .product-details__image {

@@ -2,6 +2,7 @@ const textsEN = {
   // general
   LANG: "English",
   CURRENCY: "USD",
+  RETAIL_PRICE: price => `Previous price: ${price}`,
   // entire site
   WEBSITE_NAME: "Clothes4all",
   WEBSITE_DESCRIPTION:
@@ -11,6 +12,8 @@ const textsEN = {
   PICK_SIZE: "Pick size",
   CLOSE: "Close",
   ADD_TO_CART: "Add to cart",
+  CAMPAIGN_HEADING: "Campaigns",
+  CAMPAIGN_RIBBON: "On sale!",
   CART: "Cart",
   CART_WITH_ITEMS: numberOfItems => `Cart (${numberOfItems})`,
   GO_TO_CHECKOUT: "Gå til checkout",

@@ -46,6 +46,7 @@ export const query = graphql`
       }
     ) {
       nodes {
+        campaignPrice
         description
         displayName
         id

@@ -11,7 +11,7 @@ import { Section } from "../semantic-region"
 import TEXTS from "../../data/texts"
 import { useLanguage } from "../language"
 
-const ProductCategory = ({ products }) => {
+const ProductCategory = ({ heading, products }) => {
   const { language } = useLanguage()
   const genders = getAllGendersForProducts(products)
   const types = getAllTypesForProducts(products)
