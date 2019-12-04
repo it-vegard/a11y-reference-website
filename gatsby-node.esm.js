@@ -43,6 +43,18 @@ const createBreadcrumbs = (language, gender, type, product) => {
   return breadcrumbs
 }
 
+const getPageTitle = (language, gender, productType, product) => {
+  if (product) {
+    return capitalizeAllWords(product.displayName)
+  } else if (productType) {
+    return capitalizeAllWords(productType)
+  } else if (gender) {
+    return TEXTS[language].PRODUCT_FOR_GENDER_HEADING(gender, language)
+  } else {
+    return TEXTS[language].HOME
+  }
+}
+
 const createProductPage = (
   createPage,
   component,
@@ -57,6 +69,7 @@ const createProductPage = (
     context: {
       gender: gender ? gender : undefined,
       langKey: language,
+      pageTitle: getPageTitle(language, gender, productType, product),
       productType: productType ? productType : undefined,
       slug: product ? toSlug(product.displayName) : undefined,
       breadcrumbs: createBreadcrumbs(language, gender, productType, product),

@@ -10,10 +10,10 @@ import {
 } from "../prop-types/product-query"
 import { mapProducts } from "../util/products-util"
 
-const ProductPage = ({ data, location }) => {
+const ProductPage = ({ data, location, pageContext }) => {
   const product = mapProducts(data.allProduct.nodes, data.allFile.nodes)[0]
   return (
-    <App location={location} pageTitle={product.displayName}>
+    <App location={location} pageTitle={pageContext.pageTitle}>
       <ProductDetails {...product} />
     </App>
   )
@@ -27,6 +27,7 @@ ProductPage.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),
+  pageContext: PropTypes.string,
 }
 
 export const query = graphql`

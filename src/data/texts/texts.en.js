@@ -25,7 +25,7 @@ const textsEN = {
   // portal
   HOME: "Home",
   PRODUCT_FOR_GENDER_HEADING: gender => {
-    if (gender === "Women") {
+    if (gender && gender.toLowerCase() === "women") {
       return textsEN.LADIES_FASHION
     } else {
       return textsEN.GENTS_FASHION
