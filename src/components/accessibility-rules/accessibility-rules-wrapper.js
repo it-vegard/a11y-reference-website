@@ -7,8 +7,8 @@ import AccessibilityRulesContext from "./accessibility-rules-context"
 const ruleObjectName = "rules"
 
 const toggleAllRulesOnOrOff = () =>
-  location.search.split("?setErrors=")[1]
-    ? location.search.split("?setErrors=")[1].split("&")[0]
+  location.search.split("?enableRules=")[1]
+    ? location.search.split("?enableRules=")[1].split("&")[0]
     : false
 
 const setDefaultRules = (rules, defaultValue = true) =>
