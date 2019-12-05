@@ -36,3 +36,7 @@
 .cart__item .link {
   display: inline-block;
 }
+
+.cart__count-button {
+  color: currentColor;
+}

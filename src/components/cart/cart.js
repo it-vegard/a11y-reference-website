@@ -41,9 +41,19 @@ const Cart = ({ order, addFn, subtractFn }) => {
               </p>
             </div>
             <div>
-              <Button onClick={() => addFn(product)}>+</Button>
+              <Button
+                className="cart__count-button"
+                onClick={() => addFn(product)}
+              >
+                +
+              </Button>
               {product.count}
-              <Button onClick={() => subtractFn(product)}>-</Button>
+              <Button
+                className="cart__count-button"
+                onClick={() => subtractFn(product)}
+              >
+                -
+              </Button>
             </div>
             <div>
               <p className="cart__price">
