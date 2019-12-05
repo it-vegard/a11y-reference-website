@@ -5,11 +5,13 @@
   --color-dark-cerulean: #005b94;
   --color-black: #333;
   --color-white: #fff;
+  --color-green: #005000;
 
   /* Default color definitions */
   --color-profile-main: var(--color-dark-cerulean);
   --color: var(--color-black);
   --background-color: var(--color-white);
+  --color-button-background: var(--color-green);
   --border-width: 0.1rem;
   --border-width--thick: calc(var(--border-width) * 2);
   --margin-default: 1rem;
@@ -17,8 +19,15 @@
 }
 
 body {
+  color: var(--color-black);
   font-family: Arial, sans-serif;
   font-size: 110%;
+}
+
+.low-contrast {
+  --color-black: #999;
+  --color-profile-main: #0AA1FF;
+  --color-button-background: #00B800;
 }
 
 #main {

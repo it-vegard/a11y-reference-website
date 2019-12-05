@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
+import React, { useContext, useEffect } from "react"
+import * as PropTypes from "prop-types"
 
+import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 import { Main } from "../semantic-region"
 import Footer from "../footer"
 import Header from "../header"
@@ -19,7 +20,15 @@ import "./base.css"
 
 const Layout = ({ children }) => {
   const mainTagId = "main"
-
+  const { rules } = useContext(AccessibilityRulesContext)
+  useEffect(() => {
+    const bodyElement = document.getElementsByTagName("body")[0]
+    if (!rules["color-contrast"]) {
+      bodyElement.classList.add("low-contrast")
+    } else if (bodyElement.classList.contains("low-contrast")) {
+      bodyElement.classList.remove("low-contrast")
+    }
+  }, [JSON.stringify(rules["color-contrast"])])
   return (
     <div className="layout">
       <SkipLink mainTagId={mainTagId} />
