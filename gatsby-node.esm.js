@@ -90,8 +90,8 @@ exports.createPages = ({ graphql, actions }) => {
   )
   const ProductPage = path.resolve("./src/page-templates/product-page.js")
 
-  createRedirect({ fromPath: "/v1", toPath: "/?enableRules=true" })
-  createRedirect({ fromPath: "/v2", toPath: "/?enableRules=false" })
+  createRedirect({ fromPath: "/v1", toPath: "/en/campaign?enableRules=true" })
+  createRedirect({ fromPath: "/v2", toPath: "/en/campaign?enableRules=false" })
 
   return graphql(
     `
