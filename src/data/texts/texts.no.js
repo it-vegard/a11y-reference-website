@@ -14,6 +14,8 @@ const textsNO = {
   ADD_TO_CART: "Legg i handlekurven",
   CAMPAIGN_HEADING: "Kampanjer",
   CAMPAIGN_RIBBON: "Tilbud!",
+  SALES_HEADING: "Førjulssalg!",
+  SALES_TEXT: "10-30% rabatt",
   CART: "Handlekurv",
   CART_WITH_ITEMS: numberOfItems => `Handlekurv (${numberOfItems})`,
   GO_TO_CHECKOUT: "Gå til kassen",
@@ -56,6 +58,10 @@ const textsNO = {
   RECEIPT_DISCLAIMER:
     "Det ble ikke sendt noen data fra nettleseren din. Dataene ble lagret kun midlertidig i nettleseren og er nå slettet. #PrivacyByDesign",
   PAGES: {
+    CAMPAIGN: {
+      URL: "/no/kampanje",
+      TITLE: "Tilbud!",
+    },
     ABOUT: {
       URL: "/no/om-oss",
       TITLE: "Om denne nettsiden",

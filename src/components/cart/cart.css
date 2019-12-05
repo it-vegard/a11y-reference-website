@@ -32,3 +32,7 @@
   grid-template-columns: auto 5rem;
   padding-top: 0.5rem;
 }
+
+.cart__item .link {
+  display: inline-block;
+}

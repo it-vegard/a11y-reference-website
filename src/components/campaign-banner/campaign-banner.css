@@ -1,0 +1,35 @@
+.campaign-banner {
+  /* background: linear-gradient(green, red); */
+  background-color: #00C000;
+  padding: 1rem 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.campaign-banner .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.campaign-banner__heading {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.campaign-banner__text {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.campaign-banner .link {
+  color: #333;
+  border-color: #333;
+}
+
+.campaign-banner .link:focus {
+  background-color: var(--color-white);
+  border-color: #333;
+}

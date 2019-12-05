@@ -14,6 +14,8 @@ const textsEN = {
   ADD_TO_CART: "Add to cart",
   CAMPAIGN_HEADING: "Campaigns",
   CAMPAIGN_RIBBON: "On sale!",
+  SALES_HEADING: "Christmas Sale!",
+  SALES_TEXT: "10-30% off",
   CART: "Cart",
   CART_WITH_ITEMS: numberOfItems => `Cart (${numberOfItems})`,
   GO_TO_CHECKOUT: "Gå til checkout",
@@ -57,6 +59,10 @@ const textsEN = {
   RECEIPT_DISCLAIMER:
     "No data has been sent from your computer. Data was preliminary stored in your browser while you were moving around the site but is now deleted. #PrivacyByDesign",
   PAGES: {
+    CAMPAIGN: {
+      URL: "/en/campaign",
+      TITLE: "Sale!",
+    },
     ABOUT: {
       URL: "/en/about",
       TITLE: "About",
