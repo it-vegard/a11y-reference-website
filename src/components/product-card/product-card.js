@@ -17,7 +17,7 @@ const ProductCard = ({
 }) => {
   const mainPrice = campaignPrice ? campaignPrice : price
   const subText = campaignPrice
-    ? `${TEXTS[language].RETAIL_PRICE(price)}`
+    ? `${TEXTS[language].RETAIL_PRICE(toCurrency(price, language))}`
     : undefined
   return (
     <Card
