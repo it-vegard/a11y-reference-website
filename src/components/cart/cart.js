@@ -8,6 +8,7 @@ import Button from "../button"
 import { useLanguage } from "../language"
 
 import "./cart.css"
+import Image from "../image"
 
 const Cart = ({ order, addFn, subtractFn }) => {
   const { language } = useLanguage()
@@ -17,7 +18,7 @@ const Cart = ({ order, addFn, subtractFn }) => {
         {order.map(product => (
           <li className="cart__item" key={product.id}>
             <div>
-              <img
+              <Image
                 src={product.imageSrc}
                 alt={product.imageAlt}
                 className="cart__image"

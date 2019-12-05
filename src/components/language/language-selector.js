@@ -7,11 +7,12 @@ import DropDown from "../dropdown"
 import { useLanguage } from "./language-support"
 
 import "./language-selector.css"
+import Image from "../image"
 
 const Flag = ({ languageCode = "en" }) => {
   if (languageCode === "en") {
     return (
-      <img
+      <Image
         alt="English"
         className="language-selector__flag"
         src={GreatBritishFlag}
@@ -19,7 +20,7 @@ const Flag = ({ languageCode = "en" }) => {
     )
   } else if (languageCode === "no") {
     return (
-      <img
+      <Image
         alt="Norwegian"
         className="language-selector__flag"
         src={NorwegianFlag}

@@ -13,6 +13,7 @@ import { toCurrency } from "../../util/number-util"
 import { useLanguage } from "../language"
 import { capitalizeAllWords } from "../../util/text-util"
 import TEXTS from "../../data/texts"
+import Image from "../image"
 
 const ProductDetails = product => {
   const { language } = useLanguage()
@@ -24,7 +25,7 @@ const ProductDetails = product => {
       <Heading headingLevel={1}>{product.displayName}</Heading>
       <Section>
         <ProductDescription texts={product.description} />
-        <img
+        <Image
           className="product-details__image"
           src={product.imageSrc}
           alt={product.imageAlt}

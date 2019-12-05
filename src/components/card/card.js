@@ -8,6 +8,7 @@ import { isLeftMouseButton } from "../../util/mouse-events-util"
 import "./card.css"
 import { Article } from "../semantic-region"
 import Heading from "../semantic-heading"
+import Image from "../image"
 
 const Card = ({ imgSrc, imgAlt = "", link, ribbon, subText, text, title }) => {
   const cardElement = useRef(null)
@@ -76,7 +77,7 @@ const Card = ({ imgSrc, imgAlt = "", link, ribbon, subText, text, title }) => {
         {text && <p className="card__text">{text}</p>}
         {subText && <p className="card__text card__sub-text">{subText}</p>}
       </div>
-      {imgSrc && <img className="card__image" src={imgSrc} alt={imgAlt} />}
+      {imgSrc && <Image className="card__image" src={imgSrc} alt={imgAlt} />}
     </Article>
   )
 }
