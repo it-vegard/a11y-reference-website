@@ -65,15 +65,15 @@ const AccessibilityRulesWrapper = ({ children }) => {
   }
 
   const setAllRules = value => {
-    setRules(
-      Object.keys(rules).reduce(
-        (nextRules, ruleId) => ({
-          ...nextRules,
-          [ruleId]: value,
-        }),
-        {}
-      )
+    const newRules = Object.keys(rules).reduce(
+      (nextRules, ruleId) => ({
+        ...nextRules,
+        [ruleId]: value,
+      }),
+      {}
     )
+    setRules(newRules)
+    window.sessionStorage.setItem(ruleObjectName, JSON.stringify(newRules))
   }
 
   return (

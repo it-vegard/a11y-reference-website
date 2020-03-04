@@ -1,15 +1,16 @@
 import React, { Fragment, useContext } from "react"
 import RuleSection from "../rule/rule-section"
 import { graphql, useStaticQuery } from "gatsby"
-import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
+import AccessibilityRules from "../accessibility-rules"
 import ToggleSwitch from "../toggle-switch"
 
 const getRules = data => data.allInternalRule.nodes
 const getSuccessCriteria = data => data.allWcagSuccessCriteria.nodes
 
 const GlobalRulesToggle = () => {
-  const { rules, setAllRules } = useContext(AccessibilityRulesContext)
-  const initialValue = rules[Object.keys(rules)[0]]
+  const { rules, setAllRules } = useContext(AccessibilityRules.context)
+  const firstRule = Object.keys(rules)[0]
+  const initialValue = rules[firstRule]
   return (
     <div className="rule__section">
       <ToggleSwitch
