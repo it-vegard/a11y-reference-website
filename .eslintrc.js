@@ -12,6 +12,7 @@ module.exports = {
     "prettier",
     "plugin:jest/recommended",
     "plugin:jest/style",
+    "plugin:cypress/recommended",
   ],
   globals: {
     Atomics: "readonly",

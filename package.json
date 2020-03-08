@@ -29,9 +29,11 @@
   "devDependencies": {
     "babel-jest": "^25.1.0",
     "babel-preset-gatsby": "^0.2.31",
+    "cypress": "^4.1.0",
     "eslint": "^6.4.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-jest": "^23.8.2",
     "husky": "^3.0.5",
     "identity-obj-proxy": "^3.0.0",
@@ -39,6 +41,7 @@
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.13.0",
+    "start-server-and-test": "^1.10.8",
     "stylelint": "^11.0.0",
     "stylelint-config-prettier": "^5.2.0"
   },
@@ -52,7 +55,11 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "jest"
+    "test": "jest",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
   },
   "repository": {
     "type": "git",
