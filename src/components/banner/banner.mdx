@@ -1,0 +1,27 @@
+---
+name: Banner
+route: /docs/components/banner
+menu: Components
+---
+
+# Banner
+
+A component that will stretch to use the full viewport width
+
+import { Playground, Props } from "docz"
+import Banner from "./banner.jsx"
+import Container from "../container/container.jsx"
+
+## Props
+
+<Props of={Banner} />
+
+## Basic usage
+
+<Playground>
+  <Banner className="campaign-banner">
+    <Container>
+      <p className="campaign-banner__text">This is a banner</p>
+    </Container>
+  </Banner>
+</Playground>

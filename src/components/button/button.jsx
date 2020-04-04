@@ -4,7 +4,7 @@ import classNames from "classnames"
 
 import "./button.css"
 
-const Button = ({ children, className, setRef, type = "button", ...rest }) => (
+const Button = ({ children, className, setRef, type, ...rest }) => (
   <button
     className={classNames("button", {
       [className]: className,
@@ -19,9 +19,19 @@ const Button = ({ children, className, setRef, type = "button", ...rest }) => (
 
 Button.propTypes = {
   children: PropTypes.node,
+  /**
+   * Additional classes for adding custom styling
+   */
   className: PropTypes.string,
   setRef: PropTypes.object,
-  type: PropTypes.string,
+  /**
+   * HTML button type
+   */
+  type: PropTypes.oneOf(["button", "submit"]),
+}
+
+Button.defaultProps = {
+  type: "button",
 }
 
 export default Button
