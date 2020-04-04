@@ -70,3 +70,6 @@ yarn-error.log
 
 # Cypress
 cypress/videos
+
+# Docz
+.docz/

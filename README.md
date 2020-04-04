@@ -1,3 +1,8 @@
+---
+name: About the project
+route: /about
+---
+
 <h1 align="center">Accessibility Reference Website</h1>
 <p>An example website, build for testing accessibility issues.</p>
 
