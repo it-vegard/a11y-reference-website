@@ -255,7 +255,8 @@ const addInternalRuleNodes = (
   rules.forEach(rule => {
     const ruleNode = {
       ...rule,
-      id: createNodeId(`Rule-${rule.axeId}`),
+      id: createNodeId(`Rule-${rule.wcagId}-${toSlug(rule.metadata.help)}`),
+      key: `${rule.wcagId}-${toSlug(rule.metadata.help)}`,
       internal: {
         contentDigest: createContentDigest(rule),
         type: "internalRule",

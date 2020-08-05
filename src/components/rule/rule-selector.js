@@ -5,22 +5,22 @@ import * as PropTypes from "prop-types"
 
 const RuleSelector = ({ rule }) => {
   const { rules, setRule } = useContext(AccessibilityRules.context)
-  const currentValue = rules[rule.axeId] || false
+  const currentValue = rules[rule.key] || false
   return (
     <ToggleSwitch
       checked={currentValue}
       helpText={rule.metadata.description}
-      id={rule.axeId}
-      key={rule.axeId}
+      id={rule.key}
+      key={rule.key}
       label={rule.metadata.help}
-      onClick={() => setRule(rule.axeId, !currentValue)}
+      onClick={() => setRule(rule.key, !currentValue)}
     />
   )
 }
 
 RuleSelector.propTypes = {
   rule: PropTypes.shape({
-    axeId: PropTypes.string,
+    key: PropTypes.string,
     metadata: PropTypes.shape({
       description: PropTypes.string,
       help: PropTypes.string,

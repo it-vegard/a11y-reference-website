@@ -3,7 +3,7 @@ export const toSlug = text =>
     .toString()
     .toLowerCase()
     .replace(/\s/g, "-")
-    .replace(/[^\w|-]/, "")
+    .replace(/[^\w|-]/g, "")
 
 export const createProductUrl = (language, gender, type, product) => {
   let url = `/${language}`

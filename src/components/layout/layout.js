@@ -8,6 +8,7 @@
 import React, { useContext, useEffect } from "react"
 import * as PropTypes from "prop-types"
 
+import CONSTANTS from "../../data/rules/constants"
 import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 import { Main } from "../semantic-region"
 import Footer from "../footer"
@@ -23,12 +24,12 @@ const Layout = ({ children }) => {
   const { rules } = useContext(AccessibilityRulesContext)
   useEffect(() => {
     const bodyElement = document.getElementsByTagName("body")[0]
-    if (!rules["color-contrast"]) {
+    if (!rules[CONSTANTS.COLOR_CONTRAST]) {
       bodyElement.classList.add("low-contrast")
     } else if (bodyElement.classList.contains("low-contrast")) {
       bodyElement.classList.remove("low-contrast")
     }
-  }, [JSON.stringify(rules["color-contrast"])])
+  }, [JSON.stringify(rules[CONSTANTS.COLOR_CONTRAST])])
   return (
     <div className="layout">
       <SkipLink mainTagId={mainTagId} />

@@ -1,5 +1,7 @@
 import React, { useContext } from "react"
 import * as PropTypes from "prop-types"
+
+import CONSTANTS from "../../data/rules/constants"
 import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 
 import "./radio-button.css"
@@ -23,7 +25,7 @@ const RadioButton = ({ checked, id, label, name, onChange, value }) => {
       />
       <label
         className="radio-button__label"
-        htmlFor={rules["label"] ? id : undefined}
+        htmlFor={rules[CONSTANTS.LABEL] ? id : undefined}
       >
         {label}
       </label>

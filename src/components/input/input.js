@@ -1,6 +1,8 @@
 import React, { useContext } from "react"
 import * as PropTypes from "prop-types"
 import classNames from "classnames"
+
+import CONSTANTS from "../../data/rules/constants"
 import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 
 import "./input.css"
@@ -9,7 +11,10 @@ const Input = ({ className, label, name, type }) => {
   const { rules } = useContext(AccessibilityRulesContext)
   return (
     <div className="input-container">
-      <label className="label" htmlFor={rules["label"] ? name : undefined}>
+      <label
+        className="label"
+        htmlFor={rules[CONSTANTS.LABEL] ? name : undefined}
+      >
         {label}
       </label>
       <input

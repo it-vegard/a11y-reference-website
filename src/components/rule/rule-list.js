@@ -11,7 +11,7 @@ const RuleList = ({ rules }) => {
       <Section>
         <Heading>Rules</Heading>
         {rules.map(rule => (
-          <RuleSelector key={rule.axeId} rule={rule} />
+          <RuleSelector key={rule.key} rule={rule} />
         ))}
       </Section>
     )

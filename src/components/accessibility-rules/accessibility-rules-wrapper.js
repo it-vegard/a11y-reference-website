@@ -15,7 +15,7 @@ const setDefaultRules = (rules, defaultValue = true) =>
   rules.reduce(
     (acc, curr) => ({
       ...acc,
-      [curr.axeId]: defaultValue,
+      [curr.key]: defaultValue,
     }),
     {}
   )
@@ -42,7 +42,7 @@ const AccessibilityRulesWrapper = ({ children }) => {
     {
       allInternalRule {
         nodes {
-          axeId
+          key
         }
       }
     }
@@ -55,10 +55,10 @@ const AccessibilityRulesWrapper = ({ children }) => {
     setRules(initialRules)
   }, [])
 
-  const setRule = (axeId, value) => {
+  const setRule = (key, value) => {
     const newRules = {
       ...rules,
-      [axeId]: value,
+      [key]: value,
     }
     setRules(newRules)
     window.sessionStorage.setItem(ruleObjectName, JSON.stringify(newRules))

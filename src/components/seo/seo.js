@@ -2,6 +2,8 @@ import React, { useContext } from "react"
 import * as PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+
+import CONSTANTS from "../../data/rules/constants"
 import AccessibilityRules from "../accessibility-rules"
 import TEXTS from "../../data/texts"
 import { useLanguage } from "../language"
@@ -41,9 +43,9 @@ function SEO({ meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: !rules["html-has-lang"]
+        lang: !rules[CONSTANTS.HTML_HAS_LANG]
           ? undefined
-          : !rules["html-lang-valid"]
+          : !rules[CONSTANTS.HTML_LANG_VALID]
           ? "invalid-lang"
           : language,
       }}
