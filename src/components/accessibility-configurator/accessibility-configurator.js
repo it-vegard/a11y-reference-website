@@ -39,7 +39,6 @@ const AccessibilityConfigurator = () => {
       allInternalRule {
         nodes {
           key
-          axeId
           wcagId
           description
           title
