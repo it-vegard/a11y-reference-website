@@ -9,10 +9,10 @@ const RuleSelector = ({ rule }) => {
   return (
     <ToggleSwitch
       checked={currentValue}
-      helpText={rule.metadata.description}
+      helpText={rule.description}
       id={rule.key}
       key={rule.key}
-      label={rule.metadata.help}
+      label={rule.title}
       onClick={() => setRule(rule.key, !currentValue)}
     />
   )
@@ -21,10 +21,8 @@ const RuleSelector = ({ rule }) => {
 RuleSelector.propTypes = {
   rule: PropTypes.shape({
     key: PropTypes.string,
-    metadata: PropTypes.shape({
-      description: PropTypes.string,
-      help: PropTypes.string,
-    }),
+    description: PropTypes.string,
+    title: PropTypes.string,
   }),
 }
 

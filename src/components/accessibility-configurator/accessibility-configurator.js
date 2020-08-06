@@ -41,10 +41,8 @@ const AccessibilityConfigurator = () => {
           key
           axeId
           wcagId
-          metadata {
-            description
-            help
-          }
+          description
+          title
         }
       }
     }

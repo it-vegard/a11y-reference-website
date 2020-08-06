@@ -1,7 +1,10 @@
 import colorContrastRule from "axe-core/lib/rules/color-contrast"
 
+const { description, help } = colorContrastRule.metadata
+
 const colorContrast = {
-  ...colorContrastRule,
+  title: help,
+  description,
   axeId: colorContrastRule.id,
   wcagId: "1.4.3",
 }
