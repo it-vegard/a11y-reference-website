@@ -3,6 +3,7 @@ import colorContrast from "./color-contrast"
 import htmlHasLang from "./html-has-lang"
 import htmlLangValid from "./html-lang-valid"
 import imageAlt from "./image-alt"
+import linkHasRoleLink from "./link-has-role-link"
 import label from "./label"
 
 const rules = [
@@ -10,6 +11,7 @@ const rules = [
   colorContrast,
   htmlHasLang,
   htmlLangValid,
+  linkHasRoleLink,
   imageAlt,
   label,
 ]
