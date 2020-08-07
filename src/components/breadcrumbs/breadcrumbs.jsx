@@ -1,7 +1,9 @@
 import React, { useContext } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
+import CONSTANTS from "../../data/rules/constants"
 import LocationContext from "../location-context"
+import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 
 import "./breadcrumbs.css"
 
@@ -13,6 +15,7 @@ import "./breadcrumbs.css"
 
 const Breadcrumbs = () => {
   const { location } = useContext(LocationContext)
+  const { rules } = useContext(AccessibilityRulesContext)
 
   if (!location) {
     return null
@@ -41,9 +44,18 @@ const Breadcrumbs = () => {
   if (!currentSitePage || !currentSitePage.context.breadcrumbs) {
     return null
   }
-
+  const NavElement = rules[CONSTANTS.GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT]
+    ? "nav"
+    : "div"
   return (
-    <nav className="breadcrumbs" aria-label="Breadcrumbs">
+    <NavElement
+      className="breadcrumbs"
+      aria-label={
+        rules[CONSTANTS.GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT]
+          ? "Breadcrumbs"
+          : undefined
+      }
+    >
       <ol className="breadcrumbs__list">
         {currentSitePage.context.breadcrumbs.map(breadcrumb => (
           <li className="breadcrumbs__list__item" key={breadcrumb.path}>
@@ -61,7 +73,7 @@ const Breadcrumbs = () => {
           </li>
         ))}
       </ol>
-    </nav>
+    </NavElement>
   )
 }
 

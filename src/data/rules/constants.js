@@ -1,5 +1,7 @@
 const CONSTANTS = {
   IMAGE_ALT: "1.1.1-images-must-have-alternate-text",
+  GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT:
+    "1.3.1-group-related-links-using-the-nav-element",
   HEADER_HAS_ROLE_HEADER: "1.3.1-header-has-role-header",
   LINK_HAS_ROLE_LINK: "1.3.1-link-has-role-link",
   COLOR_CONTRAST: "1.4.3-elements-must-have-sufficient-color-contrast",
