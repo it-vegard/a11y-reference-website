@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
+import { withoutTrailingSlash } from "../../util/url-util"
 import CONSTANTS from "../../data/rules/constants"
 import LocationContext from "../location-context"
 import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
@@ -38,7 +39,9 @@ const Breadcrumbs = () => {
   `)
 
   const currentSitePage = data.allSitePage.nodes.find(
-    page => page.path === location.pathname
+    page =>
+      withoutTrailingSlash(page.path) ===
+      withoutTrailingSlash(location.pathname)
   )
 
   if (!currentSitePage || !currentSitePage.context.breadcrumbs) {

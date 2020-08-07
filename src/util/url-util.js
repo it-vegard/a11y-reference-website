@@ -18,3 +18,5 @@ export const createProductUrl = (language, gender, type, product) => {
   }
   return url
 }
+
+export const withoutTrailingSlash = url => url.replace(/\/$/, "")
