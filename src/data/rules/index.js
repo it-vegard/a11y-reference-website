@@ -4,6 +4,7 @@ import htmlHasLang from "./html-has-lang"
 import htmlLangValid from "./html-lang-valid"
 import imageAlt from "./image-alt"
 import linkHasRoleLink from "./link-has-role-link"
+import headerHasRoleHeader from "./header-has-role-header"
 import label from "./label"
 
 const rules = [
@@ -11,6 +12,7 @@ const rules = [
   colorContrast,
   htmlHasLang,
   htmlLangValid,
+  headerHasRoleHeader,
   linkHasRoleLink,
   imageAlt,
   label,

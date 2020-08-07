@@ -1,5 +1,6 @@
 const CONSTANTS = {
   IMAGE_ALT: "1.1.1-images-must-have-alternate-text",
+  HEADER_HAS_ROLE_HEADER: "1.3.1-header-has-role-header",
   LINK_HAS_ROLE_LINK: "1.3.1-link-has-role-link",
   COLOR_CONTRAST: "1.4.3-elements-must-have-sufficient-color-contrast",
   BYPASS: "2.4.1-page-must-have-means-to-bypass-repeated-blocks",

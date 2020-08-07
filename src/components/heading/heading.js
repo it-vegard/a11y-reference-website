@@ -1,6 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import classNames from "classnames"
 import * as PropTypes from "prop-types"
+
+import CONSTANTS from "../../data/rules/constants"
+import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 
 import "./heading.css"
 
@@ -20,7 +23,10 @@ const Heading = ({
   headingStyle,
   ...rest
 }) => {
-  const HeadingWithLevel = `h${headingLevel}`
+  const { rules } = useContext(AccessibilityRulesContext)
+  const HeadingWithLevel = rules[CONSTANTS.HEADER_HAS_ROLE_HEADER]
+    ? `h${headingLevel}`
+    : "span"
   return (
     <HeadingWithLevel
       className={classNames("heading", {
