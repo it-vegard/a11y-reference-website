@@ -4,6 +4,8 @@ const CONSTANTS = {
     "1.3.1-group-related-links-using-the-nav-element",
   HEADER_HAS_ROLE_HEADER: "1.3.1-header-has-role-header",
   LINK_HAS_ROLE_LINK: "1.3.1-link-has-role-link",
+  USE_ARIA_LANDMARKS_TO_IDENTIFY_REGIONS_OF_A_PAGE:
+    "1.3.1-use-aria-landmarks-to-identify-regions-of-a-page",
   COLOR_CONTRAST: "1.4.3-elements-must-have-sufficient-color-contrast",
   BYPASS: "2.4.1-page-must-have-means-to-bypass-repeated-blocks",
   HTML_HAS_LANG: "3.1.1-html-element-must-have-a-lang-attribute",

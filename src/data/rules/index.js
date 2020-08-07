@@ -7,6 +7,7 @@ import linkHasRoleLink from "./link-has-role-link"
 import groupRelatedLinksUsingTheNavElement from "./group-related-links-using-the-nav-element"
 import headerHasRoleHeader from "./header-has-role-header"
 import label from "./label"
+import useARIALandmarksToIdentifyRegionsOfAPage from "./use-semantic-regions"
 
 const rules = [
   bypass,
@@ -18,6 +19,7 @@ const rules = [
   linkHasRoleLink,
   imageAlt,
   label,
+  useARIALandmarksToIdentifyRegionsOfAPage,
 ]
 
 export default rules
