@@ -22,7 +22,7 @@ const Breadcrumbs = ({ links }) => (
 )
 
 Breadcrumbs.propTypes = {
-  links: PropTypes.arrayOf(BreadcrumbLink.propTypes),
+  links: PropTypes.arrayOf(PropTypes.shape(BreadcrumbLink.propTypes)),
 }
 
 export default Breadcrumbs

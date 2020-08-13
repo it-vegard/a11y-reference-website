@@ -14,7 +14,7 @@ const InaccessibleBreadcrumbs = ({ links }) => (
 )
 
 InaccessibleBreadcrumbs.propTypes = {
-  links: PropTypes.arrayOf(BreadcrumbLink.propTypes),
+  links: PropTypes.arrayOf(PropTypes.shape(BreadcrumbLink.propTypes)),
 }
 
 export default InaccessibleBreadcrumbs
