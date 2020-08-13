@@ -10,7 +10,7 @@ const RadioButtons = ({ label, radioButtons = [] }) => (
     <legend className="radio-buttons__legend">{label}</legend>
     <div className="radio-buttons__container">
       {radioButtons.map(radioButton => (
-        <RadioButton key={radioButton.id} {...radioButton} />
+        <RadioButton key={radioButton.value} {...radioButton} />
       ))}
     </div>
   </fieldset>
