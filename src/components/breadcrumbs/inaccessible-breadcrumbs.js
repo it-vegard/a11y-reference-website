@@ -3,26 +3,18 @@ import * as PropTypes from "prop-types"
 
 import BreadcrumbLink from "./breadcrumbs-link"
 
-import "./breadcrumbs.css"
-
-/**
- * Breadcrumbs component
- *
- * Modelled after Scott O'Hara's a11y_breadcrumbs (https://scottaohara.github.io/a11y_breadcrumbs/)
- */
-
-const Breadcrumbs = ({ links }) => (
-  <nav className="breadcrumbs" aria-label="Breadcrumbs">
+const InaccessibleBreadcrumbs = ({ links }) => (
+  <div className="breadcrumbs">
     <ol className="breadcrumbs__list">
       {links.map(link => (
         <BreadcrumbLink {...link} key={link.url} />
       ))}
     </ol>
-  </nav>
+  </div>
 )
 
-Breadcrumbs.propTypes = {
+InaccessibleBreadcrumbs.propTypes = {
   links: PropTypes.arrayOf(PropTypes.shape(BreadcrumbLink.propTypes)),
 }
 
-export default Breadcrumbs
+export default InaccessibleBreadcrumbs

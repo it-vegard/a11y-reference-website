@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types"
 
 import Container from "../container"
 import DropDown from "../dropdown"
-import NavigationList from "../navigation-list"
+import Navigation from "../navigation"
 
 import "./menu.css"
 
@@ -20,7 +20,7 @@ const Menu = ({ links }) => {
           key={menu.title}
         >
           <Container>
-            <NavigationList links={menu.links} isHorizontal={true} />
+            <Navigation links={menu.links} isHorizontal={true} />
           </Container>
         </DropDown>
       ))}

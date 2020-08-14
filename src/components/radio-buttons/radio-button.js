@@ -1,8 +1,5 @@
-import React, { useContext } from "react"
+import React from "react"
 import * as PropTypes from "prop-types"
-
-import CONSTANTS from "../../data/rules/constants"
-import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 
 import "./radio-button.css"
 
@@ -11,7 +8,6 @@ import "./radio-button.css"
  */
 
 const RadioButton = ({ checked, id, label, name, onChange, value }) => {
-  const { rules } = useContext(AccessibilityRulesContext)
   return (
     <div className="radio-button__container">
       <input
@@ -23,10 +19,7 @@ const RadioButton = ({ checked, id, label, name, onChange, value }) => {
         type="radio"
         value={value}
       />
-      <label
-        className="radio-button__label"
-        htmlFor={rules[CONSTANTS.LABEL] ? id : undefined}
-      >
+      <label className="radio-button__label" htmlFor={id}>
         {label}
       </label>
     </div>
@@ -35,11 +28,11 @@ const RadioButton = ({ checked, id, label, name, onChange, value }) => {
 
 RadioButton.propTypes = {
   checked: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
 }
 
 export default RadioButton
