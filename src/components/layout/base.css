@@ -35,6 +35,14 @@ body {
   outline: none;
 }
 
+.stack--regular {
+  margin-bottom: 1rem;
+}
+
+.stack--large {
+  margin-bottom: 2rem;
+}
+
 .layout {
   display: grid;
   grid-template-rows: auto 1fr auto;

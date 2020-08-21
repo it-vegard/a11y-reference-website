@@ -7,7 +7,7 @@ import InaccessibleLink from "./inaccessible-link"
 
 const Link = props => {
   const { rules } = useContext(AccessibilityRulesContext)
-  if (!rules[CONSTANTS.LINK_HAS_ROLE_LINK]) {
+  if (rules[CONSTANTS.LINK_HAS_ROLE_LINK] === false) {
     return <InaccessibleLink {...props} />
   } else {
     return <AccessibleLink {...props} />

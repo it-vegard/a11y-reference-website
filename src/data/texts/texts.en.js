@@ -108,6 +108,9 @@ const textsEN = {
       TITLE: "Receipt",
     },
   },
+  PORTAL: {
+    FOOTER_HEADER: "Resources",
+  },
 }
 
 export default textsEN

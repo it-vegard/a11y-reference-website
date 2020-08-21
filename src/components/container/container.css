@@ -1,8 +1,29 @@
 .container {
-  --container-max-width: 75rem;
-
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: var(--container-max-width);
   padding: 0 1rem;
+}
+
+@media screen and (min-width: 36em) {
+  .container {
+    max-width: 36rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .container {
+    max-width: 48rem;
+  }
+}
+
+@media screen and (min-width: 62em) {
+  .container {
+    max-width: 62rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .container {
+    max-width: 75rem;
+  }
 }

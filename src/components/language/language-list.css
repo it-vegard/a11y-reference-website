@@ -1,0 +1,17 @@
+.language-list {
+  padding: 0;
+  margin: 0 0 2rem;
+  list-style: none;
+}
+
+.language-list__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.language-list__item > * {
+  display: inline-block;
+  margin-right: 1rem;
+}

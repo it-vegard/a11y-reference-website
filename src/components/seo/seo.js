@@ -43,11 +43,12 @@ function SEO({ meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: !rules[CONSTANTS.HTML_HAS_LANG]
-          ? undefined
-          : !rules[CONSTANTS.HTML_LANG_VALID]
-          ? "invalid-lang"
-          : language,
+        lang:
+          rules[CONSTANTS.HTML_HAS_LANG] === false
+            ? undefined
+            : rules[CONSTANTS.HTML_LANG_VALID] === false
+            ? "invalid-lang"
+            : language,
       }}
       title={title}
       titleTemplate={`%s | ${siteTitle}`}
