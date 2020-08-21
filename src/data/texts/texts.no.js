@@ -107,6 +107,9 @@ const textsNO = {
       TITLE: "Kvittering",
     },
   },
+  PORTAL: {
+    FOOTER_HEADER: "Ressurser",
+  },
 }
 
 export default textsNO

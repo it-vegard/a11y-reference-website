@@ -1,69 +1,66 @@
 import React from "react"
-import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
+import NorwegianFlag from "svg-country-flags/svg/no.svg"
+import GreatBritishFlag from "svg-country-flags/svg/us.svg"
 
-import App from "../components/app"
-import {
-  ImageQueryPropType,
-  ProductQueryPropType,
-} from "../prop-types/product-query"
-import { mapProducts } from "../util/products-util"
-import ProductCategory from "../components/product-category"
-import TEXTS from "../data/texts"
-import { useLanguage } from "../components/language"
+import Heading from "../components/heading/heading"
+import PortalPage from "../portal/portal-page"
+import Link from "../components/link/link"
+import Card from "../components/card"
+import Grid from "../components/grid"
+import LanguageList from "../components/language/language-list"
 
-const IndexPage = ({ data, location }) => {
-  const { language } = useLanguage()
-  const products = mapProducts(data.allProduct.nodes, data.allFile.nodes)
-  return (
-    <App location={location} pageTitle={TEXTS[language].HOME}>
-      <ProductCategory products={products} />
-    </App>
-  )
-}
+const languages = [
+  {
+    flagImage: GreatBritishFlag,
+    flagImageAlt: "English flag",
+    text: "English test site",
+    url: "/en",
+  },
+  {
+    flagImage: NorwegianFlag,
+    flagImageAlt: "Norwegian flag",
+    text: "Norwegian test site",
+    url: "/no",
+  },
+]
+
+const IndexPage = ({ location }) => (
+  <PortalPage location={location} pageTitle="Accessibility Reference Website">
+    <Heading headingLevel={2} className="heading heading-larger">
+      An accessibility reference site
+    </Heading>
+    <p className="stack--large">
+      Learn more about this site in our <Link url="/en/about">about us</Link>{" "}
+      section.
+    </p>
+    <Heading headingLevel={3}>Test sites</Heading>
+    <LanguageList languages={languages} />
+    <Grid numberOfColumns={3} isWide={true}>
+      <Card
+        title="How to get started"
+        link="/en/how-to"
+        text="This site can be used for several different use cases. Practice identifying accessibility issues, perform user testing, learn best practices or compare automated accessibility testing tools."
+      />
+      <Card
+        title="Component library"
+        link="/docs"
+        text="We want this site to be a source of best practices for how to create accessible components. To make it easier to get started and using these components, we have created a design system and a component library."
+      />
+      <Card
+        title="Practice assignments"
+        text="We have prepared several tasks and assignments that can be used as learning tools in classes or as material for workshops."
+        ribbon="TODO"
+        link="/en/how-to"
+      />
+    </Grid>
+  </PortalPage>
+)
 
 IndexPage.propTypes = {
-  data: PropTypes.shape({
-    allProduct: ProductQueryPropType.allProduct,
-    allFile: ImageQueryPropType.allFile,
-  }),
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),
 }
-
-export const query = graphql`
-  query FrontPageQuery($productType: String, $gender: String) {
-    allProduct(
-      filter: {
-        type: { eq: $productType }
-        gender: { eq: $gender }
-        language: { eq: "en" }
-      }
-    ) {
-      nodes {
-        displayName
-        id
-        imageAlt
-        imageName
-        language
-        price
-        type
-        gender
-        slug
-      }
-    }
-    allFile(filter: { relativeDirectory: { eq: "products" } }) {
-      nodes {
-        childImageSharp {
-          fixed(width: 300, cropFocus: CENTER, height: 350) {
-            src
-            originalName
-          }
-        }
-      }
-    }
-  }
-`
 
 export default IndexPage
