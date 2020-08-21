@@ -117,7 +117,7 @@ const AboutPage = ({ location }) => (
           (UnIKT program),
         </li>
         <li>
-          the counselling company{" "}
+          the IT consultancy{" "}
           <a href="//webstep.no" target="_blank" rel="noopener noreferrer">
             Webstep
           </a>
