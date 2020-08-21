@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
   const { rules } = useContext(AccessibilityRulesContext)
   useEffect(() => {
     const bodyElement = document.getElementsByTagName("body")[0]
-    if (!rules[CONSTANTS.COLOR_CONTRAST]) {
+    if (rules[CONSTANTS.COLOR_CONTRAST] === false) {
       bodyElement.classList.add("low-contrast")
     } else if (bodyElement.classList.contains("low-contrast")) {
       bodyElement.classList.remove("low-contrast")

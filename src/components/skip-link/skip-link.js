@@ -8,7 +8,7 @@ import "./skip-link.css"
 
 const SkipLink = ({ mainTagId = "main" }) => {
   const { rules } = useContext(AccessibilityRules.context)
-  if (!rules[CONSTANTS.BYPASS]) {
+  if (rules[CONSTANTS.BYPASS] === false) {
     return null
   }
   return (
