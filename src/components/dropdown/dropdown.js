@@ -7,7 +7,7 @@ import Button from "../button"
 
 import "./dropdown.css"
 
-const DropDown = ({ buttonText, ButtonType = Button, children, className }) => {
+const DropDown = ({ buttonText, children, className }) => {
   const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal()
   const toggleButtonRef = useRef(null)
   return (
@@ -16,15 +16,14 @@ const DropDown = ({ buttonText, ButtonType = Button, children, className }) => {
         [className]: className,
       })}
     >
-      <ButtonType
-        aria-haspopup="true"
+      <Button
         className="dropdown-toggle"
         aria-expanded={isOpen}
         onClick={() => toggleIsOpen()}
         setRef={toggleButtonRef}
       >
         {buttonText}
-      </ButtonType>
+      </Button>
       <div
         className="dropdown__container"
         hidden={!isOpen}
@@ -38,7 +37,6 @@ const DropDown = ({ buttonText, ButtonType = Button, children, className }) => {
 
 DropDown.propTypes = {
   buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  ButtonType: PropTypes.element,
   children: PropTypes.node,
   className: PropTypes.string,
 }
