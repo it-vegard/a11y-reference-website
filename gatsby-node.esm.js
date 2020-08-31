@@ -21,7 +21,7 @@ const createBreadcrumbs = (language, gender, type, product) => {
   if (gender) {
     breadcrumbs.push({
       title: TEXTS[language].HOME,
-      path: `/${language}`,
+      path: `/${language}/${TEXTS[language].SHOP}`,
     })
     breadcrumbs.push({
       title: capitalizeAllWords(gender),
@@ -37,7 +37,7 @@ const createBreadcrumbs = (language, gender, type, product) => {
   if (product) {
     breadcrumbs.push({
       title: capitalizeAllWords(product.displayName),
-      path: createProductUrl(language, gender, type, product),
+      path: createProductUrl(language, gender, type, product.displayName),
     })
   }
   return breadcrumbs
@@ -64,7 +64,12 @@ const createProductPage = (
   product
 ) => {
   createPage({
-    path: createProductUrl(language, gender, productType, product),
+    path: createProductUrl(
+      language,
+      gender,
+      productType,
+      product ? product.displayName : undefined
+    ),
     component: component,
     context: {
       gender: gender ? gender : undefined,
@@ -90,8 +95,14 @@ exports.createPages = ({ graphql, actions }) => {
   )
   const ProductPage = path.resolve("./src/page-templates/product-page.js")
 
-  createRedirect({ fromPath: "/v1", toPath: "/en/campaign?enableRules=true" })
-  createRedirect({ fromPath: "/v2", toPath: "/en/campaign?enableRules=false" })
+  createRedirect({
+    fromPath: "/v1",
+    toPath: "/en/shop/campaign?enableRules=true",
+  })
+  createRedirect({
+    fromPath: "/v2",
+    toPath: "/en/shop/campaign?enableRules=false",
+  })
 
   return graphql(
     `

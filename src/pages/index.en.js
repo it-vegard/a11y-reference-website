@@ -20,7 +20,7 @@ const languages = [
   {
     flagImage: NorwegianFlag,
     flagImageAlt: "Norwegian flag",
-    text: "Norsk testside",
+    text: "Norwegian test site",
     url: "/no/butikk",
   },
 ]

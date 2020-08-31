@@ -1,9 +1,9 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 
-import App from "../components/app"
-import TEXTS from "../data/texts/texts.en.js"
-import PaymentDetailsPage from "../page-templates/payment-details-page"
+import App from "../../components/app"
+import TEXTS from "../../data/texts/texts.en.js"
+import PaymentDetailsPage from "../../page-templates/payment-details-page"
 
 const PaymentDetails = ({ location }) => {
   return (

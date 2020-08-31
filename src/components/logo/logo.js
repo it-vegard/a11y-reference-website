@@ -10,7 +10,7 @@ const Logo = () => {
   const { language } = useLanguage()
   return (
     <h1 style={{ margin: 0 }}>
-      <Link className="logo" to={`/${language}`}>
+      <Link className="logo" to={`/${language}/${TEXTS[language].SHOP}`}>
         {TEXTS[language].WEBSITE_NAME /* Replace with a logo eventually */}
       </Link>
     </h1>

@@ -36,6 +36,7 @@ const textsNO = {
       return textsNO.GENTS_FASHION
     }
   },
+  SHOP: "butikk",
   // personal details
   PERS_DETAILS_TITLE: "Persondata",
   PERS_DETAILS_FIRST_NAME: "Fornavn",
@@ -59,7 +60,7 @@ const textsNO = {
     "Det ble ikke sendt noen data fra nettleseren din. Dataene ble lagret kun midlertidig i nettleseren og er nå slettet. #PrivacyByDesign",
   PAGES: {
     CAMPAIGN: {
-      URL: "/no/kampanje",
+      URL: "/no/butikk/kampanje",
       TITLE: "Tilbud!",
     },
     ABOUT: {
@@ -71,7 +72,7 @@ const textsNO = {
       TITLE: "Credits",
     },
     DELIVERY: {
-      URL: "/no/levering",
+      URL: "/no/butikk/levering",
       TITLE: "Levering",
     },
     HOW_TO: {
@@ -83,27 +84,27 @@ const textsNO = {
       TITLE: "Settings",
     },
     RETURNS: {
-      URL: "/no/retur",
+      URL: "/no/butikk/retur",
       TITLE: "Bytte og retur",
     },
     TERMS: {
-      URL: "/no/betingelser",
+      URL: "/no/butikk/betingelser",
       TITLE: "Kjøpsvilkår",
     },
     CHECKOUT_CART: {
-      URL: "/no/handlekurv",
+      URL: "/no/butikk/handlekurv",
       TITLE: "Handlekurv",
     },
     CHECKOUT_PERSONAL_DETAILS: {
-      URL: "/no/personlige-opplysninger",
+      URL: "/no/butikk/personlige-opplysninger",
       TITLE: "Personlige Opplysninger",
     },
     CHECKOUT_PAYMENT_DETAILS: {
-      URL: "/no/betaling",
+      URL: "/no/butikk/betaling",
       TITLE: "Betaling",
     },
     CHECKOUT_RECEIPT: {
-      URL: "/no/kvittering",
+      URL: "/no/butikk/kvittering",
       TITLE: "Kvittering",
     },
   },
