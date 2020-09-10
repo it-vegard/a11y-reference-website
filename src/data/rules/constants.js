@@ -12,6 +12,8 @@ const CONSTANTS = {
   HTML_LANG_VALID:
     "3.1.1-html-element-must-have-a-valid-value-for-the-lang-attribute",
   LABEL: "3.3.2-form-elements-must-have-labels",
+  NO_META_REDIRECT_WITH_A_TIME_LIMIT:
+    "2.2.4-no-meta-redirect-with-a-time-limit",
 }
 
 export default CONSTANTS
