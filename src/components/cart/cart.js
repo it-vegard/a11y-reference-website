@@ -31,7 +31,7 @@ const Cart = ({ order, addFn, subtractFn }) => {
                   product.language,
                   product.gender,
                   product.type,
-                  product
+                  product.displayName
                 )}
               >
                 {product.displayName}

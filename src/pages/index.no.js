@@ -14,7 +14,7 @@ const languages = [
   {
     flagImage: GreatBritishFlag,
     flagImageAlt: "English flag",
-    text: "English test site",
+    text: "Engelsk testside",
     url: "/en/shop",
   },
   {
@@ -26,30 +26,32 @@ const languages = [
 ]
 
 const IndexPage = ({ location }) => (
-  <PortalPage location={location} pageTitle="Accessibility Reference Website">
+  <PortalPage
+    location={location}
+    pageTitle="Referansenettsted for universell utforming"
+  >
     <Heading headingLevel={2} className="heading heading-larger">
-      An accessibility reference site
+      Referansenettsted for universell utforming
     </Heading>
     <p className="stack--large">
-      Learn more about this site in our <Link url="/en/about">about us</Link>{" "}
-      section.
+      Lær mer om siden i <Link url="/en/about">om oss</Link> seksjonen.
     </p>
-    <Heading headingLevel={3}>Test sites</Heading>
+    <Heading headingLevel={3}>Testsider</Heading>
     <LanguageList languages={languages} />
     <Grid numberOfColumns={3} isWide={true}>
       <Card
-        title="How to get started"
+        title="Hvordan komme i gang"
         link="/en/how-to"
-        text="This site can be used for several different use cases. Practice identifying accessibility issues, perform user testing, learn best practices or compare automated accessibility testing tools."
+        text="Denne siden kan brukes til flere formål. Lær hvordan man identifiserer tilgjengelighetsfeil, gjennomfør brukertesting, lær 'best practices' eller sammelign automatiserte testverktøy for universell utforming."
       />
       <Card
-        title="Component library"
+        title="Komponentbibliotek"
         link="/docs"
-        text="We want this site to be a source of best practices for how to create accessible components. To make it easier to get started and using these components, we have created a design system and a component library."
+        text="Vi ønsker at siden skal være et eksempel på hvordan man lager tilgjengelige komponenter for nettsider. For å gjøre det enklere å komme i gang, har vi laget et design system og et komponentbibliotek."
       />
       <Card
-        title="Practice assignments"
-        text="We have prepared several tasks and assignments that can be used as learning tools in classes or as material for workshops."
+        title="Øvingsoppgaver"
+        text="Vi har forberedt flere oppgaver som kan brukes som læringsverktøy for studieprogrammer eller i kurs."
         ribbon="TODO"
         link="/en/how-to"
       />

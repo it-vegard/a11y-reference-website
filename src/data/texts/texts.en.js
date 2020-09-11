@@ -36,6 +36,7 @@ const textsEN = {
       return textsEN.GENTS_FASHION
     }
   },
+  SHOP: "shop",
   // personal details
   PERS_DETAILS_TITLE: "Personal details",
   PERS_DETAILS_HEADER: "Personal details",
@@ -60,7 +61,7 @@ const textsEN = {
     "No data has been sent from your computer. Data was preliminary stored in your browser while you were moving around the site but is now deleted. #PrivacyByDesign",
   PAGES: {
     CAMPAIGN: {
-      URL: "/en/campaign",
+      URL: "/en/shop/campaign",
       TITLE: "Sale!",
     },
     ABOUT: {
@@ -72,7 +73,7 @@ const textsEN = {
       TITLE: "Credits",
     },
     DELIVERY: {
-      URL: "/en/delivery",
+      URL: "/en/shop/delivery",
       TITLE: "Shipping and delivery",
     },
     HOW_TO: {
@@ -84,27 +85,27 @@ const textsEN = {
       TITLE: "Settings",
     },
     RETURNS: {
-      URL: "/no/returns",
+      URL: "/en/shop/returns",
       TITLE: "Exchanges and returns",
     },
     TERMS: {
-      URL: "/no/terms",
+      URL: "/no/shop/terms",
       TITLE: "Terms and Conditions",
     },
     CHECKOUT_CART: {
-      URL: "/en/cart",
+      URL: "/en/shop/cart",
       TITLE: "Shopping Cart",
     },
     CHECKOUT_PERSONAL_DETAILS: {
-      URL: "/en/personal-details",
+      URL: "/en/shop/personal-details",
       TITLE: "Personal Details",
     },
     CHECKOUT_PAYMENT_DETAILS: {
-      URL: "/en/payment-details",
+      URL: "/en/shop/payment-details",
       TITLE: "Payment",
     },
     CHECKOUT_RECEIPT: {
-      URL: "/en/receipt",
+      URL: "/en/shop/receipt",
       TITLE: "Receipt",
     },
   },

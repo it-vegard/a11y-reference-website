@@ -1,8 +1,8 @@
 import React from "react"
 import Card from "../card"
-import { toSlug } from "../../util/url-util"
 import { ProductPropType } from "../../prop-types/product-query"
 import { toCurrency } from "../../util/number-util"
+import { createProductUrl } from "../../util/url-util"
 import TEXTS from "../../data/texts"
 
 const ProductCard = ({
@@ -23,7 +23,7 @@ const ProductCard = ({
     <Card
       imgAlt={imageAlt}
       imgSrc={imageSrc}
-      link={`/${language}/${gender}/${type}/${toSlug(displayName)}`}
+      link={createProductUrl(language, gender, type, displayName)}
       ribbon={campaignPrice ? TEXTS[language].CAMPAIGN_RIBBON : undefined}
       subText={subText}
       text={toCurrency(mainPrice, language)}
