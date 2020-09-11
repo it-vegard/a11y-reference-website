@@ -1,6 +1,7 @@
-describe("A user", () => {
+describe("A customer", () => {
   beforeEach(() => {
-    cy.visit("/").get("main")
+    window.sessionStorage.clear()
+    cy.visit("/en/shop?enableRules=true").get("main", { timeout: 15000 })
   })
   it("can complete a purchase", () => {
     // Front page
@@ -12,7 +13,7 @@ describe("A user", () => {
     cy.contains("Gå til checkout").click()
 
     // Cart page
-    cy.url().should("include", "/cart")
+    cy.url().should("include", "/en/shop/cart")
     cy.contains("Continue").click()
 
     // Navigate personal details page
@@ -36,7 +37,13 @@ describe("A user", () => {
     cy.url().should("include", "/receipt")
     cy.contains("Thank you for your purchase!")
   })
+})
 
+describe("A user", () => {
+  beforeEach(() => {
+    window.sessionStorage.clear()
+    cy.visit("/en/shop?enableRules=true").get("main", { timeout: 15000 })
+  })
   it("can toggle all rules", () => {
     cy.contains("Ruleset")
       .click()
