@@ -1,4 +1,4 @@
-import wcag from "wcag-as-json/src/wcag"
+import wcag from "./libraries/wcag-as-json/wcag"
 import path from "path"
 
 import products from "./src/data/products"
