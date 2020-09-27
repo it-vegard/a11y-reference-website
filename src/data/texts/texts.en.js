@@ -60,6 +60,10 @@ const textsEN = {
   RECEIPT_DISCLAIMER:
     "No data has been sent from your computer. Data was preliminary stored in your browser while you were moving around the site but is now deleted. #PrivacyByDesign",
   PAGES: {
+    FRONT_PAGE: {
+      URL: "/en/shop",
+      TITLE: "Clothes for all!",
+    },
     CAMPAIGN: {
       URL: "/en/shop/campaign",
       TITLE: "Sale!",

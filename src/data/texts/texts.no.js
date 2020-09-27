@@ -59,6 +59,10 @@ const textsNO = {
   RECEIPT_DISCLAIMER:
     "Det ble ikke sendt noen data fra nettleseren din. Dataene ble lagret kun midlertidig i nettleseren og er nå slettet. #PrivacyByDesign",
   PAGES: {
+    FRONT_PAGE: {
+      URL: "/no/butikk",
+      TITLE: "Klær for alle!",
+    },
     CAMPAIGN: {
       URL: "/no/butikk/kampanje",
       TITLE: "Tilbud!",

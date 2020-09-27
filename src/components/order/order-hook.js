@@ -79,6 +79,7 @@ export const useOrder = () => {
       "order",
       JSON.stringify(orderReducer(state, addToCartAction))
     )
+    window.sessionStorage.setItem("orderTimestamp", JSON.stringify(Date.now()))
     dispatch(addToCartAction)
   }
 
@@ -91,6 +92,7 @@ export const useOrder = () => {
       "order",
       JSON.stringify(orderReducer(state, subtractFromCartAction))
     )
+    window.sessionStorage.setItem("orderTimestamp", JSON.stringify(Date.now()))
     dispatch(subtractFromCartAction)
   }
 

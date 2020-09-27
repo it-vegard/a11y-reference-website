@@ -15,6 +15,7 @@ import Footer from "../footer"
 import Header from "../header"
 import Container from "../container"
 import SkipLink from "../skip-link"
+import useTimeout from "../timeout"
 
 import "./normalize.css"
 import "./base.css"
@@ -30,6 +31,7 @@ const Layout = ({ children }) => {
       bodyElement.classList.remove("low-contrast")
     }
   }, [JSON.stringify(rules[CONSTANTS.COLOR_CONTRAST])])
+  useTimeout(1)
   return (
     <div className="layout">
       <SkipLink mainTagId={mainTagId} />
