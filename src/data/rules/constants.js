@@ -14,6 +14,8 @@ const CONSTANTS = {
   LABEL: "3.3.2-form-elements-must-have-labels",
   NO_META_REDIRECT_WITH_A_TIME_LIMIT:
     "2.2.4-no-meta-redirect-with-a-time-limit",
+  TIMEOUT_NO_WARNING:
+    "2.2.6-user-is-given-option-to-extend-time-limit-before-timeout",
 }
 
 export default CONSTANTS

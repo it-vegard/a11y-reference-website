@@ -8,6 +8,7 @@ import groupRelatedLinksUsingTheNavElement from "./group-related-links-using-the
 import headerHasRoleHeader from "./header-has-role-header"
 import label from "./label"
 import noMetaRedirectWithATimeLimit from "./no-meta-redirect-with-a-time-limit"
+import timeoutNoWarning from "./timeout-no-warning"
 import useARIALandmarksToIdentifyRegionsOfAPage from "./use-semantic-regions"
 
 const rules = [
@@ -21,6 +22,7 @@ const rules = [
   imageAlt,
   label,
   noMetaRedirectWithATimeLimit,
+  timeoutNoWarning,
   useARIALandmarksToIdentifyRegionsOfAPage,
 ]
 
