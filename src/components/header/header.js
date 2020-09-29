@@ -9,7 +9,6 @@ import { LanguageSelector } from "../language"
 import { AccessibilitySlideIn } from "../accessibility-configurator"
 
 import "./header.css"
-import { Link } from "gatsby"
 
 const Header = () => (
   <header>
@@ -20,9 +19,6 @@ const Header = () => (
         <div className="header__menus">
           <MiniCart />
           <LanguageSelector />
-          <Link to="/docs" className="button">
-            Documentation
-          </Link>
           <AccessibilitySlideIn />
         </div>
       </Container>
