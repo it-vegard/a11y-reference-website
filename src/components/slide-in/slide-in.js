@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react"
+import classNames from "classnames"
 import * as PropTypes from "prop-types"
 
 import Button from "../button"
@@ -8,7 +9,7 @@ import TEXTS from "../../data/texts"
 
 import "./slide-in.css"
 
-const SlideIn = ({ children, toggleText }) => {
+const SlideIn = ({ children, className, toggleText }) => {
   const { language } = useLanguage()
   const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal()
   const toggleButtonRef = useRef()
@@ -23,14 +24,18 @@ const SlideIn = ({ children, toggleText }) => {
       <Button
         aria-haspopup={true}
         aria-expanded={isOpen}
-        className="slide-in__toggle"
+        className={classNames("slide-in__toggle", {
+          [`${className}__toggle`]: className,
+        })}
         onClick={() => toggleIsOpen()}
         setRef={toggleButtonRef}
       >
         {toggleText}
       </Button>
       <aside
-        className="slide-in"
+        className={classNames("slide-in", {
+          [`${className}`]: className,
+        })}
         hidden={!isOpen}
         onKeyUp={event => closeOnEscapeKey(event, toggleButtonRef)}
       >
@@ -51,6 +56,7 @@ const SlideIn = ({ children, toggleText }) => {
 
 SlideIn.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   toggleText: PropTypes.string,
 }
 

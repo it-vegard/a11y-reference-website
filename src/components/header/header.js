@@ -7,6 +7,7 @@ import ContentMenu from "../content-menu"
 import { MiniCart } from "../cart"
 import { LanguageSelector } from "../language"
 import { AccessibilitySlideIn } from "../accessibility-configurator"
+import SlideIn from "../slide-in"
 
 import "./header.css"
 
@@ -15,11 +16,20 @@ const Header = () => (
     <div className="header">
       <Container className="header__container">
         <Logo />
+        {/** Desktop menu */}
         <ContentMenu />
         <div className="header__menus">
           <LanguageSelector />
           <AccessibilitySlideIn />
         </div>
+        {/** Mobile menu */}
+        <SlideIn className="mobile-menu" toggleText="Menu">
+          <ContentMenu />
+          <div className="header__menus">
+            <LanguageSelector />
+            <AccessibilitySlideIn />
+          </div>
+        </SlideIn>
       </Container>
     </div>
     <MiniCart />
