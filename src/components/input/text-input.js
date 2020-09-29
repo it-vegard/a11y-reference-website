@@ -6,7 +6,7 @@ import Input from "./input"
 
 const TextInput = ({ autoComplete, className, label, name }) => (
   <Input
-    autocomplete={autoComplete}
+    autoComplete={autoComplete}
     className={classNames("text-input", {
       [className]: className,
     })}
