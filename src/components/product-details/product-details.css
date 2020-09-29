@@ -27,3 +27,8 @@
 [dir="rtl"] .product-details__image {
   float: right;
 }
+
+.product-details__terms {
+  font-size: 0.9rem;
+  max-width: 90ch;
+}

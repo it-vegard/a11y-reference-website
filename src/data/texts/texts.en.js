@@ -27,6 +27,19 @@ const textsEN = {
   GENTS_FASHION: "Gents' fashion",
   FOOTER_WEB_SHOP_LINKS_HEADER: "Customer Service",
   FOOTER_RESOURCES_LINKS_HEADER: "Resources",
+  TIMEOUT_LIMIT: 20,
+  TIMEOUT_WARNING: minutesToTimeout =>
+    `The items in you shopping cart is reserved for ${minutesToTimeout} ${
+      minutesToTimeout > 1 ? "minutes" : "minute"
+    }, and will soon be released for others to buy. Do you want more time to finish shopping?`,
+  CONDITION_TIMEOUT: (minutesToTimeout, isTimingAdjustable) =>
+    `The item is reserved for ${minutesToTimeout} ${
+      minutesToTimeout > 1 ? "minutes" : "minute"
+    }, before it is made available to others.${
+      isTimingAdjustable
+        ? " You will be asked if you want more time before it expires."
+        : ""
+    }`,
   // portal
   HOME: "Home",
   PRODUCT_FOR_GENDER_HEADING: gender => {
