@@ -6,12 +6,13 @@ import CONSTANTS from "../../data/rules/constants"
 
 const RadioButtons = ({ radioButtons, ...rest }) => {
   const { rules } = useContext(AccessibilityRulesContext)
-  const mappedRadioButtons = rules[CONSTANTS.LABEL]
-    ? radioButtons
-    : radioButtons.map(radioButton => ({
-        ...radioButton,
-        id: undefined,
-      }))
+  const mappedRadioButtons =
+    rules[CONSTANTS.LABEL] !== false
+      ? radioButtons
+      : radioButtons.map(radioButton => ({
+          ...radioButton,
+          id: undefined,
+        }))
   return <AccessibleRadioButtons radioButtons={mappedRadioButtons} {...rest} />
 }
 
