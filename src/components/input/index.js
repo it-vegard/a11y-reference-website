@@ -9,7 +9,7 @@ const TextInput = ({ name, ...rest }) => {
   const { rules } = useContext(AccessibilityRulesContext)
   return (
     <AccessibleTextInput
-      name={rules[CONSTANTS.LABEL] ? name : undefined}
+      name={rules[CONSTANTS.LABEL] !== false ? name : undefined}
       {...rest}
     />
   )

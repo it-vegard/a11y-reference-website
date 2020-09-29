@@ -6,7 +6,7 @@ import AccessibleImage from "./image"
 
 const Image = ({ alt, ...rest }) => {
   const { rules } = useContext(AccessibilityRulesContext)
-  const maybeAlt = rules[CONSTANTS.IMAGE_ALT] ? alt : undefined
+  const maybeAlt = rules[CONSTANTS.IMAGE_ALT] !== false ? alt : undefined
   return <AccessibleImage alt={maybeAlt} {...rest} />
 }
 

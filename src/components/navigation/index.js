@@ -7,7 +7,7 @@ import InaccessibleNavigation from "./inaccessible-navigation"
 
 const NavigationList = props => {
   const { rules } = useContext(AccessibilityRulesContext)
-  if (rules[CONSTANTS.GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT]) {
+  if (rules[CONSTANTS.GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT] !== false) {
     return <AccessibleNavigationList {...props} />
   } else {
     return <InaccessibleNavigation {...props} />

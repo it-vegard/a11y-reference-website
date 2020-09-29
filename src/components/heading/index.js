@@ -22,7 +22,7 @@ const Heading = props => {
     [headingStyle]: headingStyle,
     [className]: className,
   })
-  if (rules[CONSTANTS.HEADER_HAS_ROLE_HEADER]) {
+  if (rules[CONSTANTS.HEADER_HAS_ROLE_HEADER] !== false) {
     return (
       <AccessibleHeading {...props} className={allClasses}>
         {children}

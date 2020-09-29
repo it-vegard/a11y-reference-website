@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     } else if (bodyElement.classList.contains("low-contrast")) {
       bodyElement.classList.remove("low-contrast")
     }
-  }, [JSON.stringify(rules[CONSTANTS.COLOR_CONTRAST])])
+  }, [JSON.stringify(rules[CONSTANTS.COLOR_CONTRAST] !== false)])
   useTimeout(TEXTS[language].TIMEOUT_LIMIT)
   return (
     <div className="layout">

@@ -48,7 +48,7 @@ const BreadCrumbs = props => {
     url: breadcrumb.path,
   }))
 
-  if (rules[CONSTANTS.GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT]) {
+  if (rules[CONSTANTS.GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT] !== false) {
     return <AccessibleBreadCrumbs links={links} />
   } else {
     return <InaccessibleBreadcrumbs links={links} />
