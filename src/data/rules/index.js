@@ -8,7 +8,10 @@ import groupRelatedLinksUsingTheNavElement from "./group-related-links-using-the
 import headerHasRoleHeader from "./header-has-role-header"
 import label from "./label"
 import noMetaRedirectWithATimeLimit from "./no-meta-redirect-with-a-time-limit"
+import timingAdjustable from "./timing-adjustable"
 import useARIALandmarksToIdentifyRegionsOfAPage from "./use-semantic-regions"
+import timeoutWarning from "./timeout-warning"
+import noTiming from "./no-timing"
 
 const rules = [
   bypass,
@@ -21,6 +24,9 @@ const rules = [
   imageAlt,
   label,
   noMetaRedirectWithATimeLimit,
+  noTiming,
+  timeoutWarning,
+  timingAdjustable,
   useARIALandmarksToIdentifyRegionsOfAPage,
 ]
 

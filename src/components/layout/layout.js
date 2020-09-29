@@ -9,17 +9,21 @@ import React, { useContext, useEffect } from "react"
 import * as PropTypes from "prop-types"
 
 import CONSTANTS from "../../data/rules/constants"
+import TEXTS from "../../data/texts"
 import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
 import { Main } from "../semantic-region"
 import Footer from "../footer"
 import Header from "../header"
 import Container from "../container"
+import { useLanguage } from "../language"
 import SkipLink from "../skip-link"
+import useTimeout from "../timeout"
 
 import "./normalize.css"
 import "./base.css"
 
 const Layout = ({ children }) => {
+  const { language } = useLanguage()
   const mainTagId = "main"
   const { rules } = useContext(AccessibilityRulesContext)
   useEffect(() => {
@@ -30,6 +34,7 @@ const Layout = ({ children }) => {
       bodyElement.classList.remove("low-contrast")
     }
   }, [JSON.stringify(rules[CONSTANTS.COLOR_CONTRAST])])
+  useTimeout(TEXTS[language].TIMEOUT_LIMIT)
   return (
     <div className="layout">
       <SkipLink mainTagId={mainTagId} />

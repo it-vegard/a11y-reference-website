@@ -27,6 +27,19 @@ const textsNO = {
   GENTS_FASHION: "Herremote",
   FOOTER_WEB_SHOP_LINKS_HEADER: "Kundeservice",
   FOOTER_RESOURCES_LINKS_HEADER: "Ressurser",
+  TIMEOUT_LIMIT: 20,
+  TIMEOUT_WARNING: minutesToTimeout =>
+    `Varene er reservert i ${minutesToTimeout} ${
+      minutesToTimeout > 0 ? "minutter" : "minutt"
+    }, og vil snart gjøres tilgjengelig for andre igjen. Vil du ha mer tid til å fullføre handelen?`,
+  CONDITION_TIMEOUT: (minutesToTimeout, isTimingAdjustable) =>
+    `Varen reserveres i ${minutesToTimeout} ${
+      minutesToTimeout > 0 ? "minutter" : "minutt"
+    }, før den gjøres tilgjengelig for andre igjen.${
+      isTimingAdjustable
+        ? " Du blir spurt om du vil ha mer tid før tiden går ut."
+        : ""
+    }`,
   // portal
   HOME: "Hjem",
   PRODUCT_FOR_GENDER_HEADING: gender => {
@@ -59,6 +72,10 @@ const textsNO = {
   RECEIPT_DISCLAIMER:
     "Det ble ikke sendt noen data fra nettleseren din. Dataene ble lagret kun midlertidig i nettleseren og er nå slettet. #PrivacyByDesign",
   PAGES: {
+    FRONT_PAGE: {
+      URL: "/no/butikk",
+      TITLE: "Klær for alle!",
+    },
     CAMPAIGN: {
       URL: "/no/butikk/kampanje",
       TITLE: "Tilbud!",

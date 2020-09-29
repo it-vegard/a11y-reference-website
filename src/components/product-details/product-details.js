@@ -1,22 +1,25 @@
-import React from "react"
+import React, { useContext } from "react"
 import * as PropTypes from "prop-types"
 
+import CONSTANTS from "../../data/rules/constants"
+import TEXTS from "../../data/texts"
 import { ProductPropType } from "../../prop-types/product-query"
-import Heading from "../semantic-heading"
-import { Article, Section } from "../semantic-region"
+import { toCurrency } from "../../util/number-util"
+import { capitalizeAllWords } from "../../util/text-util"
+import BuyButton from "../buy-button"
+import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
+import Image from "../image"
+import { useLanguage } from "../language"
 import ProductDescription from "./product-description"
 import ProductSizePicker from "./product-size-picker"
+import Heading from "../semantic-heading"
+import { Article, Section } from "../semantic-region"
 
 import "./product-details.css"
-import BuyButton from "../buy-button"
-import { toCurrency } from "../../util/number-util"
-import { useLanguage } from "../language"
-import { capitalizeAllWords } from "../../util/text-util"
-import TEXTS from "../../data/texts"
-import Image from "../image"
 
 const ProductDetails = product => {
   const { language } = useLanguage()
+  const { rules } = useContext(AccessibilityRulesContext)
   const mainPrice = product.campaignPrice
     ? product.campaignPrice
     : product.price
@@ -42,6 +45,15 @@ const ProductDetails = product => {
         )}
         <ProductSizePicker sizes={product.sizes} />
         <BuyButton product={product} />
+        {rules[CONSTANTS.NO_TIMING] === false &&
+          rules[CONSTANTS.TIMEOUT_WARNING] !== false && (
+            <p className="product-details__terms">
+              {TEXTS[language].CONDITION_TIMEOUT(
+                TEXTS[language].TIMEOUT_LIMIT,
+                rules[CONSTANTS.TIMEOUT_ADJUSTABLE] !== false
+              )}
+            </p>
+          )}
       </Section>
     </Article>
   )
