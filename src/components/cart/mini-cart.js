@@ -8,6 +8,8 @@ import Link from "../link"
 import { useLanguage } from "../language"
 import Cart from "./cart"
 
+import "./mini-cart.css"
+
 const MiniCart = () => {
   const { loadOrder } = useOrder()
   const { language } = useLanguage()
@@ -29,7 +31,10 @@ const MiniCart = () => {
     }))
 
   return (
-    <DropDown buttonText={TEXTS[language].CART_WITH_ITEMS(numberOfItems)}>
+    <DropDown
+      buttonText={TEXTS[language].CART_WITH_ITEMS(numberOfItems)}
+      className="mini-cart"
+    >
       <Heading headingLevel={2}>{TEXTS[language].CART}</Heading>
       <Cart
         order={mapProducts(order)}

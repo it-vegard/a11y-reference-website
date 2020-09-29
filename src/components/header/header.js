@@ -17,12 +17,12 @@ const Header = () => (
         <Logo />
         <ContentMenu />
         <div className="header__menus">
-          <MiniCart />
           <LanguageSelector />
           <AccessibilitySlideIn />
         </div>
       </Container>
     </div>
+    <MiniCart />
     <Container>
       <Breadcrumbs />
     </Container>

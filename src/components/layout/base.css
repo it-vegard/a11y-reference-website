@@ -3,12 +3,14 @@
   --color-cornflowerblue: #6495ed;
   --color-blue-cola: #0088DC;
   --color-dark-cerulean: #005b94;
+  --color-cerulean: #0040FF;
   --color-black: #333;
   --color-white: #fff;
   --color-green: #005000;
 
   /* Default color definitions */
   --color-profile-main: var(--color-dark-cerulean);
+  --color-profile-lighter: var(--color-cerulean);
   --color: var(--color-black);
   --background-color: var(--color-white);
   --color-button-background: var(--color-green);
