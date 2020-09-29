@@ -6,6 +6,7 @@ import imageAlt from "./image-alt"
 import linkHasRoleLink from "./link-has-role-link"
 import groupRelatedLinksUsingTheNavElement from "./group-related-links-using-the-nav-element"
 import headerHasRoleHeader from "./header-has-role-header"
+import identifyInputPurpose from "./identify-input-purpose"
 import label from "./label"
 import noMetaRedirectWithATimeLimit from "./no-meta-redirect-with-a-time-limit"
 import timingAdjustable from "./timing-adjustable"
@@ -21,6 +22,7 @@ const rules = [
   htmlLangValid,
   headerHasRoleHeader,
   linkHasRoleLink,
+  identifyInputPurpose,
   imageAlt,
   label,
   noMetaRedirectWithATimeLimit,

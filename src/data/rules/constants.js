@@ -6,6 +6,8 @@ const CONSTANTS = {
   LINK_HAS_ROLE_LINK: "1.3.1-link-has-role-link",
   USE_ARIA_LANDMARKS_TO_IDENTIFY_REGIONS_OF_A_PAGE:
     "1.3.1-use-aria-landmarks-to-identify-regions-of-a-page",
+  IDENTIFY_INPUT_PURPOSE:
+    "1.3.5-the-purpose-of-all-input-fields-can-be-programmatically-determined",
   COLOR_CONTRAST: "1.4.3-elements-must-have-sufficient-color-contrast",
   TIMEOUT_ADJUSTABLE:
     "2.2.1-user-is-given-option-to-extend-time-limit-before-timeout",

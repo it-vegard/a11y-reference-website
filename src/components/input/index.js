@@ -5,10 +5,15 @@ import AccessibilityRulesContext from "../accessibility-rules/accessibility-rule
 import AccessibleTextInput from "./text-input"
 import CONSTANTS from "../../data/rules/constants"
 
-const TextInput = ({ name, ...rest }) => {
+const TextInput = ({ autoComplete, name, ...rest }) => {
   const { rules } = useContext(AccessibilityRulesContext)
   return (
     <AccessibleTextInput
+      autoComplete={
+        rules[CONSTANTS.IDENTIFY_INPUT_PURPOSE] !== false
+          ? autoComplete
+          : undefined
+      }
       name={rules[CONSTANTS.LABEL] !== false ? name : undefined}
       {...rest}
     />
@@ -16,6 +21,7 @@ const TextInput = ({ name, ...rest }) => {
 }
 
 TextInput.propTypes = {
+  autoComplete: PropTypes.string,
   name: PropTypes.string,
 }
 
