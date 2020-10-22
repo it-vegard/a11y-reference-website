@@ -2,6 +2,7 @@ const textsNO = {
   // general
   LANG: "norsk",
   CURRENCY: "NOK",
+  MENU: "Meny",
   RETAIL_PRICE: price => `Førpris: ${price}`,
   // entire site
   WEBSITE_NAME: "Klær for alle",

@@ -2,6 +2,7 @@ const textsEN = {
   // general
   LANG: "English",
   CURRENCY: "USD",
+  MENU: "Menu",
   RETAIL_PRICE: price => `Previous price: ${price}`,
   // entire site
   WEBSITE_NAME: "Clothes4all",

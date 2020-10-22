@@ -3,11 +3,9 @@ import React from "react"
 import Container from "../container"
 import Breadcrumbs from "../breadcrumbs"
 import Logo from "../logo"
-import ContentMenu from "../content-menu"
 import { MiniCart } from "../cart"
-import { LanguageSelector } from "../language"
-import { AccessibilitySlideIn } from "../accessibility-configurator"
-import SlideIn from "../slide-in"
+import HeaderMenuDesktop from "./header-menu-desktop"
+import HeaderMenuMobile from "./header-menu-mobile"
 
 import "./header.css"
 
@@ -16,20 +14,8 @@ const Header = () => (
     <div className="header">
       <Container className="header__container">
         <Logo />
-        {/** Desktop menu */}
-        <ContentMenu />
-        <div className="header__menus">
-          <LanguageSelector />
-          <AccessibilitySlideIn />
-        </div>
-        {/** Mobile menu */}
-        <SlideIn className="mobile-menu" toggleText="Menu">
-          <ContentMenu />
-          <div className="header__menus">
-            <LanguageSelector />
-            <AccessibilitySlideIn />
-          </div>
-        </SlideIn>
+        <HeaderMenuDesktop />
+        <HeaderMenuMobile />
       </Container>
     </div>
     <MiniCart />
