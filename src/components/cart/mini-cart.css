@@ -14,3 +14,8 @@
   right: initial;
   top: initial;
 }
+
+.mini-cart__content {
+  max-width: 30rem;
+  margin: 0 auto;
+}

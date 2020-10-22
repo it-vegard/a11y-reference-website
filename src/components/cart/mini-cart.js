@@ -35,16 +35,18 @@ const MiniCart = () => {
       buttonText={TEXTS[language].CART_WITH_ITEMS(numberOfItems)}
       className="mini-cart"
     >
-      <Heading headingLevel={2}>{TEXTS[language].CART}</Heading>
-      <Cart
-        order={mapProducts(order)}
-        addFn={addToCart}
-        subtractFn={subtractFromCart}
-      />
-      <Link
-        url={TEXTS[language].PAGES.CHECKOUT_CART.URL}
-        title={TEXTS[language].GO_TO_CHECKOUT}
-      />
+      <div className="mini-cart__content">
+        <Heading headingLevel={2}>{TEXTS[language].CART}</Heading>
+        <Cart
+          order={mapProducts(order)}
+          addFn={addToCart}
+          subtractFn={subtractFromCart}
+        />
+        <Link
+          url={TEXTS[language].PAGES.CHECKOUT_CART.URL}
+          title={TEXTS[language].GO_TO_CHECKOUT}
+        />
+      </div>
     </DropDown>
   )
 }
