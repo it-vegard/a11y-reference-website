@@ -1,13 +1,16 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 
-import App from "../../components/app"
-import TEXTS from "../../data/texts/texts.en"
-import PersonalDetailsPage from "../../page-templates/personal-details-page"
+import App from "../../../components/app"
+import TEXTS from "../../../data/texts/texts.en"
+import PersonalDetailsPage from "../../../page-templates/personal-details-page"
 
 const PersonalDetails = ({ location }) => {
   return (
-    <App location={location} pageTitle={TEXTS.PAGES.CHECKOUT_PERSONAL_DETAILS}>
+    <App
+      location={location}
+      pageTitle={TEXTS.PAGES.CHECKOUT_PERSONAL_DETAILS.TITLE}
+    >
       <PersonalDetailsPage />
     </App>
   )

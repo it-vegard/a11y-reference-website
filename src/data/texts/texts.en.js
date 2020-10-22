@@ -111,19 +111,19 @@ const textsEN = {
       TITLE: "Terms and Conditions",
     },
     CHECKOUT_CART: {
-      URL: "/en/shop/cart",
+      URL: "/en/shop/checkout/cart",
       TITLE: "Shopping Cart",
     },
     CHECKOUT_PERSONAL_DETAILS: {
-      URL: "/en/shop/personal-details",
+      URL: "/en/shop/checkout/personal-details",
       TITLE: "Personal Details",
     },
     CHECKOUT_PAYMENT_DETAILS: {
-      URL: "/en/shop/payment-details",
+      URL: "/en/shop/checkout/payment-details",
       TITLE: "Payment",
     },
     CHECKOUT_RECEIPT: {
-      URL: "/en/shop/receipt",
+      URL: "/en/shop/checkout/receipt",
       TITLE: "Receipt",
     },
   },
