@@ -1,9 +1,11 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { useOrder } from "../components/order"
 import { Cart } from "../components/cart"
 import Link from "../components/link"
 import TEXTS from "../data/texts"
+import CheckoutPage from "../components/checkout-page"
 import { useLanguage } from "../components/language"
+import Heading from "../components/heading"
 
 const CartPage = () => {
   const { order, addToCart, subtractFromCart } = useOrder()
@@ -16,7 +18,8 @@ const CartPage = () => {
     }))
 
   return (
-    <Fragment>
+    <CheckoutPage>
+      <Heading headingLevel={1}>{TEXTS[language].CART}</Heading>
       <Cart
         order={mapProducts(order)}
         addFn={addToCart}
@@ -26,7 +29,7 @@ const CartPage = () => {
         title={TEXTS[language].CONTINUE}
         url={TEXTS[language].PAGES.CHECKOUT_PERSONAL_DETAILS.URL}
       />
-    </Fragment>
+    </CheckoutPage>
   )
 }
 
