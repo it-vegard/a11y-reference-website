@@ -51,6 +51,7 @@ const textsNO = {
     }
   },
   SHOP: "butikk",
+  CHECKOUT: "kassen",
   // personal details
   PERS_DETAILS_TITLE: "Persondata",
   PERS_DETAILS_FIRST_NAME: "Fornavn",

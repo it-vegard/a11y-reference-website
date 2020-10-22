@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useLocation } from "@reach/router"
 
 import TEXTS from "../../data/texts"
 import Heading from "../semantic-heading"
@@ -13,12 +14,17 @@ import "./mini-cart.css"
 const MiniCart = () => {
   const { loadOrder } = useOrder()
   const { language } = useLanguage()
+  const location = useLocation()
 
   useEffect(() => {
     loadOrder()
   }, [])
 
   const { order, numberOfItems, addToCart, subtractFromCart } = useOrder()
+
+  if (location.pathname.includes(`${TEXTS[language].CHECKOUT}`)) {
+    return null // Hide cart in checkout
+  }
 
   if (numberOfItems === 0) {
     return null

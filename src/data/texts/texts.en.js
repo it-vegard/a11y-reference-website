@@ -51,6 +51,7 @@ const textsEN = {
     }
   },
   SHOP: "shop",
+  CHECKOUT: "checkout",
   // personal details
   PERS_DETAILS_TITLE: "Personal details",
   PERS_DETAILS_HEADER: "Personal details",
