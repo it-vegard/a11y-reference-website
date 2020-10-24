@@ -2,12 +2,13 @@ import React from "react"
 import NorwegianFlag from "svg-country-flags/svg/no.svg"
 import GreatBritishFlag from "svg-country-flags/svg/gb.svg"
 
-import Link from "../link"
+import TEXTS from "../../data/texts"
 import DropDown from "../dropdown"
+import Link from "../link"
+import Image from "../image"
 import { useLanguage } from "./language-support"
 
 import "./language-selector.css"
-import Image from "../image"
 
 const Flag = ({ languageCode = "en" }) => {
   if (languageCode === "en") {
@@ -31,6 +32,8 @@ const Flag = ({ languageCode = "en" }) => {
   }
 }
 
+const siteLanguages = ["no", "en"]
+
 const LanguageSelector = () => {
   const { language } = useLanguage()
   const button = (
@@ -41,12 +44,16 @@ const LanguageSelector = () => {
   )
   return (
     <DropDown buttonText={button} className="language-selector">
-      <Link className="language-selector__link" title="NO" url="/no">
-        <Flag languageCode="no" />
-      </Link>
-      <Link className="language-selector__link" title="EN" url="/en">
-        <Flag languageCode="en" />
-      </Link>
+      {siteLanguages.map(language => (
+        <Link
+          className="language-selector__link"
+          title={language.toUpperCase()}
+          url={TEXTS[language].PAGES.FRONT_PAGE.URL}
+          key={language}
+        >
+          <Flag languageCode={language} />
+        </Link>
+      ))}
     </DropDown>
   )
 }
