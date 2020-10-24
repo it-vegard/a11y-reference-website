@@ -1,7 +1,7 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import App from "../components/app"
-import "./delivery.css"
+import App from "../../components/app"
+import "../delivery.css"
 
 const DeliveryPage = ({ location }) => (
   <App pageTitle="Delivery" location={location}>

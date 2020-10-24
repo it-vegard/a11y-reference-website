@@ -2,6 +2,7 @@ const textsNO = {
   // general
   LANG: "norsk",
   CURRENCY: "NOK",
+  MENU: "Meny",
   RETAIL_PRICE: price => `Førpris: ${price}`,
   // entire site
   WEBSITE_NAME: "Klær for alle",
@@ -50,6 +51,7 @@ const textsNO = {
     }
   },
   SHOP: "butikk",
+  CHECKOUT: "kassen",
   // personal details
   PERS_DETAILS_TITLE: "Persondata",
   PERS_DETAILS_FIRST_NAME: "Fornavn",
@@ -109,19 +111,19 @@ const textsNO = {
       TITLE: "Kjøpsvilkår",
     },
     CHECKOUT_CART: {
-      URL: "/no/butikk/handlekurv",
+      URL: "/no/butikk/kassen/handlekurv",
       TITLE: "Handlekurv",
     },
     CHECKOUT_PERSONAL_DETAILS: {
-      URL: "/no/butikk/personlige-opplysninger",
+      URL: "/no/butikk/kassen/personlige-opplysninger",
       TITLE: "Personlige Opplysninger",
     },
     CHECKOUT_PAYMENT_DETAILS: {
-      URL: "/no/butikk/betaling",
+      URL: "/no/butikk/kassen/betaling",
       TITLE: "Betaling",
     },
     CHECKOUT_RECEIPT: {
-      URL: "/no/butikk/kvittering",
+      URL: "/no/butikk/kassen/kvittering",
       TITLE: "Kvittering",
     },
   },

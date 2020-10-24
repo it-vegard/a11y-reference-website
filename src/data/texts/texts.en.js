@@ -2,6 +2,7 @@ const textsEN = {
   // general
   LANG: "English",
   CURRENCY: "USD",
+  MENU: "Menu",
   RETAIL_PRICE: price => `Previous price: ${price}`,
   // entire site
   WEBSITE_NAME: "Clothes4all",
@@ -50,6 +51,7 @@ const textsEN = {
     }
   },
   SHOP: "shop",
+  CHECKOUT: "checkout",
   // personal details
   PERS_DETAILS_TITLE: "Personal details",
   PERS_DETAILS_HEADER: "Personal details",
@@ -110,19 +112,19 @@ const textsEN = {
       TITLE: "Terms and Conditions",
     },
     CHECKOUT_CART: {
-      URL: "/en/shop/cart",
+      URL: "/en/shop/checkout/cart",
       TITLE: "Shopping Cart",
     },
     CHECKOUT_PERSONAL_DETAILS: {
-      URL: "/en/shop/personal-details",
+      URL: "/en/shop/checkout/personal-details",
       TITLE: "Personal Details",
     },
     CHECKOUT_PAYMENT_DETAILS: {
-      URL: "/en/shop/payment-details",
+      URL: "/en/shop/checkout/payment-details",
       TITLE: "Payment",
     },
     CHECKOUT_RECEIPT: {
-      URL: "/en/shop/receipt",
+      URL: "/en/shop/checkout/receipt",
       TITLE: "Receipt",
     },
   },

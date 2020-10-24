@@ -1,0 +1,11 @@
+.header__container > .menu,
+.header__container > .header__menus {
+  display: none;
+}
+
+@media screen and (min-width: 48rem) {
+  .header__container > .menu,
+  .header__container > .header__menus {
+    display: flex;
+  }
+}

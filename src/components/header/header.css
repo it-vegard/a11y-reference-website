@@ -1,7 +1,6 @@
 .header {
   color: var(--color-white);
   background: var(--color-profile-main);
-  margin-bottom: 1.45rem;
   padding: 1rem 0;
 }
 
@@ -16,4 +15,8 @@
   display: flex;
   flex-direction: row;
   float: right;
+}
+
+.menu {
+  align-items: center;
 }

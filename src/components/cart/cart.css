@@ -2,14 +2,13 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 37rem;
-  max-width: 100%;
+  width: 100%;
 }
 
 .cart__item {
   align-items: center;
   display: grid;
-  grid-template-columns: 2rem auto 6rem 5rem;
+  grid-template-columns: 2rem auto 6rem 4rem;
   grid-gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -29,7 +28,7 @@
 .cart__total {
   border-top: 0.1rem solid currentColor;
   display: grid;
-  grid-template-columns: auto 5rem;
+  grid-template-columns: auto 4rem;
   padding-top: 0.5rem;
 }
 

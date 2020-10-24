@@ -1,0 +1,21 @@
+.mini-cart {
+  background: var(--color-profile-lighter);
+  border-top: 0.1rem solid var(--color-white);
+  filter: brightness(125%);
+}
+
+.mini-cart .dropdown-toggle {
+  justify-content: center;
+  width: 100%;
+}
+
+.mini-cart .dropdown__container {
+  position: relative;
+  right: initial;
+  top: initial;
+}
+
+.mini-cart__content {
+  max-width: 30rem;
+  margin: 0 auto;
+}

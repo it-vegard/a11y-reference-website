@@ -1,7 +1,8 @@
-import React, { Fragment, useContext } from "react"
+import React, { useContext } from "react"
 import Helmet from "react-helmet"
 
 import AccessibilityRules from "../components/accessibility-rules"
+import CheckoutPage from "../components/checkout-page"
 import Heading from "../components/semantic-heading"
 import { useLanguage } from "../components/language"
 import CONSTANTS from "../data/rules/constants"
@@ -14,7 +15,7 @@ const ReceiptPage = () => {
   const shouldSiteRefresh =
     rules[CONSTANTS.NO_META_REDIRECT_WITH_A_TIME_LIMIT] === false
   return (
-    <Fragment>
+    <CheckoutPage>
       {shouldSiteRefresh ? (
         <Helmet>
           <meta httpEquiv="refresh" content={`5 url=/${language}/`} />
@@ -23,7 +24,7 @@ const ReceiptPage = () => {
       <Heading>{RECEIPT_HEADER}</Heading>
       <p>{RECEIPT_NOTE}</p>
       <p>{RECEIPT_DISCLAIMER}</p>
-    </Fragment>
+    </CheckoutPage>
   )
 }
 
