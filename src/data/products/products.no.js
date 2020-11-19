@@ -10,6 +10,18 @@ const PRODUCT_TYPE_DRESS = "kjoler"
 
 module.exports = [
   {
+    type: PRODUCT_TYPE_SUIT,
+    displayName: "Strandløven",
+    description: ["Lys og lett, beige dress som passer ypperlig på stranden."],
+    gender: GENDER_MEN,
+    imageAlt:
+      "Mann i en beige dress på stranden. Jakken er åpen, med en mørk, mønstret skjorte under. Han ser bakover mot skyskraperene høybyggene som omkranser stranden.",
+    imageName: "beach-smart-01.png",
+    video: "Clothes4All-Beach-NO",
+    price: 2499,
+    campaignPrice: 1999,
+  },
+  {
     type: PRODUCT_TYPE_DRESS,
     displayName: "Sommerbris",
     description: [
