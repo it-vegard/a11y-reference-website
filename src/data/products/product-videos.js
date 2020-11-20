@@ -2,8 +2,12 @@ import React from "react"
 
 import BEACH_VIDEO_EN from "../../videos/Clothes4All-Beach-EN_original.mp4"
 import BEACH_VIDEO_NO from "../../videos/Clothes4All-Beach-NO_original.mp4"
+import BEACH_VIDEO_AUDIO_DESCRIPTIONS_EN from "../../videos/Clothes4All-Beach-EN_with-descriptions.mp4"
+import BEACH_VIDEO_AUDIO_DESCRIPTIONS_NO from "../../videos/Clothes4All-Beach-NO_with-descriptions.mp4"
 import BEACH_VIDEO_CAPTIONS_EN from "file-loader!../../videos/Clothes4All-Beach-EN-captions.vtt"
 import BEACH_VIDEO_CAPTIONS_NO from "file-loader!../../videos/Clothes4All-Beach-NO-captions.vtt"
+import BEACH_VIDEO_DESCRIPTIONS_EN from "file-loader!../../videos/Clothes4All-Beach-EN-descriptions.vtt"
+import BEACH_VIDEO_DESCRIPTIONS_NO from "file-loader!../../videos/Clothes4All-Beach-NO-descriptions.vtt"
 
 const TextAlternativeForBeachVideoEn = () => (
   <div>
@@ -40,6 +44,8 @@ const productVideos = {
   en: {
     beach: {
       url: BEACH_VIDEO_EN,
+      audioDescriptions: BEACH_VIDEO_AUDIO_DESCRIPTIONS_EN,
+      audioDescriptionsCaptions: BEACH_VIDEO_DESCRIPTIONS_EN,
       captions: BEACH_VIDEO_CAPTIONS_EN,
       textAlternative: TextAlternativeForBeachVideoEn,
     },
@@ -47,6 +53,8 @@ const productVideos = {
   no: {
     beach: {
       url: BEACH_VIDEO_NO,
+      audioDescriptions: BEACH_VIDEO_AUDIO_DESCRIPTIONS_NO,
+      audioDescriptionsCaptions: BEACH_VIDEO_DESCRIPTIONS_NO,
       captions: BEACH_VIDEO_CAPTIONS_NO,
       textAlternative: TextAlternativeForBeachVideoNo,
     },

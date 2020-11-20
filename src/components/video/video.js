@@ -139,15 +139,19 @@ VideoTime.propTypes = {
 }
 
 const Video = ({
+  audioDescriptions = [],
+  audioDescriptionsCaptions = [],
   captions = [],
   className,
-  descriptions = [],
   height,
   onClick = () => {},
   sources = [],
   textAlternative = () => {},
   width,
 }) => {
+  const [isAudioDescriptionsEnabled, setIsAudioDescriptionsEnabled] = useState(
+    false
+  )
   const [shouldShowControls, setShouldShowControls] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
@@ -199,6 +203,23 @@ const Video = ({
       videoRef.current.currentTime += seconds
     }
   }
+
+  const toggleAudioDescriptions = () => {
+    const timestamp = videoRef.current.currentTime
+    setIsAudioDescriptionsEnabled(!isAudioDescriptionsEnabled)
+    videoRef.current.load()
+    videoRef.current.currentTime = timestamp
+    videoRef.current.play()
+  }
+  const videoSources =
+    isAudioDescriptionsEnabled && audioDescriptions.length > 0
+      ? audioDescriptions
+      : sources
+  useEffect(() => {
+    if (audioDescriptions.length === 0 && isAudioDescriptionsEnabled) {
+      toggleAudioDescriptions()
+    }
+  }, [audioDescriptions])
   return (
     <>
       <section
@@ -239,7 +260,7 @@ const Video = ({
           preload="auto"
           ref={videoRef}
         >
-          {sources.map(source => (
+          {videoSources.map(source => (
             <source src={source} key={source} type="video/mp4" />
           ))}
           {captions.map(caption => (
@@ -255,7 +276,7 @@ const Video = ({
               }}
             />
           ))}
-          {descriptions.map(description => (
+          {audioDescriptionsCaptions.map(description => (
             <track
               kind="description"
               src={description}
@@ -296,6 +317,14 @@ const Video = ({
               Tekstversjon
             </button>
           )}
+          {audioDescriptions.length > 0 && (
+            <button
+              onClick={toggleAudioDescriptions}
+              className="video__controls__button video__controls__audio-descriptions"
+            >
+              AD
+            </button>
+          )}
         </div>
       </section>
       {shouldShowTextAlternative && textAlternative()}
@@ -304,10 +333,12 @@ const Video = ({
 }
 
 Video.propTypes = {
+  /** Audio descriptions source (.mp4) */
+  audioDescriptions: arrayOf(string),
+  /** Captions for audio descriptions source (.vtt) */
+  audioDescriptionsCaptions: arrayOf(string),
   /** Video files */
   sources: arrayOf(string),
-  /** Audio descriptions (.vtt) */
-  descriptions: arrayOf(string),
   /** Closed-captions (.vtt) */
   captions: arrayOf(string),
   height: number,
