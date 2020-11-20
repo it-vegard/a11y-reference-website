@@ -10,6 +10,20 @@ const PRODUCT_TYPE_DRESS = "dresses"
 
 module.exports = [
   {
+    type: PRODUCT_TYPE_SUIT,
+    displayName: "Khaki suit",
+    description: [
+      "A light, tanned suit that is a perfect fit for a party at the beach.",
+    ],
+    gender: GENDER_MEN,
+    imageAlt:
+      "Man in a tanned suit at the beach. His jacket is open, with a dark, patterned shirt beneath. He looks back towards the tall buildings encircling the beach.",
+    imageName: "beach-smart-01.png",
+    video: "beach",
+    price: 249,
+    campaignPrice: 199,
+  },
+  {
     type: PRODUCT_TYPE_DRESS,
     displayName: "Summer breeze",
     description: [

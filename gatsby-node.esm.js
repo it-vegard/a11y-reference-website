@@ -229,6 +229,7 @@ const addProductNodes = (
         })),
         slug: toSlug(product.displayName),
         type: product.type,
+        video: product.video,
       }
       createNode(productNode)
     })

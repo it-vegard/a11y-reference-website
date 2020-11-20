@@ -1,0 +1,28 @@
+---
+name: Video
+route: /docs/components/video
+menu: Components
+---
+
+# Video
+
+Native HTML5 video component, with custom controls for keyboard support.
+
+import { Playground, Props } from "docz"
+import Video from "./video.js"
+import MyVideo from "../../videos/Clothes4All-Beach-EN_original.mp4"
+import PRODUCT_VIDEOS from "../../data/products/product-videos.js"
+
+## Props
+
+<Props of={Video} />
+
+## Basic usage
+
+<Playground>
+  <Video
+    sources={[MyVideo]}
+    captions={[PRODUCT_VIDEOS.en.beach.captions]}
+    descriptions={[]}
+  />
+</Playground>

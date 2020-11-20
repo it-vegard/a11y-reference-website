@@ -3,6 +3,7 @@ import * as PropTypes from "prop-types"
 
 import CONSTANTS from "../../data/rules/constants"
 import TEXTS from "../../data/texts"
+import PRODUCT_VIDEOS from "../../data/products/product-videos"
 import { ProductPropType } from "../../prop-types/product-query"
 import { toCurrency } from "../../util/number-util"
 import { capitalizeAllWords } from "../../util/text-util"
@@ -13,7 +14,8 @@ import { useLanguage } from "../language"
 import ProductDescription from "./product-description"
 import ProductSizePicker from "./product-size-picker"
 import Heading from "../semantic-heading"
-import { Article, Section } from "../semantic-region"
+import { Article } from "../semantic-region"
+import Video from "../video"
 
 import "./product-details.css"
 
@@ -23,16 +25,31 @@ const ProductDetails = product => {
   const mainPrice = product.campaignPrice
     ? product.campaignPrice
     : product.price
+  const productVideo = PRODUCT_VIDEOS[language][product.video]
   return (
     <Article className="product-details">
       <Heading headingLevel={1}>{product.displayName}</Heading>
-      <Section>
-        <ProductDescription texts={product.description} />
-        <Image
-          className="product-details__image"
-          src={product.imageSrc}
-          alt={product.imageAlt}
-        />
+      <ProductDescription texts={product.description} />
+      <Image
+        className="product-details__image"
+        src={product.imageSrc}
+        alt={product.imageAlt}
+      />
+      <div className="product-details__content">
+        {productVideo && (
+          <div className="product-details__video">
+            <Video
+              sources={[productVideo.url]}
+              captions={[productVideo.captions]}
+              audioDescriptions={[productVideo.audioDescriptions]}
+              audioDescriptionsCaptions={[
+                productVideo.audioDescriptionsCaptions,
+              ]}
+              textAlternative={productVideo.textAlternative}
+            />
+          </div>
+        )}
+        <ProductSizePicker sizes={product.sizes} />
         <p className="product-details__price">
           {capitalizeAllWords(toCurrency(mainPrice, language))}
         </p>
@@ -43,7 +60,6 @@ const ProductDetails = product => {
             )}
           </p>
         )}
-        <ProductSizePicker sizes={product.sizes} />
         <BuyButton product={product} />
         {rules[CONSTANTS.NO_TIMING] === false &&
           rules[CONSTANTS.TIMEOUT_WARNING] !== false && (
@@ -54,7 +70,7 @@ const ProductDetails = product => {
               )}
             </p>
           )}
-      </Section>
+      </div>
     </Article>
   )
 }
