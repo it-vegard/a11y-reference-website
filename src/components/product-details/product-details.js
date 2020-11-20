@@ -41,6 +41,7 @@ const ProductDetails = product => {
             <Video
               sources={[productVideo.url]}
               captions={[productVideo.captions]}
+              textAlternative={productVideo.textAlternative}
             />
           </div>
         )}

@@ -1,6 +1,8 @@
 const CONSTANTS = {
   IMAGE_ALT: "1.1.1-images-must-have-alternate-text",
   VIDEO_CAPTIONS: "1.2.2-video-elements-must-have-captions",
+  MEDIA_ALTERNATIVE_FOR_PRERECORDED_MEDIA:
+    "1.2.3-provide-an-alternative-to-time-based-media",
   GROUP_RELATED_LINKS_USING_THE_NAV_ELEMENT:
     "1.3.1-group-related-links-using-the-nav-element",
   HEADER_HAS_ROLE_HEADER: "1.3.1-header-has-role-header",

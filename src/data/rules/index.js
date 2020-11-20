@@ -8,6 +8,7 @@ import groupRelatedLinksUsingTheNavElement from "./group-related-links-using-the
 import headerHasRoleHeader from "./header-has-role-header"
 import identifyInputPurpose from "./identify-input-purpose"
 import label from "./label"
+import mediaAlternativeForPrerecordedMedia from "./media-alternative-for-prerecorded-media"
 import noMetaRedirectWithATimeLimit from "./no-meta-redirect-with-a-time-limit"
 import timingAdjustable from "./timing-adjustable"
 import useARIALandmarksToIdentifyRegionsOfAPage from "./use-semantic-regions"
@@ -26,6 +27,7 @@ const rules = [
   identifyInputPurpose,
   imageAlt,
   label,
+  mediaAlternativeForPrerecordedMedia,
   noMetaRedirectWithATimeLimit,
   noTiming,
   timeoutWarning,

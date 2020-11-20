@@ -53,7 +53,7 @@
   right: 0;
   display: grid;
   grid-template-rows: 2rem 2rem;
-  grid-template-columns: 1fr 2rem 2rem 2rem 2rem 1fr;
+  grid-template-columns: 1fr auto auto auto auto auto 1fr;
   grid-column-gap: 1rem;
   padding: 0.5rem 0;
   pointer-events: none;
@@ -78,7 +78,7 @@
 
 .video__controls__time {
   grid-column-start: 1;
-  grid-column-end: span 6;
+  grid-column-end: span 7;
   margin: 0 auto;
   width: 90%;
   display: grid;
@@ -198,14 +198,19 @@
 .video__controls__button {
   height: 2rem;
   width: 2rem;
+  background-color: rgba(230, 230, 230, 0.9);
   border: 0;
   border-radius: 0.2rem;
   box-shadow: #999 0 0 0.3rem 0.2rem;
+  color: #333;
   font-size: 1.1rem;
   font-weight: bold;
   padding: 0.1rem;
   position: relative;
   pointer-events: all;
+  text-align: center;
+  line-height: 2rem;
+  text-decoration: none;
 }
 
 .video__controls__button:focus,
@@ -221,4 +226,9 @@
     outline: none;
     box-shadow: #333 0 0 0 0.3rem;
   }
+}
+
+.video__controls__text-alternative {
+  grid-column: 6 / 7;
+  width: auto;
 }

@@ -145,6 +145,7 @@ const Video = ({
   height,
   onClick = () => {},
   sources = [],
+  textAlternative = () => {},
   width,
 }) => {
   const [shouldShowControls, setShouldShowControls] = useState(false)
@@ -152,6 +153,9 @@ const Video = ({
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [closedCaptionsMode, setClosedCaptionsMode] = useState(true)
+  const [shouldShowTextAlternative, setShouldShowTextAlternative] = useState(
+    false
+  )
   const videoRef = useRef(null)
   const toggleClosedCaptions = currentMode => {
     console.log("Showing captions? ", currentMode !== "showing")
@@ -196,93 +200,106 @@ const Video = ({
     }
   }
   return (
-    <section
-      className={classNames("video__section", className, {
-        "video--is-playing": isPlaying,
-        "video--is-controls-active": isPlaying || shouldShowControls,
-      })}
-      onFocus={() => setShouldShowControls(true)}
-      onBlur={() => setShouldShowControls(false)}
-      onMouseOver={event => {
-        if (event.target === videoRef.current) {
-          setShouldShowControls(videoRef.current && !videoRef.current.paused)
-        }
-      }}
-      onMouseOut={event => {
-        if (event.target === videoRef.current) {
-          console.log("Hiding controls")
-          setShouldShowControls(false)
-        } else {
-          console.log(event.target)
-          console.log(videoRef.current)
-        }
-      }}
-    >
-      <video
-        className="video"
-        height={height}
-        width={width}
-        onClick={togglePlaying}
-        onLoadedMetadata={event => {
-          setDuration(event.target.duration)
-        }}
-        onDurationChange={event => setDuration(event.target.duration)}
-        onEnded={stop}
-        onPlay={onClick}
-        onPause={onClick}
-        onTimeUpdate={event => setCurrentTime(event.target.currentTime)}
-        preload="auto"
-        ref={videoRef}
-      >
-        {sources.map(source => (
-          <source src={source} key={source} type="video/mp4" />
-        ))}
-        {captions.map(caption => (
-          <track
-            kind="captions"
-            src={caption}
-            key={caption}
-            srcLang="en"
-            onLoad={() => {
-              videoRef.current.textTracks[0].mode = closedCaptionsMode
-                ? "showing"
-                : "hidden"
-            }}
-          />
-        ))}
-        {descriptions.map(description => (
-          <track
-            kind="description"
-            src={description}
-            key={description}
-            srcLang="en"
-          />
-        ))}
-        Beklager, nettleseren din støtter ikke visning av video.
-      </video>
-      <div
-        className={classNames("video__controls", {
-          "video__controls--hidden": !isPlaying && !shouldShowControls,
+    <>
+      <section
+        className={classNames("video__section", className, {
+          "video--is-playing": isPlaying,
+          "video--is-controls-active": isPlaying || shouldShowControls,
         })}
+        onFocus={() => setShouldShowControls(true)}
+        onBlur={() => setShouldShowControls(false)}
+        onMouseOver={event => {
+          if (event.target === videoRef.current) {
+            setShouldShowControls(videoRef.current && !videoRef.current.paused)
+          }
+        }}
+        onMouseOut={event => {
+          if (event.target === videoRef.current) {
+            console.log("Hiding controls")
+            setShouldShowControls(false)
+          } else {
+            console.log(event.target)
+            console.log(videoRef.current)
+          }
+        }}
       >
-        <VideoTime
-          currentTime={currentTime}
-          duration={duration}
-          setTime={newTime => (videoRef.current.currentTime = newTime)}
-        />
-        <StopButton onClick={stop} />
-        <RewindButton rewindSeconds={10} onClick={rewind} />
-        <PlayOrPauseButton onClick={togglePlaying} isPaused={!isPlaying} />
-        <ForwardButton forwardSeconds={10} onClick={forward} />
-        {captions.length > 0 && (
-          <ClosedCaptionsButton
-            onClick={() =>
-              toggleClosedCaptions(videoRef.current.textTracks[0].mode)
-            }
+        <video
+          className="video"
+          height={height}
+          width={width}
+          onClick={togglePlaying}
+          onLoadedMetadata={event => {
+            setDuration(event.target.duration)
+          }}
+          onDurationChange={event => setDuration(event.target.duration)}
+          onEnded={stop}
+          onPlay={onClick}
+          onPause={onClick}
+          onTimeUpdate={event => setCurrentTime(event.target.currentTime)}
+          preload="auto"
+          ref={videoRef}
+        >
+          {sources.map(source => (
+            <source src={source} key={source} type="video/mp4" />
+          ))}
+          {captions.map(caption => (
+            <track
+              kind="captions"
+              src={caption}
+              key={caption}
+              srcLang="en"
+              onLoad={() => {
+                videoRef.current.textTracks[0].mode = closedCaptionsMode
+                  ? "showing"
+                  : "hidden"
+              }}
+            />
+          ))}
+          {descriptions.map(description => (
+            <track
+              kind="description"
+              src={description}
+              key={description}
+              srcLang="en"
+            />
+          ))}
+          {textAlternative()}
+        </video>
+        <div
+          className={classNames("video__controls", {
+            "video__controls--hidden": !isPlaying && !shouldShowControls,
+          })}
+        >
+          <VideoTime
+            currentTime={currentTime}
+            duration={duration}
+            setTime={newTime => (videoRef.current.currentTime = newTime)}
           />
-        )}
-      </div>
-    </section>
+          <StopButton onClick={stop} />
+          <RewindButton rewindSeconds={10} onClick={rewind} />
+          <PlayOrPauseButton onClick={togglePlaying} isPaused={!isPlaying} />
+          <ForwardButton forwardSeconds={10} onClick={forward} />
+          {captions.length > 0 && (
+            <ClosedCaptionsButton
+              onClick={() =>
+                toggleClosedCaptions(videoRef.current.textTracks[0].mode)
+              }
+            />
+          )}
+          {textAlternative() && (
+            <button
+              onClick={() =>
+                setShouldShowTextAlternative(!shouldShowTextAlternative)
+              }
+              className="video__controls__button video__controls__text-alternative"
+            >
+              Tekstversjon
+            </button>
+          )}
+        </div>
+      </section>
+      {shouldShowTextAlternative && textAlternative()}
+    </>
   )
 }
 
@@ -296,6 +313,7 @@ Video.propTypes = {
   height: number,
   onClick: func,
   className: string,
+  textAlternative: func,
   width: number,
 }
 
