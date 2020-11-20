@@ -163,10 +163,12 @@ const Video = ({
     setIsPlaying(videoRef.current && !videoRef.current.paused)
   }, [videoRef.current && !videoRef.current.paused])
   useEffect(() => {
-    videoRef.current.textTracks[0].line = 1
-    videoRef.current.textTracks[0].mode = closedCaptionsMode
-      ? "showing"
-      : "hidden"
+    if (captions.length > 0) {
+      videoRef.current.textTracks[0].line = 1
+      videoRef.current.textTracks[0].mode = closedCaptionsMode
+        ? "showing"
+        : "hidden"
+    }
   }, [closedCaptionsMode])
   const play = () => {
     videoRef.current.play()
@@ -238,7 +240,17 @@ const Video = ({
           <source src={source} key={source} type="video/mp4" />
         ))}
         {captions.map(caption => (
-          <track kind="captions" src={caption} key={caption} srcLang="en" />
+          <track
+            kind="captions"
+            src={caption}
+            key={caption}
+            srcLang="en"
+            onLoad={() => {
+              videoRef.current.textTracks[0].mode = closedCaptionsMode
+                ? "showing"
+                : "hidden"
+            }}
+          />
         ))}
         {descriptions.map(description => (
           <track
@@ -264,11 +276,13 @@ const Video = ({
         <RewindButton rewindSeconds={10} onClick={rewind} />
         <PlayOrPauseButton onClick={togglePlaying} isPaused={!isPlaying} />
         <ForwardButton forwardSeconds={10} onClick={forward} />
-        <ClosedCaptionsButton
-          onClick={() =>
-            toggleClosedCaptions(videoRef.current.textTracks[0].mode)
-          }
-        />
+        {captions.length > 0 && (
+          <ClosedCaptionsButton
+            onClick={() =>
+              toggleClosedCaptions(videoRef.current.textTracks[0].mode)
+            }
+          />
+        )}
       </div>
     </section>
   )

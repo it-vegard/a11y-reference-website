@@ -17,7 +17,7 @@ module.exports = [
     imageAlt:
       "Mann i en beige dress på stranden. Jakken er åpen, med en mørk, mønstret skjorte under. Han ser bakover mot skyskraperene høybyggene som omkranser stranden.",
     imageName: "beach-smart-01.png",
-    video: "Clothes4All-Beach-NO",
+    video: "beach",
     price: 2499,
     campaignPrice: 1999,
   },

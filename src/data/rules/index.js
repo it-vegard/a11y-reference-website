@@ -13,6 +13,7 @@ import timingAdjustable from "./timing-adjustable"
 import useARIALandmarksToIdentifyRegionsOfAPage from "./use-semantic-regions"
 import timeoutWarning from "./timeout-warning"
 import noTiming from "./no-timing"
+import videoCaptions from "./video-captions"
 
 const rules = [
   bypass,
@@ -29,6 +30,7 @@ const rules = [
   noTiming,
   timeoutWarning,
   timingAdjustable,
+  videoCaptions,
   useARIALandmarksToIdentifyRegionsOfAPage,
 ]
 

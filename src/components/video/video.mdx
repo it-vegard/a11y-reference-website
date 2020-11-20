@@ -11,7 +11,7 @@ Native HTML5 video component, with custom controls for keyboard support.
 import { Playground, Props } from "docz"
 import Video from "./video.js"
 import MyVideo from "../../videos/Clothes4All-Beach-EN_original.mp4"
-import MyVideoCaption from "file-loader!../../videos/Clothes4All-Beach-EN-captions.vtt"
+import PRODUCT_VIDEOS from "../../data/products/product-videos.js"
 
 ## Props
 
@@ -20,5 +20,9 @@ import MyVideoCaption from "file-loader!../../videos/Clothes4All-Beach-EN-captio
 ## Basic usage
 
 <Playground>
-  <Video sources={[MyVideo]} captions={[MyVideoCaption]} descriptions={[]} />
+  <Video
+    sources={[MyVideo]}
+    captions={[PRODUCT_VIDEOS.en.beach.captions]}
+    descriptions={[]}
+  />
 </Playground>

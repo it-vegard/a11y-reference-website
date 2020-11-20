@@ -4,13 +4,13 @@ import BEACH_VIDEO_CAPTIONS_NO from "file-loader!../../videos/Clothes4All-Beach-
 
 const productVideos = {
   en: {
-    "Clothes4All-Beach-EN": {
+    beach: {
       url: BEACH_VIDEO,
       captions: BEACH_VIDEO_CAPTIONS_EN,
     },
   },
   no: {
-    "Clothes4All-Beach-NO": {
+    beach: {
       url: BEACH_VIDEO,
       captions: BEACH_VIDEO_CAPTIONS_NO,
     },
