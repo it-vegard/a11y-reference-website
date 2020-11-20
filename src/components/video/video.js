@@ -9,8 +9,6 @@ import classNames from "classnames"
 
 import "./video.css"
 
-// import VideoSrc from "../../videos/Clothes4All-Beach-EN_with-captions.mp4"
-
 const PlayOrPauseButton = ({ isPaused, onClick }) => {
   const playOrPauseButtonRef = useRef(null)
   return (

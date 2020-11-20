@@ -15,7 +15,7 @@ module.exports = [
     description: ["Lys og lett, beige dress som passer ypperlig på stranden."],
     gender: GENDER_MEN,
     imageAlt:
-      "Mann i en beige dress på stranden. Jakken er åpen, med en mørk, mønstret skjorte under. Han ser bakover mot skyskraperene høybyggene som omkranser stranden.",
+      "Mann i en beige dress på stranden. Jakken er åpen, med en mørk, mønstret skjorte under. Han ser bakover mot høybyggene som omkranser stranden.",
     imageName: "beach-smart-01.png",
     video: "beach",
     price: 2499,

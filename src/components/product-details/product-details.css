@@ -48,6 +48,7 @@
 
 .product-details__content {
   grid-area: content;
+  max-width: calc(100vw - 3rem);
 }
 
 .product-details__terms {
