@@ -1,6 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import App from "../components/app"
+import App from "../../components/app"
 // import "./returns.css"
 
 const ReturnsPage = ({ location }) => (
