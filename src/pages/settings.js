@@ -1,13 +1,13 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 
-import App from "../components/app"
 import Heading from "../components/semantic-heading"
 import { AccessibilityConfigurator } from "../components/accessibility-configurator"
+import PortalPage from "../portal/portal-page"
 
 const SettingsPage = ({ location }) => {
   return (
-    <App location={location} pageTitle="Settings">
+    <PortalPage location={location} pageTitle="Settings">
       <Heading>Settings</Heading>
       <p>
         On this page you can switch on/off individual accessibility rules, so
@@ -20,7 +20,7 @@ const SettingsPage = ({ location }) => {
         guidelines.
       </p>
       <AccessibilityConfigurator />
-    </App>
+    </PortalPage>
   )
 }
 

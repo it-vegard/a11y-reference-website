@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 
-import App from "../components/app"
 import Credit from "../components/credit"
 import Grid from "../components/grid"
+import PortalPage from "../portal/portal-page"
 
 const Credits = ({ data, location }) => {
   const images = data.allFile.edges.map(
@@ -16,7 +16,7 @@ const Credits = ({ data, location }) => {
   }))
 
   return (
-    <App pageTitle="Credits" location={location}>
+    <PortalPage pageTitle="Credits" location={location}>
       <h1>Credits</h1>
       <p>Product images have been downloaded from Unsplash.com.</p>
       <Grid>
@@ -24,7 +24,7 @@ const Credits = ({ data, location }) => {
           <Credit {...credit} key={credit.originalName} />
         ))}
       </Grid>
-    </App>
+    </PortalPage>
   )
 }
 
