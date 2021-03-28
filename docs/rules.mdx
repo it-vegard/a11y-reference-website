@@ -1,0 +1,41 @@
+---
+name: Rules
+route: /docs/rules
+---
+
+<h1>Rules</h1>
+
+<p>Rules are how we manage the accessibility (or inaccessibility) of the web app.
+Each rule is connected to one success criterion, but each success criterion can have more than one rule connected to it.</p>
+
+<p>All rules can be found under <code>src/data/rules</code>.</p>
+
+<p>A rule works like this:</p>
+
+<ul>
+  <li>
+    If enabled, the rule is (in principle) complied with throughout the web app.
+  </li>
+  <li>
+    If disabled, the rule is intentionally violated, breaking the success
+    criterion.
+  </li>
+</ul>
+
+<p>As an example, disabling the <code>html-has-lang</code> rule will remove the <code>lang</code> attribute on the <code>html</code> tag.
+This breaks automatic language recognition for screen readers, possibly resulting in using the wrong pronounciation.</p>
+
+<p>Some rules depend on each other. If switched off, <code>html-lang-valid</code> will add a non-valid language code in the <code>lang</code> attribute.
+Since <code>html-has-lang</code> removes the attribute entirely, this rule will only be checked if <code>html-has-lang</code> is enabled.</p>
+
+<h2>Adding a new rule</h2>
+
+<p>To add a new rule, it is necessary to:</p>
+
+<ul>
+  <li>Add a file to <code>src/data/rules</code>, containing the rule definition.</li>
+  <li>Include the rule definition in <code>src/data/rules/index.js</code>.</li>
+  <li>In the component where you intend to add the rule violation/accessibility issue, get the rule settings using the following code: <code>{`const { rules } = useContext(AccessibilityRulesContext)`}</code>.</li>
+  <li>Then check if the rule is enabled with <code>rules[CONSTANTS["your-rule-name"]] !== false</code>. If not, render inaccessible code.</li>
+</ul>
+<p>PS: It is recommended to check if the rule is not equal to false, instead of checking if it is true. That way, the rule has to intentionally be disabled to introduce accessilility issues. If checking if it is true, we could end up introducing issues if the rules did not load correctly</p>
