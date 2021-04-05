@@ -19,7 +19,7 @@ const DeliveryPage = ({ location }) => (
         <td>Hent på butikken</td>
         <td>-</td>
         <td>Samme dag dersom bestilt før 14:00 på en virkedag.</td>
-        <td className="nmbr">-</td>
+        <td className="nmbr">Gratis</td>
       </tr>
       <tr>
         <td>Norge</td>

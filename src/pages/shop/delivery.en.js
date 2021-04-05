@@ -13,55 +13,55 @@ const DeliveryPage = ({ location }) => (
         <th scope="col">Destination</th>
         <th scope="col">Shipping method</th>
         <th scope="col">Duration</th>
-        <th scope="col">Shipping fee (NOK)</th>
+        <th scope="col">Shipping fee (USD)</th>
       </tr>
       <tr>
         <td>Fetch at shop</td>
         <td>-</td>
         <td>Same business day if ordered before 14:00.</td>
-        <td className="nmbr">-</td>
+        <td className="nmbr">Free</td>
       </tr>
       <tr>
         <td>Norway</td>
         <td>Posten</td>
         <td>2-5 business days</td>
-        <td className="nmbr">99,-</td>
+        <td className="nmbr">$9.99</td>
       </tr>
       <tr>
         <td>Norway</td>
         <td>Posten Express</td>
         <td>1-2 business days</td>
-        <td className="nmbr">199,-</td>
+        <td className="nmbr">$19.99</td>
       </tr>
       <tr>
         <td>Sweden</td>
         <td>Schenker</td>
         <td>3-6 business days</td>
-        <td className="nmbr">149,-</td>
+        <td className="nmbr">$14.99</td>
       </tr>
       <tr>
         <td>Sweden</td>
         <td>Schenker Express</td>
         <td>2-4 business days</td>
-        <td className="nmbr">199,-</td>
+        <td className="nmbr">$19.99</td>
       </tr>
       <tr>
         <td>Finnland</td>
         <td>Schenker</td>
         <td>4-7 business days</td>
-        <td className="nmbr">149,-</td>
+        <td className="nmbr">$14.99</td>
       </tr>
       <tr>
         <td>Finnland</td>
         <td>Schenker Express</td>
         <td>2-4 business days</td>
-        <td className="nmbr">199,-</td>
+        <td className="nmbr">$19.99</td>
       </tr>
       <tr>
         <td>Other Scandinavia</td>
         <td>Schenker</td>
         <td>6-10 business days</td>
-        <td className="nmbr">149,-</td>
+        <td className="nmbr">$14.99</td>
       </tr>
     </table>
     <p>
