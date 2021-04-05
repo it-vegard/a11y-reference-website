@@ -6,7 +6,7 @@ import Credit from "../components/credit"
 import Grid from "../components/grid"
 import PortalPage from "../portal/portal-page"
 
-const Credits = ({ data, location }) => {
+const Opphavsrett = ({ data, location }) => {
   const images = data.allFile.edges.map(
     image => image.node.childImageSharp.fixed
   )
@@ -16,9 +16,9 @@ const Credits = ({ data, location }) => {
   }))
 
   return (
-    <PortalPage pageTitle="Credits" location={location}>
-      <h1>Credits</h1>
-      <p>Product images have been downloaded from Unsplash.com.</p>
+    <PortalPage pageTitle="Opphavsrett" location={location}>
+      <h1>Opphavsrett</h1>
+      <p>Produktbilder er hentet fra Unsplash.com.</p>
       <Grid>
         {credits.map(credit => (
           <Credit {...credit} key={credit.originalName} />
@@ -28,7 +28,7 @@ const Credits = ({ data, location }) => {
   )
 }
 
-Credits.propTypes = {
+Opphavsrett.propTypes = {
   data: PropTypes.shape({
     allFile: PropTypes.shape({
       edges: PropTypes.arrayOf({
@@ -83,4 +83,4 @@ export const query = graphql`
   }
 `
 
-export default Credits
+export default Opphavsrett

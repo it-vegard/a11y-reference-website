@@ -108,7 +108,7 @@ const textsEN = {
       TITLE: "Exchanges and returns",
     },
     TERMS: {
-      URL: "/no/shop/terms",
+      URL: "/en/shop/terms",
       TITLE: "Terms and Conditions",
     },
     CHECKOUT_CART: {

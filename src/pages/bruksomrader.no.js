@@ -1,13 +1,12 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-
 import PortalPage from "../portal/portal-page"
 
 import "./how-to.css"
 
 const HowtoPage = ({ location }) => (
-  <PortalPage pageTitle="How to's" location={location}>
-    <h1>How to&#39;s</h1>
+  <PortalPage pageTitle="Bruksområder" location={location}>
+    <h1>Bruksområder</h1>
     <section>
       <h2>How to use this website</h2>
       <p>

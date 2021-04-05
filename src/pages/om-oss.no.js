@@ -1,11 +1,11 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { Link } from "gatsby"
-import App from "../components/app"
+import PortalPage from "../portal/portal-page"
 import { portalURLs } from "../util/urls"
 
 const AboutPage = ({ location }) => (
-  <App pageTitle="Om oss" location={location}>
+  <PortalPage pageTitle="Om oss" location={location}>
     <h1>Om oss</h1>
     <section>
       <h2>What is it?</h2>
@@ -141,7 +141,7 @@ const AboutPage = ({ location }) => (
         </li>
       </ul>
     </section>
-  </App>
+  </PortalPage>
 )
 
 AboutPage.propTypes = {

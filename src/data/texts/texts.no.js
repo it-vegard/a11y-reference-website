@@ -87,20 +87,20 @@ const textsNO = {
       TITLE: "Om denne nettsiden",
     },
     CREDITS: {
-      URL: "/en/credits",
-      TITLE: "Credits",
+      URL: "/no/opphavsrett",
+      TITLE: "Opphavsrett",
     },
     DELIVERY: {
       URL: "/no/butikk/levering",
       TITLE: "Levering",
     },
     HOW_TO: {
-      URL: "/en/how-to",
-      TITLE: "How to's",
+      URL: "/no/bruksomrader",
+      TITLE: "Bruksområder",
     },
     SETTINGS: {
       URL: "/settings",
-      TITLE: "Settings",
+      TITLE: "Innstillinger",
     },
     RETURNS: {
       URL: "/no/butikk/retur",
