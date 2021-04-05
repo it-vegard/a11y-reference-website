@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { Link } from "gatsby"
 import App from "../components/app"
+import { portalURLs } from "../util/urls"
 
 const AboutPage = ({ location }) => (
   <App pageTitle="Om oss" location={location}>
@@ -40,11 +41,7 @@ const AboutPage = ({ location }) => (
         The tool is basically a web application, and its main feature is that it
         can be configured to contain or be free of accessibility errors.
         Accessibility flaws in turn corresponding to selected{" "}
-        <a
-          href="//www.w3.org/WAI/standards-guidelines/wcag/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={portalURLs.en.wcag} target="_blank" rel="noopener noreferrer">
           WCAG
         </a>{" "}
         criteria.
@@ -71,15 +68,15 @@ const AboutPage = ({ location }) => (
         <li>It allows to turn on/off single accessibility flaws.</li>
         <li>It is multilingual.</li>
         <li>
-          It is freely available as open source under the{" "}
+          {"It is freely available as open source under the "}
           <a
-            href="//opensource.org/licenses/MIT"
+            href={portalURLs.no.licenceMIT}
             target="_blank"
             rel="noopener noreferrer"
           >
             MIT licence
-          </a>{" "}
-          and can thus be used and extended by anyone.
+          </a>
+          {" and can thus be used and extended by anyone."}
         </li>
       </ul>
     </section>
@@ -101,8 +98,8 @@ const AboutPage = ({ location }) => (
       <h2>If you would like to contribute</h2>
       <p>
         We invite you to contribute to this project and extend the tool. Please
-        see the <Link to="/howto">Howto</Link> for use and extension
-        possibilities.
+        see the <Link to={portalURLs.no.howTo}>Howto</Link> for use and
+        extension possibilities.
       </p>
     </section>
     <section>
@@ -111,21 +108,33 @@ const AboutPage = ({ location }) => (
       <ul>
         <li>
           the{" "}
-          <a href="//bufdir.no/" target="_blank" rel="noopener noreferrer">
+          <a
+            href={portalURLs.no.bufdir}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Norwegian Directorate for Children, Youth and Family Affairs
           </a>{" "}
           (UnIKT program),
         </li>
         <li>
           the IT consultancy{" "}
-          <a href="//webstep.no" target="_blank" rel="noopener noreferrer">
+          <a
+            href={portalURLs.no.webstep}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Webstep
           </a>
           ,
         </li>
         <li>
           and the research institute{" "}
-          <a href="//nr.no" target="_blank" rel="noopener noreferrer">
+          <a
+            href={portalURLs.no.norskRegnesentral}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Norwegian Computing Center
           </a>
           .
