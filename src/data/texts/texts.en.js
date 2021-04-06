@@ -19,7 +19,7 @@ const textsEN = {
   SALES_TEXT: "10-30% off",
   CART: "Cart",
   CART_WITH_ITEMS: numberOfItems => `Cart (${numberOfItems})`,
-  GO_TO_CHECKOUT: "Gå til checkout",
+  GO_TO_CHECKOUT: "Go to checkout",
   GO_TO_PAYMENT: "Go to payment",
   COMPLETE_PURCHASE: "Complete purchase",
   CONTINUE: "Continue",
