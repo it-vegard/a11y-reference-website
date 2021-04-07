@@ -2,7 +2,7 @@
   display: inline-block; /* Added to make sure nothing changes visually when converting heading to a span to break 1.3.1 */
   font-family: Arial, sans-serif;
   font-weight: 700;
-  margin: 0 0 1em; /* Using em instead of rem to adjust based on heading font size */
+  margin: 0 0 0.75em; /* Using em instead of rem to adjust based on heading font size */
 }
 
 .heading-largest {

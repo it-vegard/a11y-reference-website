@@ -73,6 +73,8 @@ const textsNO = {
     "PS: Du fikk med deg at dette ikke er en riktig nettbutikk, eller?",
   RECEIPT_DISCLAIMER:
     "Det ble ikke sendt noen data fra nettleseren din. Dataene ble lagret kun midlertidig i nettleseren og er nå slettet. #PrivacyByDesign",
+  BROWSE: "Se flere",
+  SEE_MORE: "Se mer",
   PAGES: {
     FRONT_PAGE: {
       URL: "/no/butikk",

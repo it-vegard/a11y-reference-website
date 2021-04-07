@@ -10,6 +10,10 @@ import Heading from "../semantic-heading"
 import { Section } from "../semantic-region"
 import TEXTS from "../../data/texts"
 import { useLanguage } from "../language"
+import Link from "../link"
+import { createProductUrl } from "../../util/url-util"
+
+import "./product-category.css"
 
 const ProductCategory = ({ products }) => {
   const { language } = useLanguage()
@@ -33,10 +37,13 @@ const ProductCategory = ({ products }) => {
           )}
         </Heading>
         {types.map(type => (
-          <Section key={type}>
+          <Section className="product-category__section" key={type}>
             <ProductCategory
               products={products.filter(product => product.type === type)}
             />
+            <Link url={createProductUrl(language, genders[0], type)}>
+              {`${TEXTS[language].BROWSE} ${type.toLowerCase()}`}
+            </Link>
           </Section>
         ))}
       </Fragment>
@@ -44,17 +51,18 @@ const ProductCategory = ({ products }) => {
   } else {
     // Front page
     return genders.map(gender => (
-      <Section key={gender}>
-        <Heading>
-          {TEXTS[language].PRODUCT_FOR_GENDER_HEADING(
-            capitalizeAllWords(gender)
-          )}
-        </Heading>
+      <Section className="product-category__section" key={gender}>
+        <Heading>{TEXTS[language].PRODUCT_FOR_GENDER_HEADING(gender)}</Heading>
         <ProductList
           products={products
             .filter(product => product.gender === gender)
             .slice(0, 5)}
         />
+        <Link url={createProductUrl(language, gender)}>
+          {`${TEXTS[language].SEE_MORE} ${TEXTS[language]
+            .PRODUCT_FOR_GENDER_HEADING(gender)
+            .toLowerCase()}`}
+        </Link>
       </Section>
     ))
   }
