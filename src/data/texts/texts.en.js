@@ -74,6 +74,8 @@ const textsEN = {
   RECEIPT_NOTE: "PS: You noticed this was not a real shop, right?",
   RECEIPT_DISCLAIMER:
     "No data has been sent from your computer. Data was preliminary stored in your browser while you were moving around the site but is now deleted. #PrivacyByDesign",
+  BROWSE: "Browse",
+  SEE_MORE: "See more",
   PAGES: {
     FRONT_PAGE: {
       URL: "/en/shop",
