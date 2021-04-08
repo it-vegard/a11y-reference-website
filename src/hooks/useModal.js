@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const useModal = () => {
+const useModal = modalRef => {
   const [isOpen, setIsOpen] = useState(false)
 
   const closeOnEscapeKey = (event, resetFocusTargetRef) => {
@@ -19,6 +19,22 @@ const useModal = () => {
       resetFocusTargetRef.current.focus()
     }
   }
+
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (
+        isOpen &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target)
+      ) {
+        toggleIsOpen()
+      }
+    }
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [isOpen, modalRef])
 
   return {
     isOpen,

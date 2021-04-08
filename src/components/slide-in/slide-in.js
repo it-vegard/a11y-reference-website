@@ -10,10 +10,11 @@ import TEXTS from "../../data/texts"
 import "./slide-in.css"
 
 const SlideIn = ({ children, className, toggleText }) => {
+  const closeButtonRef = useRef(null)
+  const toggleButtonRef = useRef(null)
+  const slideInRef = useRef(null)
   const { language } = useLanguage()
-  const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal()
-  const toggleButtonRef = useRef()
-  const closeButtonRef = useRef()
+  const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal(slideInRef)
   useEffect(() => {
     if (isOpen) {
       closeButtonRef.current.focus()
@@ -38,6 +39,7 @@ const SlideIn = ({ children, className, toggleText }) => {
         })}
         hidden={!isOpen}
         onKeyUp={event => closeOnEscapeKey(event, toggleButtonRef)}
+        ref={slideInRef}
       >
         <div className="slide-in__close__container">
           <Button
