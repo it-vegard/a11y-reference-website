@@ -26,7 +26,7 @@ const CartPage = () => {
         subtractFn={subtractFromCart}
       />
       <Link
-        title={TEXTS[language].CONTINUE}
+        title={TEXTS[language].GO_TO_PERSONAL_DETAILS}
         url={TEXTS[language].PAGES.CHECKOUT_PERSONAL_DETAILS.URL}
       />
     </CheckoutPage>

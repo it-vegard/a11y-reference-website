@@ -22,7 +22,7 @@ const textsNO = {
   GO_TO_CHECKOUT: "Gå til kassen",
   GO_TO_PAYMENT: "Gå til betaling",
   COMPLETE_PURCHASE: "Fullfør kjøp",
-  CONTINUE: "Fortsett",
+  GO_TO_PERSONAL_DETAILS: "Gå til personlige opplysninger",
   IN_TOTAL: "Totalt:",
   LADIES_FASHION: "Damemote",
   GENTS_FASHION: "Herremote",

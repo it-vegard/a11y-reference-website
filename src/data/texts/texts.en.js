@@ -22,7 +22,7 @@ const textsEN = {
   GO_TO_CHECKOUT: "Go to checkout",
   GO_TO_PAYMENT: "Go to payment",
   COMPLETE_PURCHASE: "Complete purchase",
-  CONTINUE: "Continue",
+  GO_TO_PERSONAL_DETAILS: "Go to personal details",
   IN_TOTAL: "Total:",
   LADIES_FASHION: "Ladies' fashion",
   GENTS_FASHION: "Gents' fashion",
