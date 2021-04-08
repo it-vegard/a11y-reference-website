@@ -50,7 +50,7 @@ const MiniCart = () => {
         />
         <Link
           url={TEXTS[language].PAGES.CHECKOUT_CART.URL}
-          title={TEXTS[language].GO_TO_CHECKOUT}
+          title={TEXTS[language].GO_TO_CART}
         />
       </div>
     </DropDown>

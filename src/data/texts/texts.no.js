@@ -19,7 +19,7 @@ const textsNO = {
   SALES_TEXT: "10-30% rabatt",
   CART: "Handlekurv",
   CART_WITH_ITEMS: numberOfItems => `Handlekurv (${numberOfItems})`,
-  GO_TO_CHECKOUT: "Gå til kassen",
+  GO_TO_CART: "Gå til handlekurven",
   GO_TO_PAYMENT: "Gå til betaling",
   COMPLETE_PURCHASE: "Fullfør kjøp",
   GO_TO_PERSONAL_DETAILS: "Gå til personlige opplysninger",
