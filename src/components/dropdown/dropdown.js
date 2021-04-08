@@ -8,13 +8,15 @@ import Button from "../button"
 import "./dropdown.css"
 
 const DropDown = ({ buttonText, children, className }) => {
-  const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal()
+  const dropDownRef = useRef(null)
   const toggleButtonRef = useRef(null)
+  const { isOpen, closeOnEscapeKey, toggleIsOpen } = useModal(dropDownRef)
   return (
     <div
       className={classNames("dropdown", {
         [className]: className,
       })}
+      ref={dropDownRef}
     >
       <Button
         className="dropdown-toggle"
