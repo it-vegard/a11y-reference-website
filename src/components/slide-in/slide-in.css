@@ -1,6 +1,5 @@
 .slide-in {
-  max-height: 100vh;
-  overflow-y: auto;
+  height: 100vh;
   min-width: 25vw;
   position: fixed;
   top: 0;
@@ -27,6 +26,6 @@
 }
 
 .slide-in__container {
-  overflow: auto;
-  min-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  height: calc(100vh - 6rem);
 }
