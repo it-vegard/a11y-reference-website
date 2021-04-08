@@ -65,7 +65,7 @@ const textsNO = {
   PAY_DETAILS_CARD_NUMBER: "Kortnummer",
   PAY_DETAILS_EXPIRY_MONTH: "Utløpsmåned",
   PAY_DETAILS_EXPIRY_YEAR: "Utløpsår",
-  PAY_DETAILS_CSC: "CSC",
+  PAY_DETAILS_CSC: "CVC",
   // receipt
   RECEIPT_TITLE: "Kvittering",
   RECEIPT_HEADER: "Mange takk for kjøpet ditt!",

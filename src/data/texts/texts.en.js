@@ -67,7 +67,7 @@ const textsEN = {
   PAY_DETAILS_CARD_NUMBER: "Card number",
   PAY_DETAILS_EXPIRY_MONTH: "Expiry month",
   PAY_DETAILS_EXPIRY_YEAR: "Expiry year",
-  PAY_DETAILS_CSC: "CSC",
+  PAY_DETAILS_CSC: "Security code",
   // receipt
   RECEIPT_TITLE: "Receipt",
   RECEIPT_HEADER: "Thank you for your purchase!",
