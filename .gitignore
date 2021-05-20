@@ -73,3 +73,7 @@ cypress/videos
 
 # Docz
 .docz/
+
+# IDEA / IntelliJ / WebStorm / etc
+.idea/
+*.iml
