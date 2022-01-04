@@ -7,7 +7,7 @@ import RuleList from "./rule-list"
 
 import "./rule-section.css"
 
-const RuleSection = ({ description, rules, title, url }) => {
+const RuleSection = ({ description, rules, title, url, variant }) => {
   return (
     <Article className="rule__section">
       <Heading>
@@ -16,7 +16,7 @@ const RuleSection = ({ description, rules, title, url }) => {
         </a>
       </Heading>
       {description && <p>{description}</p>}
-      {rules && <RuleList rules={rules} />}
+      {rules && <RuleList rules={rules} variant={variant} />}
     </Article>
   )
 }
@@ -27,6 +27,7 @@ RuleSection.propTypes = {
   rules: RuleList.propTypes.rules,
   title: PropTypes.string,
   url: PropTypes.string,
+  variant: PropTypes.string.isRequired,
 }
 
 export default RuleSection

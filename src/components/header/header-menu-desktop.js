@@ -10,7 +10,7 @@ const HeaderMenuDesktop = () => (
     <ContentMenu />
     <div className="header__menus">
       <LanguageSelector />
-      <AccessibilitySlideIn />
+      <AccessibilitySlideIn variant="desktop" />
     </div>
   </>
 )
