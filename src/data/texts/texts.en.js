@@ -1,6 +1,7 @@
 const textsEN = {
   // general
   LANG: "English",
+  SKIP_TO_CONTENT: "Skip to content",
   CURRENCY: "USD",
   MENU: "Menu",
   RETAIL_PRICE: price => `Previous price: ${price}`,
