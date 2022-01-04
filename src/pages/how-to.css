@@ -3,6 +3,7 @@ table tr:nth-child(even) {
 }
 table tr.header {
   background-color: #ddf;
+  color:#000;
 }
 table td, table th {
   padding: .5ex;
