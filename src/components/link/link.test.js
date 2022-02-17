@@ -1,5 +1,7 @@
 import React from "react"
 import "@testing-library/jest-dom"
+import "jest-axe/extend-expect"
+import { axe } from "jest-axe"
 import { render, screen, waitFor } from "@testing-library/react"
 import CONSTANTS from "../../data/rules/constants"
 import AccessibilityRulesContext from "../accessibility-rules/accessibility-rules-context"
@@ -30,4 +32,12 @@ test("Link has role='link'", async () => {
   await waitFor(() => (link = screen.getByRole("link")))
 
   expect(link).toHaveTextContent("Go to Clothes4All.net")
+})
+
+test("Link has no accessibility violations", async () => {
+  const { container } = render(renderLink("Go to Clothes4All.net"))
+
+  await waitFor(() => screen.getByRole("link"))
+
+  expect(await axe(container)).toHaveNoViolations()
 })
