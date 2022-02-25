@@ -8,6 +8,7 @@
     "@mdx-js/mdx": "1.5.9",
     "axe-core": "3.3.2",
     "classnames": "2.2.6",
+    "cypress-axe": "^0.14.0",
     "docz": "2.3.0",
     "esm": "3.2.25",
     "gatsby": "^2.25.0",
