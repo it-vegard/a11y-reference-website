@@ -99,7 +99,7 @@ const HowtoPage = ({ location }) => (
       <h2>How to extend this website</h2>
       <p>
         The project / website can be extended in multiple ways. Here, we give
-        you a couple of suggestions.
+        you a couple of suggestions on how to do it within our <a href="https://github.com/it-vegard/a11y-reference-website">GitHub repository</a>.
       </p>
       <table>
         <caption>Task suggestions</caption>
@@ -113,14 +113,14 @@ const HowtoPage = ({ location }) => (
           <td>Add more accessibility failures</td>
           <td>git, WCAG, ...</td>
           <td>2 d</td>
-          <td>Get the repository and ...</td>
+          <td>Get the <a href="https://github.com/it-vegard/a11y-reference-website">GitHub repository</a> and ...</td>
         </tr>
         <tr>
           <td>Add one or several languages</td>
           <td>git, JSON</td>
           <td>1 d</td>
           <td>
-            Get the repository and add language strings as done with the other
+            Get the <a href="https://github.com/it-vegard/a11y-reference-website">GitHub repository</a> and add language strings as done with the other
             languages in the language string JSON.
           </td>
         </tr>
@@ -129,7 +129,7 @@ const HowtoPage = ({ location }) => (
           <td>git, JSON</td>
           <td>2 h</td>
           <td>
-            First get the repository. Decide which product categories you want
+            First get the <a href="https://github.com/it-vegard/a11y-reference-website">GitHub repository</a>. Decide which product categories you want
             to add. See the <samp>type</samp> fields in{" "}
             <samp>src/data/products.js</samp> for existing categories. For each
             new product, copy the picture to <samp>src/images/products/</samp>,
@@ -144,7 +144,7 @@ const HowtoPage = ({ location }) => (
           <td>git, Node, Javascript, React, JSX</td>
           <td>Min. 1 d</td>
           <td>
-            Get the repository and copy one of the other pages in{" "}
+            Get the <a href="https://github.com/it-vegard/a11y-reference-website">GitHub repository</a> and copy one of the other pages in{" "}
             <samp>src/pages</samp> or <samp>src/page-templates</samp>, then
             modify the copy as needed.
           </td>
@@ -153,7 +153,7 @@ const HowtoPage = ({ location }) => (
           <td>Modify existing pages</td>
           <td>git, Node, Javascript, React, JSX</td>
           <td>2-5 d</td>
-          <td>Get the repository and ...</td>
+          <td>Get the <a href="https://github.com/it-vegard/a11y-reference-website">GitHub repository</a> and ...</td>
         </tr>
       </table>
     </section>
