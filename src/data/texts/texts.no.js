@@ -1,6 +1,7 @@
 const textsNO = {
   // general
   LANG: "norsk",
+  SKIP_TO_CONTENT: "Hopp til innhold",
   CURRENCY: "NOK",
   MENU: "Meny",
   RETAIL_PRICE: price => `Førpris: ${price}`,
