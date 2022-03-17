@@ -3,14 +3,14 @@ import AccessibilityRules from "../accessibility-rules"
 import ToggleSwitch from "../toggle-switch"
 import * as PropTypes from "prop-types"
 
-const RuleSelector = ({ rule }) => {
+const RuleSelector = ({ rule, variant }) => {
   const { rules, setRule } = useContext(AccessibilityRules.context)
   const currentValue = rules[rule.key] || false
   return (
     <ToggleSwitch
       checked={currentValue}
       helpText={rule.description}
-      id={rule.key}
+      id={`${rule.key}__${variant}`}
       key={rule.key}
       label={rule.title}
       onClick={() => setRule(rule.key, !currentValue)}
@@ -24,6 +24,7 @@ RuleSelector.propTypes = {
     description: PropTypes.string,
     title: PropTypes.string,
   }),
+  variant: PropTypes.string.isRequired,
 }
 
 export default RuleSelector

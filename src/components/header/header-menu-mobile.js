@@ -15,7 +15,7 @@ const HeaderMenuMobile = () => {
       <ContentMenu />
       <div className="header__menus">
         <LanguageSelector />
-        <AccessibilitySlideIn />
+        <AccessibilitySlideIn variant="mobile" />
       </div>
     </SlideIn>
   )
