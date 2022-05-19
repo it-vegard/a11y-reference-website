@@ -37,7 +37,7 @@ const Cart = ({ order, addFn, subtractFn }) => {
                 {product.displayName}
               </a>
               <p className="cart__subtext">
-                á {toCurrency(product.price, language)}
+                à {toCurrency(product.price, language)}
               </p>
             </div>
             <div>
