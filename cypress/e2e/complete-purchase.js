@@ -1,36 +1,76 @@
 describe("A customer", () => {
   beforeEach(() => {
     window.sessionStorage.clear()
-    cy.visit("/en/shop?enableRules=true").get("main", { timeout: 15000 })
+    cy.visit("/en/shop?enableRules=true")
+    cy.injectAxe()
   })
   it("can complete a purchase", () => {
     // Front page
     cy.get(".card__link")
       .first()
       .click()
-    cy.contains("Add to cart").click()
-    cy.contains("Cart (1)").click()
-    cy.contains("Gå til checkout").click()
+    cy.get(".product-details")
+      .contains("Add to cart")
+      .click()
+    cy.get(".mini-cart")
+      .contains("Cart (1)")
+      .click()
+    // cy.checkA11y()
+    cy.contains("Go to cart").click()
 
     // Cart page
-    cy.url().should("include", "/en/shop/cart")
-    cy.contains("Continue").click()
+    cy.url().should("include", "/en/shop/checkout/cart")
+    cy.get(".cart__list .cart__item").should("have.length", 1)
+    cy.get(".cart__list").findByRole("link", { name: "Khaki suit" })
+    cy.findByRole("link", { name: "Go to personal details" }).click()
 
     // Navigate personal details page
     cy.url().should("include", "/personal-details")
-    cy.get("[id='first-name']").type("Ole")
-    cy.get("[id='last-name']").type("Brumm")
-    cy.get("[id='address-street']").type("Testveien 1")
-    cy.get("[id='address-zip']").type("0001")
-    cy.get("[id='address-city']").type("Testville")
+    cy.get(".checkout-page .form .input").should("have.length", 5)
+    cy.findByRole("textbox", { name: "First name" })
+      .should("exist")
+      .click()
+    cy.findByLabelText("First name")
+      .should("exist")
+      .click()
+      .type("Ole")
+    cy.findByLabelText("Last name")
+      .should("exist")
+      .click()
+      .type("Brumm")
+    cy.findByLabelText("Street")
+      .should("exist")
+      .click()
+      .type("Testveien 1")
+    cy.findByLabelText("Zip code")
+      .should("exist")
+      .click()
+      .type("tull")
+    cy.findByLabelText("City")
+      .should("exist")
+      .click()
+      .type("Testville")
     cy.contains("Go to payment").click()
 
     // Navigate payment page
     cy.url().should("include", "/payment-details")
-    cy.get("[id='card-number']").type("11111111111")
-    cy.get("[id='card-expiry-month']").type("01")
-    cy.get("[id='card-expiry-year']").type("2030")
-    cy.get("[id='card-csc']").type("123")
+    cy.get(".checkout-page .form .input").should("have.length", 5)
+    cy.findByLabelText("Card number")
+      .should("have.attr", "type", "text")
+      .click()
+      .type("11111111111")
+    cy.findByLabelText("Expiry month")
+      .should("have.attr", "type", "text")
+      .click()
+      .type("01")
+    cy.findByLabelText("Expiry year")
+      .should("have.attr", "type", "text")
+      .click()
+      .type("2030")
+    cy.findByLabelText("Security code")
+      .should("have.attr", "type", "text")
+      .click()
+      .type("123")
     cy.contains("Complete purchase").click()
 
     // Load receipt page
@@ -39,7 +79,8 @@ describe("A customer", () => {
   })
 })
 
-describe("A user", () => {
+// eslint-disable-next-line jest/no-commented-out-tests
+/* describe("A user", () => {
   beforeEach(() => {
     window.sessionStorage.clear()
     cy.visit("/en/shop?enableRules=true").get("main", { timeout: 15000 })
@@ -51,3 +92,4 @@ describe("A user", () => {
       .click()
   })
 })
+*/

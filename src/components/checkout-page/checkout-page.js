@@ -1,5 +1,5 @@
 import React from "react"
-import { element } from "prop-types"
+import { array, element, oneOfType } from "prop-types"
 
 import "./checkout-page.css"
 
@@ -8,7 +8,7 @@ const CheckoutPage = ({ children }) => (
 )
 
 CheckoutPage.propTypes = {
-  children: element,
+  children: oneOfType([element, array]),
 }
 
 export default CheckoutPage
